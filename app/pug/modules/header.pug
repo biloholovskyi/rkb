@@ -1,1 +1,48 @@
 header.header
+  .header__top
+    .container
+      .row
+        .col-12
+          .top__wrapper
+            .left
+              .header__lang-wrapper
+                a.header__lang.header__lang--active(href='#') RU
+                a.header__lang(href='#') ENG
+                a.header__lang(href='#') TAT
+              a.header__link
+                img(src='./media/icon/eye.svg' alt='eye')
+                span Версия для слабовидящих
+              a.header__link
+                img(src='./media/icon/map.svg' alt='map')
+                span Карта РКБ
+            .right
+              a.header__number(href='tel:88432312090') 8 (843) 231-20-90
+                span  — круглосуточно
+
+  .header__bot
+    .container
+      .row
+        .col-12
+          .bot-wrapper
+            .left
+              a.home-link(href='/')
+                img(alt='rkb' src='./media/icon/logo.svg')
+                .home-link__text
+                  .title Республиканская #[br] Клиническая Больница
+                  .small Министерства здравоохранения #[br] Республики Татарстан
+
+              nav.header__navigation
+                ul
+                  li
+                    a(href='/') Посетителям
+                  li
+                    a(href='/') Специалистам
+                  li
+                    a(href='/') Партнерам
+                  li
+                    a(href='/') Контакты
+            .right
+              a.header__search(href='#')
+                img(alt='search' src='./media/icon/search.svg')
+              .header__menu-btn Меню
+                .humb
