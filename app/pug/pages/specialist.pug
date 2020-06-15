@@ -1,0 +1,19 @@
+extends ../layout/main
+
+block variables
+  - const pageTitle = 'РКБ'
+
+block content
+  .single-specialist
+    .container
+      .row
+        .col-12
+          a(href="#").btn_back Вернуться к списку специалистов
+      .row
+        include ../modules/specialist/main_block
+      .row
+        .col-12
+          include ../modules/specialist/feedback
+          include ../modules/specialist/form_spec
+      .row.block_blog
+        include ../modules/specialist/section_blog      
