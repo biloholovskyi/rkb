@@ -59,7 +59,7 @@
     <div class="single-specialist">
       <div class="container">
         <div class="row">
-          <div class="col-12"><a class="btn_back" href="#">Вернуться к списку специалистов</a></div>
+          <div class="col-12"><a class="btn_back" href="/">Вернуться к списку специалистов</a></div>
         </div>
         <div class="row">
           <div class="col-3">
@@ -78,10 +78,25 @@
                       <ul class="dropdown-menu">
                         <li>
                           <div class="acc-item">
-                            <div class="icon-wrap"><img src="../../media/icon/specialist/union.svg" alt=""></div>
+                            <div class="icon-wrap exp"><img src="../../media/icon/specialist/circle.svg" alt=""></div>
                             <div class="info">
                               <p>Республиканская Клиническая Больница <span>Август 2017 - Настоящее время</span></p>
-                              <p>Биомед <span>Ноябрь 2017 - мая 2017</span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="acc-item">
+                            <div class="icon-wrap exp"><img src="../../media/icon/specialist/circle.svg" alt=""></div>
+                            <div class="info">
+                              <p>Республиканская Клиническая Больница <span>Август 2017 - Настоящее время</span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="acc-item">
+                            <div class="icon-wrap exp"><img src="../../media/icon/specialist/circle.svg" alt=""></div>
+                            <div class="info">
+                              <p>Биомед <span>Ноябрь 2017 - мая 2017</span>      </p>
                             </div>
                           </div>
                         </li>
@@ -93,9 +108,11 @@
                   <p>Закончил: КГЭУ</p>
                 </div>
                 <div class="specialist-item"><img src="../../media/icon/specialist/tel.svg" alt="icon">
-                  <p>(843) XXX-XX-XX <a class="show-phone" href="#">Показать телефон </a></p>
+                  <p>(843) XXX-XX-XX 
+                    <p class="show-phone">Показать телефон </p>
+                  </p>
                 </div>
-                <div class="specialist-item"><img src="../../media/icon/specialist/mail.svg" alt="icon"><a href="#">abdulganievad@rkb.ru</a></div>
+                <div class="specialist-item"><img src="../../media/icon/specialist/mail.svg" alt="icon"><a href="mailto:abdulganievad@rkb.ru">abdulganievad@rkb.ru</a></div>
                 <div class="rank">
                   <div class="star-block">
                     <button><img src="../../media/icon/specialist/star-color.svg" alt="icon"></button>
@@ -103,9 +120,10 @@
                     <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
                     <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
                     <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  </div><a href="#">8 отзывов    </a>
+                  </div>
+                  <p>8 отзывов</p>
                 </div>
-                <button>Оставить отзыв           </button>
+                <button class="anhors">  <a href="#feedback">Оставить отзыв           </a></button>
               </div>
             </div>
           </div>
@@ -142,7 +160,7 @@
                 </div>
                 <p>Андрей Анатольевич, от души благодарствую вас и клинику, за радушный прием и оказанную мне медицинскую помощь. Чувствую себя сейчас превосходно. Спасибо Вам, что еще есть такие врачи！Рекомендую!</p>
               </div>
-              <div class="feedback-item">
+              <div class="feedback-item" id="feedback">
                 <h3>Алексей Кочерыжкин</h3>
                 <div class="rank">
                   <div class="star-block">
@@ -160,7 +178,7 @@
             <div class="form_spec">
               <div class="rank">
                 <div class="star-block">
-                  <button><img src="../../media/icon/specialist/star-color.svg" alt="icon"></button>
+                  <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
                   <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
                   <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
                   <button><img src="../../media/icon/specialist/star-disable.svg" alt="icon"></button>
@@ -265,6 +283,16 @@
         </div>
       </div>
     </footer>
+    <div class="showTel-overlay">
+      <div class="showTel-modal">
+        <div class="showTel-close"></div>
+        <div class="showTel-item">
+          <h3> Телефон</h3>
+          <p>+7 962 395-63-44</p>
+          <div class="modal-btn-block"><a href="#">Подзвонить   </a></div>
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="buildjs/owl.carousel.js"></script>
     <script src="buildjs/index.js"></script>

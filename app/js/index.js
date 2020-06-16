@@ -1,6 +1,9 @@
 import 'normalize.css';
 import './servis';
 import {specSliderRender, specSliderNext, currentSlideNumber} from "./specSlider";
+import './modal';
+import './anhors';
+
 
 $(document).ready((e) => {
   // specialists slider
@@ -27,9 +30,8 @@ $(document).ready((e) => {
 
   specSliderRender();
 
-  $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {
-    specSliderNext(e)
-  })
+  $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {specSliderNext(e)})
+
 });
 
 $(window).resize(() => {

@@ -1,12 +1,4 @@
 //ACCORDION one
-// $(document).ready(function () {
-
-//   const btn = document.querySelector('.acc_btn > span');
-//   btn.addEventListener('click', function () {
-//     btn.innerHTML =
-//       (btn.innerHTML === 'Показать все (10)') ? btn.innerHTML = 'Свернуть все' : btn.innerHTML = 'Показать все (10)';
-//   });
-// });
 
 ! function (i) {
   let btn, info;
