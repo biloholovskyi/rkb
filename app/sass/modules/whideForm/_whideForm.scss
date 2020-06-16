@@ -1,0 +1,73 @@
+.whide-form {
+  position: relative;
+  padding: 45px 0;
+  box-shadow: 0 9px 10px rgba(0, 0, 0, 0.0561594);
+  background-image: url(../media/image/form-fon.jpg);
+  @include base-background(cover);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(355.59deg, #242628 32.11%, #202327 92.68%);
+    mix-blend-mode: normal;
+    opacity: 0.78;
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+
+    .text {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      color: #FFFFFF;
+      white-space: nowrap;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      margin-left: 24px;
+      background: #fff;
+      border: 1px solid #979797;
+      border-radius: 5px;
+
+      input[type='text'] {
+        width: 100%;
+        padding: 18px 27px 17px;
+        background: transparent;
+        border: none;
+        font-size: 18px;
+        line-height: 24px;
+        color: #111;
+
+        &::placeholder {
+          font-size: 18px;
+          line-height: 24px;
+          color: #A0A0A0;
+        }
+      }
+
+      input[type='submit'] {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #2861AC;
+        background: transparent;
+        border: none;
+        padding: 0 24px;
+        cursor: pointer;
+      }
+    }
+  }
+}
