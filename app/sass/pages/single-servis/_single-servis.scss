@@ -1,0 +1,91 @@
+@import './servis-acc' ;
+// BUTTON BLOCK
+.servis-btn-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0 40px;
+  border-bottom: 1px solid #EDEDED;
+  padding-bottom: 40px;
+  button {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1581DD;
+    background: #E8F3FC;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: none;
+  }
+}
+.single-servis {
+  h1 {
+    font-style: normal;
+    color: #111;
+    margin: 26px 0 40px;
+  }
+}
+
+// servis contact block
+.contact-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 363px;
+    margin-left: auto;
+  h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #111111;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EDEDED;
+  }
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #EDEDED;
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      color: #999999;
+    }
+    .contact {
+      color: #111111;
+    }
+    
+  }
+  button {
+    font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  background: #1E6BD0;
+  border-radius: 10px;
+  border: 1px solid #1E6BD0;
+  padding: 12px 24px;
+  transition: .3s;
+  display: flex;
+    justify-content: center;
+  }
+  & .contact-item:last-child {
+    margin-top: 16px;
+  }
+}
+//  end servis contact block
