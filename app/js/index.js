@@ -28,6 +28,17 @@ $(document).ready((e) => {
     currentSlideNumber();
   });
 
+  // thanks slider
+  $('.thanks-slider__body').owlCarousel({
+    loop: false,
+    nav: true,
+    navText: '',
+    dots: false,
+    autoWidth: true,
+    autoplay: false,
+    margin: 32
+  });
+
   specSliderRender();
 
   $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {specSliderNext(e)})
