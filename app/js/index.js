@@ -4,6 +4,8 @@ import {specSliderRender, specSliderNext, currentSlideNumber} from "./specSlider
 import './modal';
 import './anhors';
 import { switchNewsTab } from "./newsTabs";
+import './accordion';
+import {inputForm} from "./input";
 
 
 $(document).ready((e) => {
@@ -25,7 +27,7 @@ $(document).ready((e) => {
       slider.attr('data-count', newNumber);
       $('.spec-slider__body .slider__nav .count .current').html(currentSlid);
     }
-  }).on('translated.owl.carousel', function(e) {
+  }).on('translated.owl.carousel', function (e) {
     currentSlideNumber();
   });
 
@@ -42,9 +44,24 @@ $(document).ready((e) => {
 
   specSliderRender();
 
-  $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {specSliderNext(e)})
-  $('.news-tab__head .tabs .tab').on('click', (e) => {switchNewsTab(e)});
+  $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {
+    specSliderNext(e)
+  });
 
+  $('.news-tab__head .tabs .tab').on('click', (e) => {
+    switchNewsTab(e)
+  });
+
+  $('input,textarea').on('input', inputForm);
+
+
+  // aside bar add active
+  $('.aside ul li').on('click', function(){
+    if(!$(this).hasClass('active')){
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+    }
+  });
 });
 
 $(window).resize(() => {
