@@ -117,8 +117,9 @@
             <h2 class="small-title">Отделения</h2>
             <div class="servis-acc">
               <ul>
-                <li class="dropdown">
-                  <input type="checkbox"><a href="#" data-toggle="dropdown">Организационно-методический отдел</a>
+                <li class="dropdown servisDrop">
+                  <input type="checkbox">
+                  <button data-toggle="dropdown">Организационно-методический отдел<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -128,8 +129,9 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <input type="checkbox"><a href="#" data-toggle="dropdown">Патологоанатомическое отделение</a>
+                <li class="dropdown servisDrop">
+                  <input type="checkbox">
+                  <button data-toggle="dropdown">Патологоанатомическое отделение<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -139,8 +141,9 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <input type="checkbox"><a href="#" data-toggle="dropdown">Отделение клинической фармакологии</a>
+                <li class="dropdown servisDrop">
+                  <input type="checkbox">
+                  <button data-toggle="dropdown">Отделение клинической фармакологии<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -150,8 +153,9 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <input type="checkbox"><a href="#" data-toggle="dropdown">Клинико-экспертное отделение</a>
+                <li class="dropdown servisDrop">
+                  <input type="checkbox">
+                  <button data-toggle="dropdown">Клинико-экспертное отделение<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -161,8 +165,9 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <input type="checkbox"><a href="#" data-toggle="dropdown">Отдел организации высокотехнологичной медицинской помощи</a>
+                <li class="dropdown servisDrop">
+                  <input type="checkbox">
+                  <button data-toggle="dropdown">Отдел организации высокотехнологичной медицинской помощи<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -179,9 +184,38 @@
         </div>
         <div class="row">
           <div class="col-8">
-            <h2 class="small-title">Описание</h2>
-            <p>Служба клинико-экспертной работы организована с целью обеспечения контроля качества медицинской помощи, оказываемой населению на базе ГАУЗ «РКБ МЗ РТ»  и включает в себя экспертизу процесса оказания медицинской помощи конкретному пациенту, выявление и изучение дефектах лечебно-диагностического процесса, а также разработку мероприятий для  улучшения качества медицинской помощи на основании анализа выявленных дефектов.</p>
-            <p>Контроль качества медицинской помощи в ГАУЗ «РКБ МЗ РТ»  осуществляется на основе стандартов медицинской помощи и протоколов ведения больных по нозологиям и профилям путем ежемесячного анализа первичной медицинской документации (в стационаре – не менее 10% законченных случаев лечения). Отделение разрабатывает внутрибольничную систему управления качеством лечебно-диагностического процесса и, с привлечением необходимых специалистов, организует ее внедрение в структурных подразделениях больницы.          </p>
+            <div class="desc-serv">
+              <h2 class="small-title">Описание</h2>
+              <p>Служба клинико-экспертной работы организована с целью обеспечения контроля качества медицинской помощи, оказываемой населению на базе ГАУЗ «РКБ МЗ РТ»  и включает в себя экспертизу процесса оказания медицинской помощи конкретному пациенту, выявление и изучение дефектах лечебно-диагностического процесса, а также разработку мероприятий для  улучшения качества медицинской помощи на основании анализа выявленных дефектов.</p>
+              <p>Контроль качества медицинской помощи в ГАУЗ «РКБ МЗ РТ»  осуществляется на основе стандартов медицинской помощи и протоколов ведения больных по нозологиям и профилям путем ежемесячного анализа первичной медицинской документации (в стационаре – не менее 10% законченных случаев лечения). Отделение разрабатывает внутрибольничную систему управления качеством лечебно-диагностического процесса и, с привлечением необходимых специалистов, организует ее внедрение в структурных подразделениях больницы.   </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="form__title">Остались вопросы?<br>Свяжитесь с нами</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="contact-form-block">
+                <form id="contact-form">
+                  <div class="input-wrapper input-wrapper--name">
+                    <input type="text">
+                  </div>
+                  <div class="input-wrapper input-wrapper--tel">
+                    <input type="text">
+                  </div>
+                  <div class="input-wrapper input-wrapper--comment message-wrap">
+                    <textarea class="message" type="text"></textarea>
+                  </div>
+                  <button class="submit" type="submit">Отправить</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -238,7 +272,7 @@
         <div class="showTel-item">
           <h3> Телефон</h3>
           <p>+7 962 395-63-44</p>
-          <div class="modal-btn-block"><a href="#">Подзвонить   </a></div>
+          <div class="modal-btn-block"><a href="tel:+7 962 395-63-44">Подзвонить   </a></div>
         </div>
       </div>
     </div>

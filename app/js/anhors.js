@@ -7,4 +7,7 @@ $(document).ready(function(){
         top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 800); 
   });
+
+
+
 });
