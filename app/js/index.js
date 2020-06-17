@@ -3,6 +3,7 @@ import './servis';
 import {specSliderRender, specSliderNext, currentSlideNumber} from "./specSlider";
 import './modal';
 import './anhors';
+import { switchNewsTab } from "./newsTabs";
 
 
 $(document).ready((e) => {
@@ -42,6 +43,7 @@ $(document).ready((e) => {
   specSliderRender();
 
   $('.spec-slider__body .slider__nav .slider-btn').on('click', (e) => {specSliderNext(e)})
+  $('.news-tab__head .tabs .tab').on('click', (e) => {switchNewsTab(e)});
 
 });
 
