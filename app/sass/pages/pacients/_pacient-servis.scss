@@ -1,0 +1,49 @@
+.pacient-servis {
+  margin-bottom: 40px;
+  border-bottom: 1px solid  #EDEDED;
+  h2 {
+    font-style: normal;
+    margin-bottom: 40px;
+  }
+
+  .pacient-servis-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .pacient-serv-item {
+      flex: 32%;
+      display: flex;
+      flex-direction: column;
+      max-width: 294px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+
+      h3 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color: #111111;
+        margin-bottom: 12px;
+      }
+
+      img {
+        width: 28px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 16px;
+      }
+
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 26px;
+        color: #111111;
+      }
+    }
+  }
+
+}
