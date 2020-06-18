@@ -6,6 +6,7 @@ import './anhors';
 import { switchNewsTab } from "./newsTabs";
 import './accordion';
 import {inputForm} from "./input";
+import { searchDoctorCheck } from "./searchSidebarCheck";
 
 
 $(document).ready((e) => {
@@ -53,6 +54,8 @@ $(document).ready((e) => {
   });
 
   $('input,textarea').on('input', inputForm);
+
+  $('.search-doctor-sidebar .sidebar__options .options__list .option').on('click', (e) => searchDoctorCheck(e));
 
 
   // aside bar add active
