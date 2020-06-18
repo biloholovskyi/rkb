@@ -1,0 +1,107 @@
+.diplom-slider {
+  position: relative;
+  padding: 0 0 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #EDEDED;
+
+  .diplom__title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #111111;
+    margin-bottom: 24px;
+  }
+
+  &__body {
+    position: relative;
+
+    .owl-stage-outer {
+      overflow: visible !important;
+    }
+
+    .owl-nav {
+      position: absolute;
+      top: -80px;
+      right: 0;
+
+      .owl-prev,
+      .owl-next {
+        background-position: center !important;
+        background-size: 24px !important;
+        background-repeat: no-repeat !important;
+        background-image: url(../media/icon/blue-arrow.svg) !important;
+        border: 1px solid #EDEDED !important;
+        box-sizing: border-box !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        min-width: 40px !important;
+        height: 40px !important;
+        margin: 0 !important;
+
+        &:hover {
+          background-color: transparent !important;
+        }
+      }
+
+      .owl-next {
+        transform: rotate(180deg);
+        margin-left: 16px !important;
+      }
+    }
+
+    .item {
+      // width: 296px;
+      // height: 358px;
+    
+    .diplom {
+      width: 284px;
+      height: 400px;
+      object-position: center;
+      object-fit: cover;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: .4s;
+    }
+    // .diplom-overlay {
+    //   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(3662418.jpg);
+    //   border: 1px solid rgba(0, 0, 0, 0.05);
+    //   position: absolute;
+    //   z-index: 2;
+    //   left: 0;
+    //   width: 284px;
+    //   height: 400px;
+    //   top: 0;
+    //   display: none;
+    //   justify-content: center;
+    //   align-items: center;
+    //   transition: .4s;
+    //   img {
+    //     width: 48px;
+    //     height: 48px;
+    //     padding: 15px;
+    //   }
+    //   &:after {
+    //     content: "";
+    //     width: 48px;
+    //     height: 48px;
+    //     background: rgba(255, 255, 255, 0.3);
+    //     position: absolute;
+    //     border-radius: 50%;
+    //   }
+    // }
+    // .diplom:hover .diplom-overlay{ 
+    //   display: flex;
+    // }
+      .text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #111111;
+        max-width: 224px;
+      }
+
+   
+    }
+  }
+}

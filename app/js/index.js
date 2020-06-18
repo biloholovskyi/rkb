@@ -41,6 +41,24 @@ $(document).ready((e) => {
     autoplay: false,
     margin: 32
   });
+  // slider company on pacient page
+  $('.pacient-slider__body').owlCarousel({
+    loop: true,
+    nav: true,
+    dots: false,
+    margin: 16,
+    items: 4
+  });
+   // diploms slider on  for specialist page
+   $('.diplom-slider__body').owlCarousel({
+    loop: false,
+    nav: true,
+    navText: '',
+    dots: false,
+    autoWidth: true,
+    autoplay: false,
+    margin: 20
+  });
 
   specSliderRender();
 

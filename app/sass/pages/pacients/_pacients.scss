@@ -1,9 +1,11 @@
 @import './aside';
 @import './pacient-contact';
 @import './pacient-servis'; 
+@import './pacient_slider';
+@import './document';
 
 .pacients-page {
-  padding-top: 40px;
+  padding-top: 40px; 
   h1 {
     font-style: normal;
     margin: 0 0 24px;
