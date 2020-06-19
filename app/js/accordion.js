@@ -12,3 +12,10 @@ $(document).ready(function(){
     $(this).children('button').find('.arrow').toggleClass('active');
   });
 });
+
+$(document).mouseup(function(e){
+  var acc = $('.acc_btn, .accordion_item');
+  if(!acc.is(e.target) && acc.has(e.target).length === 0) {
+    acc.removeClass('active_block');
+  }
+});

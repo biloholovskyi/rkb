@@ -49,7 +49,8 @@
 
   }
 
-  .opacity-block {
+  .opacity-block,
+  .opacity-block2 {
     position: absolute;
     right: 0;
     bottom: 40px;
@@ -59,5 +60,8 @@
     transform: rotate(-180deg);
     z-index: 1;
   }
-
+  .opacity-block2 {
+    left: 0;
+    transform: rotate(0);
+  }
 }

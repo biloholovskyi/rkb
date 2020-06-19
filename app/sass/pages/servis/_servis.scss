@@ -5,6 +5,8 @@
 .accordion {
   margin-bottom: 100px;
   .accordion_item {
+    display: flex;
+    flex-direction: column;
     img {
       width: 28px;
       height: 40px;
@@ -12,7 +14,7 @@
       object-position: center;
       margin-bottom: 24px;
     }
-    h3 {
+    a {
       font-style: normal;
       font-weight: 600;
       font-size: 20px;
@@ -42,6 +44,7 @@
       color: #1E6BD0;
       border: none;
       background-color: transparent;
+      text-align: left;
     }
   }
 }

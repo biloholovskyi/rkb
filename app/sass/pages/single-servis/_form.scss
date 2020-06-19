@@ -58,18 +58,26 @@
       }
 
       &--input {
+        input {
+          padding-top: 15px;
+        }
+        textarea {
+          padding-top: 28px!important;
+        }
         &::after {
           font-size: 12px;
           line-height: 18px;
           letter-spacing: 0.04em;
+          font-weight: 600;
           color: #fff;
-          top: 2px;
+          top: 9px;
           transform: none;
         }
 
         border: 2px solid rgba(255, 255, 255, 0.8);
         border-radius: 5px;
         background: rgba(65, 143, 191, 0.05);
+        
       }
 
       input,textarea {
@@ -90,7 +98,7 @@
       }
       textarea {
         resize: none;
-        padding-top: 15px;
+        padding-top: 17px;
       }
       .message  {
         height: 128px;
