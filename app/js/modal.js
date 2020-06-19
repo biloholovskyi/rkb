@@ -16,11 +16,7 @@ $(document).ready(function(){
     $('.modal-img').css('background-image', 'url(' + img + ')');
 
     $('.diplom-overlay-modal').css('display', 'flex');
-    $('body').css({
-      'overflow' : 'hidden',
-      'position' : 'relative',
-      'height' : '100vh'
-    });
+ 
     
   });
 

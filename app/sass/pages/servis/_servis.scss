@@ -3,10 +3,14 @@
   padding: 80px 0;
 }
 .accordion {
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
   .accordion_item {
     display: flex;
     flex-direction: column;
+    flex: 32%;
+    margin-bottom: 100px;
     img {
       width: 28px;
       height: 40px;
@@ -45,6 +49,9 @@
       border: none;
       background-color: transparent;
       text-align: left;
+    }
+    & .info.active {
+      display: block;
     }
   }
 }
