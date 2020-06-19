@@ -7,9 +7,12 @@ import { switchNewsTab } from "./newsTabs";
 import './accordion';
 import {inputForm} from "./input";
 import { searchDoctorCheck } from "./searchSidebarCheck";
+import { bigSliderRender, bigSliderNext, bigSliderPrev } from "./bigSlider";
 
 
 $(document).ready((e) => {
+  bigSliderRender();
+
   // specialists slider
   $('.spec-slider__body .slider').owlCarousel({
     loop: false,
@@ -74,6 +77,8 @@ $(document).ready((e) => {
   $('input,textarea').on('input', inputForm);
 
   $('.search-doctor-sidebar .sidebar__options .options__list .option').on('click', (e) => searchDoctorCheck(e));
+  $('.big-slider .next').on('click', (e) => bigSliderNext(e));
+  $('.big-slider .prev').on('click', (e) => bigSliderPrev(e));
 
 
   // aside bar add active
