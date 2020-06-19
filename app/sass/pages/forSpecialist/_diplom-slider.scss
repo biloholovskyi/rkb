@@ -61,6 +61,9 @@
       margin-bottom: 16px;
       cursor: pointer;
       transition: .3s;
+      img {
+        height: 100%;
+      }
     }
     .diplom-overlay {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(3662418.jpg);
@@ -106,5 +109,24 @@
 
    
     }
+  }
+}
+
+.diplom-overlay-modal {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  .modal-img {
+    max-width: 500px;
+    width: 100%;
+    background-size: cover;
+    max-height: 700px;
+    height: 100%;
   }
 }

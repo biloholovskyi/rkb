@@ -3,6 +3,7 @@
 ! function (i) {
   let btn, info;
   i(".acc_btn").on("click", function () {
+    e.preventDefault();
     btn = i(this).parents(".accordion_item"),
       info = btn.find(".info"),
       btn.hasClass("active_block") ? (btn.removeClass("active_block"),

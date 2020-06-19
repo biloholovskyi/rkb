@@ -7,6 +7,23 @@ $(document).ready(function(){
     $('.showTel-overlay').fadeOut().css('display', 'none');
   });
 
+
+  // show diplom modal
+  $('.diplom-overlay').on('click', function(){
+    const current = $(this);
+    const img     = current.parent().find('img').attr('src');
+    
+    $('.modal-img').css('background-image', 'url(' + img + ')');
+
+    $('.diplom-overlay-modal').css('display', 'flex');
+    $('body').css({
+      'overflow' : 'hidden',
+      'position' : 'relative',
+      'height' : '100vh'
+    });
+    
+  });
+
 });
 
 
@@ -20,4 +37,13 @@ $(document).on('click', function(e){
       $('.showTel-overlay').fadeOut().css('display', 'none');
     }
   }
+
+
+let imgModal = $('.diplom-overlay');
+
+if(!imgModal.is(e.target) && imgModal.has(e.target).length === 0) {
+  $('.diplom-overlay-modal').fadeOut().css('display', 'none');
+}
+
+
 });
