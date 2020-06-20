@@ -60,38 +60,44 @@
       object-fit: cover;
       margin-bottom: 16px;
       cursor: pointer;
-      transition: .4s;
+      transition: .3s;
+      img {
+        height: 100%;
+      }
     }
-    // .diplom-overlay {
-    //   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(3662418.jpg);
-    //   border: 1px solid rgba(0, 0, 0, 0.05);
-    //   position: absolute;
-    //   z-index: 2;
-    //   left: 0;
-    //   width: 284px;
-    //   height: 400px;
-    //   top: 0;
-    //   display: none;
-    //   justify-content: center;
-    //   align-items: center;
-    //   transition: .4s;
-    //   img {
-    //     width: 48px;
-    //     height: 48px;
-    //     padding: 15px;
-    //   }
-    //   &:after {
-    //     content: "";
-    //     width: 48px;
-    //     height: 48px;
-    //     background: rgba(255, 255, 255, 0.3);
-    //     position: absolute;
-    //     border-radius: 50%;
-    //   }
-    // }
-    // .diplom:hover .diplom-overlay{ 
-    //   display: flex;
-    // }
+    .diplom-overlay {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(3662418.jpg);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      width: 284px;
+      height: 400px;
+      top: 0;
+      display: flex;
+      visibility: hidden;
+      justify-content: center;
+      align-items: center;
+      transition: .2s;
+      img {
+        width: 48px;
+        height: 48px;
+        padding: 15px;
+      }
+      &:after {
+        content: "";
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
+    .diplom:hover .diplom-overlay{ 
+      // display: flex;
+      visibility: visible;
+     
+    }
       .text {
         font-style: normal;
         font-weight: 500;
@@ -103,5 +109,24 @@
 
    
     }
+  }
+}
+
+.diplom-overlay-modal {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  .modal-img {
+    max-width: 500px;
+    width: 100%;
+    background-size: cover;
+    max-height: 700px;
+    height: 100%;
   }
 }

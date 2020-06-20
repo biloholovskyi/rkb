@@ -1,8 +1,16 @@
+
+
+$('.accordion').on('click', '.accordion_item', function() {
+  $(this).closest('.accordion').children('.accordion_item').find('.info').each((i, n) => {
+    $(n).toggleClass('active', n === this);
+  });
+});
 //ACCORDION one
 
 ! function (i) {
   let btn, info;
   i(".acc_btn").on("click", function () {
+   
     btn = i(this).parents(".accordion_item"),
       info = btn.find(".info"),
       btn.hasClass("active_block") ? (btn.removeClass("active_block"),
@@ -13,3 +21,5 @@
        
   }) 
 }(jQuery);
+
+
