@@ -1,0 +1,55 @@
+.container
+  .row
+    .col-6
+      script(src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript")
+      .contacts__map#contacts__map
+        .pin
+      script.
+        ymaps.ready(init);
+        function init() {
+          var myMap = new ymaps.Map("contacts__map", {
+            center: [51.767703, 55.198824],
+            zoom: 17
+          });
+
+          myMap.behaviors.disable(['drag', 'scrollZoom', 'dblClickZoom']);
+
+          myMap.controls
+          .remove('trafficControl')
+          .remove('fullscreenControl')
+          .remove('rulerControl')
+          .remove('typeSelector')
+          .remove('searchControl')
+          .remove('zoomControl')
+          .remove('geolocationControl');
+
+          var myPin = new ymaps.Placemark([51.767703, 55.198824],
+          {
+            // balloonContentHeader: 'BRP',
+            // balloonContentBody: 'BRP',
+            // balloonContentFooter: 'BRP',
+            // hintContent: 'BRP'
+          },
+          {
+            iconLayout: 'none',
+            iconImageHref: './media/icon/pin.svg',
+            iconImageSize: [36, 36],
+            iconImageOffset: [0, 0]
+          });
+
+          myMap.geoObjects.add(myPin);
+        }
+    .col-6
+      form.contacts__form
+        .form__title Форма для жалоб и предложений
+        label(for='contacts-name') Ваше имя
+          input(id='contacts-name' type='text' placeholder='Иванов Иван Иванович')
+        .form__double
+          label(for='contacts-tel') Телефон
+            input(id='contacts-tel' type='text' placeholder='8 (843) 231-65-95')
+          label(for='contacts-email') Email
+            input(id='contacts-email' type='email' placeholder='mz.rkb@tatar.ru')
+        label(for='contacts-text') Что не понравилось?
+          textarea(id='contacts-text' placeholder='Какой то плейсхолдер')
+        .submit-wrapper
+          input(type='submit' value='Отправить')

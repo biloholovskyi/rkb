@@ -60,21 +60,10 @@ button {
 @import "./modules/big-slider/main";
 
 /*pages*/
-@import "./pages/specialists/spуcialists"; 
-
-/*pages*/
-/* SINGLE SPECIALIST */
+@import "./pages/specialists/spуcialists";
 @import "./pages/single-specialist/single-specialist";
-
-/*pages*/
-/* SERVIS */ 
-@import "./pages/servis/servis"; 
-/*pages*/
-/* SINGLE SERVIS */
+@import "./pages/servis/servis";
 @import "./pages/single-servis/single-servis";
-/*pages*/
-/* SINGLE SERVIS */
-@import "./pages/pacients/pacients";  
-/*pages*/
-/* page for specialist */
-@import "./pages/forSpecialist/forspecialist";  
+@import "./pages/pacients/pacients";
+@import "./pages/forSpecialist/forspecialist";
+@import "./pages/contacts/contacts";
