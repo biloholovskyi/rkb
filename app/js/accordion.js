@@ -1,21 +1,23 @@
 $(document).ready(function(){
- // acc specialist page
+ 
 
-  $('.specDrop').on('click', function(){
-    $('.dropdown-menu').toggleClass('active');
-    $('.arrow').toggleClass('active');
-  });
-
-  // servis page accordion
+  //  accordion
   $('.servisDrop').on('click', function(){
     $(this).children('.dropdown-menu').toggleClass('active');
     $(this).children('button').find('.arrow').toggleClass('active');
+    $(this).children('a').find('.arrow').toggleClass('active');
   });
+
+
+
+  $(".servisDrop").click(function() {
+    $(this).closest('li').siblings().find('.dropdown-menu').removeClass('active').parent('.dropdown').children('button').find('.arrow').removeClass('active');
+
+  });
+ 
 });
 
-$(document).mouseup(function(e){
-  var acc = $('.acc_btn, .accordion_item');
-  if(!acc.is(e.target) && acc.has(e.target).length === 0) {
-    acc.removeClass('active_block');
-  }
-});
+
+
+
+

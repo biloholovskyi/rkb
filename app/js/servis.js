@@ -20,6 +20,6 @@ $('.accordion').on('click', '.accordion_item', function() {
         btn.siblings(".active_block").removeClass("active_block").children(".info").stop(!0, !0).slideUp())
        
   }) 
-}(jQuery);
+}(jQuery); 
 
 
