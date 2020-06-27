@@ -5,6 +5,8 @@ $('.accordion').on('click', '.accordion_item', function() {
     $(n).toggleClass('active', n === this);
   });
 });
+
+
 //ACCORDION one
 
 ! function (i) {

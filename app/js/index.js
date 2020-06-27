@@ -20,6 +20,16 @@ $(document).ready((e) => {
     dots: false,
     autoWidth: true,
     autoplay: false,
+    responsive : {
+      0: {
+        dots:true,
+        autoWidth: false,
+        items: 1
+      },
+      767: { 
+        dots: true
+      }
+    },
     callbacks: function () {
       const slider = $('.spec-slider__body .slider');
       const currentSlid = +slider.attr('data-count');

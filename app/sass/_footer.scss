@@ -59,8 +59,12 @@
         border: 1px solid #FFFFFF;
       }
     }
+    
   }
 
+  .mobile-btn {
+    display: none;
+  }
   &__nav-wrapper {
     display: flex;
     justify-content: flex-end;
