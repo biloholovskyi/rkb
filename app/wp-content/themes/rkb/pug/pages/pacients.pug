@@ -1,0 +1,23 @@
+extends ../layout/main
+
+block variables
+  - const pageTitle = 'РКБ'
+
+block content
+  .pacients-page
+    .container
+      .row
+        .col-3
+          include ../modules/pacients/aside_pacients 
+        .col-9
+          h1.big-title Посетителям
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sem in metus semper scelerisque. Proin ante tortor, mollis vitae orci nec, faucibus ultrices lacus. Integer quis dui leo. Vestibulum pulvinar sed nunc sed venenatis. Curabitur et magna non est convallis imperdiet. Aenean vel lacinia velit.
+          include ../modules/pacients/pacient-contact
+          include ../modules/pacients/pacient-servis
+          h3#help.small-title Виды оказания помощи
+          include ../modules/pacients/pacient-acc
+          .line
+          include ../modules/pacients/document
+          include ../modules/pacients/pacient_slider
+    include ../modules/form          
+          

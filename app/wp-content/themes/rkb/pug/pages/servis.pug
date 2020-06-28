@@ -1,0 +1,16 @@
+extends ../layout/main
+
+block variables
+  - const pageTitle = 'РКБ'
+  - const bigFormTitle = 'Отделения Республиканской <br> клинической больницы'
+  - const bigFormFon = './media/image/big-form2.jpg'
+  - const bigFormPlaceholder = 'Введите название службы или отделения'
+
+
+block content
+  include ../modules/big-form
+  .servis-page
+    .container
+      .row
+        include ../modules/servis/servis_block
+      

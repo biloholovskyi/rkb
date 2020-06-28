@@ -1,0 +1,15 @@
+extends ../layout/main
+
+block variables
+  - const pageTitle = 'Контакты'
+
+block content
+  .contacts
+    .container
+      .row
+        .col-6
+          .contacts__title Контактная #[br] информация
+          .contacts__desc Государственное автономное учреждение здравоохранения «Республиканская клиническая больница Министерства здравоохранения Республики Татарстан»(ГАУЗ «РКБ МЗ РТ»)
+        .col-6
+          include ../modules/contacts/info
+    include ../modules/contacts/bottom

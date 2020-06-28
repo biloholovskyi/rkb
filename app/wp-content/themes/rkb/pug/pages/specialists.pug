@@ -1,0 +1,17 @@
+extends ../layout/main
+
+block variables
+  - const pageTitle = 'РКБ'
+  - const bigFormTitle = 'Найдите нужного врача'
+  - const bigFormFon = './media/image/big-form1.jpg'
+  - const bigFormPlaceholder = 'Введите ФИО врача, должность или службу'
+
+block content
+  include ../modules/big-form
+  include ../modules/searchSpecialist/letters
+  .container
+    .row
+      .col-12.col-md-12.col-lg-3.order-last.order-lg-first
+        include ../modules/searchSpecialist/sidebar
+      .col-12.col-lg-9.col-md-12
+        include ../modules/searchSpecialist/list

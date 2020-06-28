@@ -1,0 +1,161 @@
+.experience {
+  ul {
+    .dropdown {
+      position: relative;
+      list-style: none;
+      margin-bottom: 12px;
+
+      a {
+        
+
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 300px;
+
+        img {
+          margin-right: 16px;
+          object-fit: cover;
+          object-position: center;
+          width: 24px;
+          height: 24px;
+        }
+        p {
+          margin-bottom: 0;
+          text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: #111111;
+        }
+        .arrow {
+          margin-left: 9px;
+          // transform: rotate(0deg);
+        transition: .4s;
+        }
+      }
+
+      [data-toggle="dropdown"] {
+        display: flex;
+        padding: 8px 0;
+
+        // &:before {
+        //   position: absolute;
+        //   display: block;
+        //   content: '';
+        //   background-image: url(../../../media/icon/arrow_down.svg);
+        //   background-position: center;
+        //   background-repeat: no-repeat;
+        //   width: 18px;
+        //   height: 18px;
+        //   color: #000;
+        //   top: 13px;
+        //   left: 240px;
+        //   transform: rotate(0deg);
+        //   transition: transform .5s;
+        //   padding: 6px 0;
+        // }
+      }
+
+      &>.dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+
+        transition: .4s;
+
+
+        li {
+          padding: 0;
+          $radioSize: 24px;
+          $inputBorder: #D0D7DD;
+          $inputActive: #1F1F22;
+          height: 31px;
+          .acc-item {
+            display: flex;
+            position: relative;
+            .icon-wrap {
+              width: 24px;
+              // height: 56px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 16px;
+
+              img {
+                object-position: center;
+                position: relative;
+              }
+              
+            }
+            
+            .info {
+              p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 24px;
+                color: #111111;
+                margin-bottom: 0;
+
+                span {
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #999999;
+                  margin-left: 37px;
+                }
+              }
+            }
+          }
+          .exp:before {
+            content: "";
+            background-image: url(../../../media/icon/specialist/stick.svg);
+            background-position: center;
+            background-size: cover;
+            width: 2px;
+            height: 25px;
+            position: absolute;
+            top: -15px;
+          }
+        }
+        & li:first-child .acc-item .exp:before{
+          content: none;
+        }
+      }
+
+      &>input[type="checkbox"] {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        color: #565B62;
+
+        // &:checked~.dropdown-menu {
+        //   max-height: 1500px;
+        //   display: block;
+        //   transition: 2s;
+        // }
+
+        // &:checked+a[data-toggle="dropdown"] {
+        //   & .arrow {
+        //     transform: rotate(-180deg);
+        //     transition: transform .3s;
+        //   }
+        // }
+      }
+    }
+    .dropdown-menu.active {
+        max-height: 1500px;
+        display: block;
+        transition: 2s;
+    }
+    .arrow.active {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.big-form {
+  padding: 96px 16px 98px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(345.61deg, rgba(0, 76, 137, 0.8) 0%, rgba(30, 107, 208, 0.8) 100%);
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+
+    input[type='submit'] {
+      display: block;
+      background-image: url(../media/icon/big-form-search.svg);
+      @include base-background(contain);
+      @include base-box(24px);
+      border: none;
+      background-color: transparent;
+      margin-right: 16px;
+    }
+
+    input[type='text'] {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: #111;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #999999;
+      }
+    }
+  }
+}

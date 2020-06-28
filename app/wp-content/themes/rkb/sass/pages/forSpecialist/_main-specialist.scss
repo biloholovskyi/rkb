@@ -1,0 +1,48 @@
+.main-spec-item {
+  display: flex;
+  flex: 48%;
+  border: 1px solid #EDEDED;
+  padding: 20px;
+  max-width: 470px;
+  border-radius: 10px;
+  margin: 0 16px 16px 0;
+  padding-right: 0;
+  .spec-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center; 
+    margin-right: 20px;
+  }
+  .spec-info {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #2560A9;
+      margin-bottom: 4px;
+    }
+    .name {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+      color: #111111;
+      margin-bottom: 6px;
+    }
+    .position {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: #333333;
+      margin-bottom: 0;
+    }
+  }
+}

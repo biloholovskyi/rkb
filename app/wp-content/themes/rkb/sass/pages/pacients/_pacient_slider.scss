@@ -1,0 +1,67 @@
+.pacient-slider {
+  position: relative;
+  padding: 0px 0px 40px;
+
+  .pacient__title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #111111;
+    margin-bottom: 20px;
+  }
+
+  &__body {
+    position: relative;
+
+    .owl-nav {
+      position: absolute;
+      top: -80px;
+      right: 0;
+
+      .owl-prev,
+      .owl-next {
+        background-position: center !important;
+        background-size: 24px !important;
+        background-repeat: no-repeat !important;
+        background-image: url(../media/icon/blue-arrow.svg) !important;
+        border: 1px solid #EDEDED !important;
+        box-sizing: border-box !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        min-width: 40px !important;
+        height: 40px !important;
+        margin: 0 !important;
+
+        &:hover {
+          background-color: transparent !important;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      .owl-next {
+        transform: rotate(180deg);
+        margin-left: 16px !important;
+      }
+    }
+
+  }
+
+  .opacity-block,
+  .opacity-block2 {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    width: 56px;
+    height: 114px;
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    transform: rotate(-180deg);
+    z-index: 1;
+  }
+  .opacity-block2 {
+    left: 0;
+    transform: rotate(0);
+  }
+}

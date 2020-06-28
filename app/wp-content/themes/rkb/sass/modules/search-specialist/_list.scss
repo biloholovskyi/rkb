@@ -1,0 +1,107 @@
+.search-doctor-list {
+  width: 100%;
+  display: flex;
+  padding-left: 26px;
+
+  .list__latter {
+    @include base-box(80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 50px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1581DD;
+  }
+
+  .list__body {
+    width: 100%;
+
+    .item {
+      margin-left: 20px;
+      width: 100%;
+      display: flex;
+      cursor: pointer;
+      border-bottom: 1px solid #EDEDED;
+      padding: 20px 0;
+      transition: box-shadow .3s, border-radius .3s, margin-left .3s, padding-left .3s, width .3s;
+
+      .avatar {
+        display: block;
+        @include base-box(80px);
+        object-position: center;
+        object-fit: cover;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .info {
+        .build {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #2560A9;
+          margin-bottom: 4px;
+        }
+
+        .name {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 26px;
+          color: #111111;
+          margin-bottom: 6px;
+        }
+
+        .post {
+          font-size: 16px;
+          line-height: 22px;
+          color: #333333;
+        }
+      }
+
+      &:hover {
+        border: 1px solid #EDEDED;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+        margin-left: 0;
+        padding-left: 20px;
+        width: calc(100% + 20px);
+      }
+    }
+
+    .more {
+      display: block;
+      margin: 40px auto 80px auto;
+      width: max-content;
+      cursor: pointer;
+      border: 1px solid #2560A9;
+      border-radius: 10px;
+      padding: 17px 50px 17px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #2560A9;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        @include base-box(24px);
+        @include base-background(contain);
+        background-image: url(../media/icon/blue-arrow-down.svg);
+        top: 50%;
+        margin-top: -12px;
+        right: 18px;
+      }
+    }
+  }
+}
+
+.mobile-more {
+  display: none;
+}

@@ -1,0 +1,126 @@
+.form {
+  background-color: #1E6BD0;
+  padding: 128px 0;
+  width: 100%;
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .input-wrapper {
+      width: 100%;
+      margin-bottom: 32px;
+      position: relative;
+      
+      &::after {
+        content: '';
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        font-style: normal;
+        font-weight: normal;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        transition: all .3s;
+      }
+
+      &--name {
+        &::after {
+          content: 'Ваше имя';
+        }
+      }
+
+      &--tel {
+        &::after {
+          content: 'Номер телефона';
+        }
+      }
+
+      &--comment {
+        &::after {
+          content: 'Ваш вопрос (необязательно)';
+          top: 30px;
+        }
+      }
+
+      &--input {
+        input {
+          padding-top: 15px;
+        }
+        textarea {
+          padding-top: 28px!important;
+        }
+        &::after {
+          font-size: 12px;
+          line-height: 18px;
+          letter-spacing: 0.04em;
+          font-weight: 600;
+          color: #fff;
+          top: 9px;
+          transform: none;
+        }
+
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        background: rgba(65, 143, 191, 0.05);
+        
+      }
+
+      input,textarea {
+        width: 100%;
+        background-color: transparent;
+        line-height: 24px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        color: #FFF;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        position: relative;
+        z-index: 5;
+        padding-left: 16px;
+        // padding-top: 15px;
+        height: 64px;
+      }
+      textarea {
+        resize: none;
+        padding-top: 17px;
+      }
+      .message  {
+        height: 128px;
+      }
+    }
+    .message-wrap {
+      height: 128px; 
+    }
+    .submit {
+      background: #FFFFFF;
+      border-radius: 10px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      color: #1E6BD0;
+      padding: 13px 32px;
+      border: none;
+      margin: 0 auto;
+    }
+
+  }
+}
