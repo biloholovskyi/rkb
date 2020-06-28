@@ -34,16 +34,26 @@
                   <div class="title">Республиканская <br> Клиническая Больница</div>
                   <div class="small">Министерства здравоохранения <br> Республики Татарстан</div>
                 </div></a>
-              <nav class="header__navigation">
-                <ul>
-                  <li><a href="/pacients.html">Посетителям</a></li>
-                  <li><a href="/forspecialist.html">Специалистам</a></li>
-                  <li><a href="/servis.html">Службы</a></li>
-                  <li><a href="/single-servises.html">Служба</a></li>
-                  <li><a href="/specialists.html">Поиск</a></li>
-                  <li><a href="/contacts.html">Контакты</a></li>
-                </ul>
-              </nav>
+              <?php
+              wp_nav_menu( [
+                'theme_location'  => 'header',
+                'menu'            => '',
+                'container'       => 'nav',
+                'container_class' => 'header__navigation',
+                'container_id'    => '',
+                'menu_class'      => '',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => '',
+              ] );
+              ?>
             </div>
             <div class="right"><a class="header__search" href="#"><img alt="search" src="<?php echo get_template_directory_uri() ?>/media/icon/search.svg"></a>
               <div class="header__menu-btn">Меню
