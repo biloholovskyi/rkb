@@ -4,6 +4,7 @@ $(document).ready(function(){
   //  accordion
   $('.servisDrop').on('click', function(){
     $(this).children('.dropdown-menu').toggleClass('active');
+    console.log($(this).children('.dropdown-menu').height());
     $(this).children('button').find('.arrow').toggleClass('active');
     $(this).children('a').find('.arrow').toggleClass('active');
   });

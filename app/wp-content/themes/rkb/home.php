@@ -54,22 +54,23 @@ get_header();
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="week__body"><img class="photo"
-                                     src="<?php echo get_template_directory_uri() ?>/media/image/specialist.png"
-                                     alt="rkb">
+        <div class="week__body">
+          <?php
+          $spec_week = get_field('spec_week');
+          ?>
+          <img class="photo" src="<?php echo get_the_post_thumbnail_url($spec_week->ID); ?>" alt="rkb">
           <div class="week__info">
             <div class="title week-bg">СПЕЦИАЛИСТ НЕДЕЛИ</div>
             <div class="info__wrapper">
               <div class="info__text">
-                <div class="name">Аббазов Ренас Ринатович</div>
-                <div class="place">Хирургическая служба - Урологическое отделение №2</div>
-                <div class="post">Врач-ревматолог высшей категории</div>
+                <div class="name"><?php echo $spec_week->post_title; ?></div>
+                <div class="place"><?php the_field('place', $spec_week->ID); ?></div>
+                <div class="post"><?php the_field('post', $spec_week->ID); ?></div>
               </div>
-              <a class="info__link" href="/specialist.html">Подробнее о специалисте</a>
+              <a class="info__link" href="<?php the_permalink($spec_week->ID); ?>">Подробнее о специалисте</a>
             </div>
             <div class="week__desc week-bg">
-              <p>Современные технологии в области медицины дают надежду многим больным, у которых при имеющемся
-                диагнозе, раньше, просто не было шанса на жизнь.</p><span>— «Современные технологии в области медицины дают надежду многим больным!»</span>
+              <p><?php the_field('desc', $spec_week->ID); ?></p><span>— «<?php the_field('small', $spec_week->ID); ?>»</span>
             </div>
           </div>
         </div>

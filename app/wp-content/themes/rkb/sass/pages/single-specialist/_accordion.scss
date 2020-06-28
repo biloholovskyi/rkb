@@ -44,7 +44,7 @@
         //   position: absolute;
         //   display: block;
         //   content: '';
-        //   background-image: url(../../../media/icon/arrow_down.svg);
+        //   background-image: url(../media/icon/arrow_down.svg);
         //   background-position: center;
         //   background-repeat: no-repeat;
         //   width: 18px;
@@ -71,6 +71,7 @@
           $inputBorder: #D0D7DD;
           $inputActive: #1F1F22;
           height: 31px;
+          list-style: none;
           .acc-item {
             display: flex;
             position: relative;
@@ -111,7 +112,7 @@
           }
           .exp:before {
             content: "";
-            background-image: url(../../../media/icon/specialist/stick.svg);
+            background-image: url(../media/icon/specialist/stick.svg);
             background-position: center;
             background-size: cover;
             width: 2px;
