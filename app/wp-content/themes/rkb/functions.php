@@ -3,9 +3,9 @@ add_action('wp_enqueue_scripts', 'style_them');
 add_action('wp_footer', 'script_them');
 add_action('after_setup_theme', 'menu');
 
-//add_filter('excerpt_length', function () {
-//  return 13;
-//});
+add_filter('excerpt_length', function () {
+  return 18;
+});
 
 remove_filter('the_excerpt', 'wpautop');
 
