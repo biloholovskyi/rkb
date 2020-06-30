@@ -124,12 +124,15 @@
               </div>
               <p>Поставьте оценку</p>
             </div>
-            <form>
-              <textarea placeholder="Введите текст сообщения"></textarea>
-              <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/add_file.svg" alt="image"></div>
+            <form id="rev-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+              <textarea placeholder="Введите текст сообщения" name="text"></textarea>
+              <input type="hidden" name="action" value="doctor-review">
+              <input type="hidden" name="doctor_id" value="<?php the_ID(); ?>">
+              <input type="hidden" name="rating" value="5">
+              <div class="icon icon--first"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/add_file.svg" alt="image"></div>
               <div class="icon"> <img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/smile.svg" alt="image"></div>
+              <button class="form__submit" type="submit">Оставить отзыв </button>
             </form>
-            <button>Оставить отзыв </button>
           </div>
         </div>
       </div>
@@ -187,3 +190,17 @@
   </div>
 
 <?php get_footer(); ?>
+
+<script>
+  $('#rev-form').on('submit', function (e) {
+    e.preventDefault();
+    jQuery.ajax({
+      type:'POST',
+      url:"<?php echo esc_url(admin_url('admin-ajax.php')); ?>",
+      data:$(this).serialize(),
+      success:function(data){
+
+      }
+    });
+  })
+</script>
