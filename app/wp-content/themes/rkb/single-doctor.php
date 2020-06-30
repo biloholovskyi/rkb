@@ -39,7 +39,7 @@
                 </ul>
               </div>
               <div class="specialist-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/hat.svg" alt="icon">
-                <p>Закончил: КГЭУ</p>
+                <p>Закончил: <?php the_field('education'); ?></p>
               </div>
               <div class="specialist-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/tel.svg" alt="icon">
                 <?php

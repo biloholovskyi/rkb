@@ -8,6 +8,7 @@ import './accordion';
 import {inputForm} from "./input";
 import { searchDoctorCheck } from "./searchSidebarCheck";
 import { bigSliderRender, bigSliderNext, bigSliderPrev } from "./bigSlider";
+import { listDoctorMore } from "./listDoctorMore";
 
 
 $(document).ready((e) => {
@@ -89,6 +90,7 @@ $(document).ready((e) => {
   $('.search-doctor-sidebar .sidebar__options .options__list .option').on('click', (e) => searchDoctorCheck(e));
   $('.big-slider .next').on('click', (e) => bigSliderNext(e));
   $('.big-slider .prev').on('click', (e) => bigSliderPrev(e));
+  $('.search-doctor-list .list__body .more').on('click', listDoctorMore);
 
 
   // aside bar add active

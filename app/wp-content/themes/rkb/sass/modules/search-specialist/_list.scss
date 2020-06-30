@@ -25,8 +25,26 @@
       display: flex;
       cursor: pointer;
       border-bottom: 1px solid #EDEDED;
-      padding: 20px 0;
-      transition: box-shadow .3s, border-radius .3s, margin-left .3s, padding-left .3s, width .3s;
+      padding: 0;
+      transition: box-shadow .3s, border-radius .3s, margin-left .3s, padding-left .3s, width .3s, opacity .3s, visibility .3s;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+
+      &--show {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        padding: 20px 0;
+      }
+
+      &--hidden {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        padding: 0;
+      }
 
       .avatar {
         display: block;
