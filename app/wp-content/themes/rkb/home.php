@@ -16,33 +16,39 @@ get_header();
             <div class="slider-btn next"></div>
           </div>
           <div class="slider owl-carousel owl-theme" data-count="1">
+          <?php
+            $args = array(
+              'numberposts' => -1, // если -1 то выводит все
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'post_type' => 'main-slider', // тип поста
+              'suppress_filters' => true,
+            );
+
+            $posts = get_posts($args);
+
+            foreach ($posts as $post) { 
+              setup_postdata($post);
+              ?>  
             <div class="item"
-                 style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/slider.jpg">
-              <div class="title">1Как стать донором крови и ее компонентов в период самоизоляции?</div>
-              <div class="desc">Современные технологии в области медицины дают надежду многим больным, у которых при
-                имеющемся диагнозе, раньше, просто не было шанса на жизнь.
+                 style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>)">
+              <div class="title"><?php the_title(); ?></div>
+              <div class="desc"><?php the_field('slider_desc'); ?>
               </div>
             </div>
-            <div class="item"
-                 style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/slider.jpg">
-              <div class="title">2Как стать донором крови и ее компонентов в период самоизоляции?</div>
-              <div class="desc">Современные технологии в области медицины дают надежду многим больным, у которых при
-                имеющемся диагнозе, раньше, просто не было шанса на жизнь.
-              </div>
-            </div>
-            <div class="item"
-                 style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/slider.jpg">
-              <div class="title">3Как стать донором крови и ее компонентов в период самоизоляции?</div>
-              <div class="desc">Современные технологии в области медицины дают надежду многим больным, у которых при
-                имеющемся диагнозе, раньше, просто не было шанса на жизнь.
-              </div>
-            </div>
+            <?php
+              }
+              wp_reset_postdata(); // сброс
+              ?>  
           </div>
-          <div class="links"><a class="link" href="#"
+          <div class="links">
+            <a class="link" href="/specialists"
                                 style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/link1.jpg)">Найти
-              специалиста <span class="icon"></span></a><a class="link" href="#"
+              специалиста <span class="icon"></span></a>
+              <a class="link" href="/services"
                                                            style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/link2.jpg)">Службы
-              и отделения <span class="icon"></span></a><a class="link" href="#"
+              и отделения <span class="icon"></span></a>
+              <a class="link" href="/contacts"
                                                            style="background-image: url(<?php echo get_template_directory_uri() ?>/media/image/link3.jpg)">Карта
               РКБ <span class="icon"></span></a></div>
         </div>

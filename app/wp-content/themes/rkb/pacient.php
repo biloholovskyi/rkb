@@ -21,8 +21,8 @@ get_header();
         </div>
       </div>
       <div class="col-9">
-        <h1 class="big-title">Посетителям</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum sem in metus semper scelerisque. Proin ante tortor, mollis vitae orci nec, faucibus ultrices lacus. Integer quis dui leo. Vestibulum pulvinar sed nunc sed venenatis. Curabitur et magna non est convallis imperdiet. Aenean vel lacinia velit.</p>
+        <h1 class="big-title"><?php the_field('pacient_title'); ?></h1>
+        <p><?php the_field('pacient_desc'); ?></p>
         <div class="pacient-contact">
           <h2 class="small-title" id="contact">Контакты</h2>
           <div class="contacts-container">

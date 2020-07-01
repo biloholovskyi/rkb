@@ -79,6 +79,9 @@
           color: #111111;
         }
       }
+      & .pacient-serv-item:nth-child(3n) {
+        margin-right: 0;
+      }
     }
   }
 }
