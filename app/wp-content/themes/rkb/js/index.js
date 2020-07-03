@@ -9,6 +9,7 @@ import {inputForm} from "./input";
 import { searchDoctorCheck } from "./searchSidebarCheck";
 import { bigSliderRender, bigSliderNext, bigSliderPrev } from "./bigSlider";
 import { listDoctorMore } from "./listDoctorMore";
+import { revActiveButton, revAddRating } from "./revDoctor";
 
 
 $(document).ready((e) => {
@@ -91,6 +92,8 @@ $(document).ready((e) => {
   $('.big-slider .next').on('click', (e) => bigSliderNext(e));
   $('.big-slider .prev').on('click', (e) => bigSliderPrev(e));
   $('.search-doctor-list .list__body .more').on('click', listDoctorMore);
+  $('#rev-form input, #rev-form textarea').on('input', revActiveButton);
+  $('.form_spec .rank .star-block button').on('click', (e) => revAddRating(e));
 
 
   // aside bar add active

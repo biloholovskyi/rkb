@@ -393,10 +393,16 @@ add_action( 'wp_ajax_doctor-review', 'add_review' );
 
 function add_review() {
 	$text = $_POST['text'];
+	$rating = $_POST['rating_count'];
+	if($rating == '') {
+		$rating = 1;
+	}
+	$fio = $_POST['fio'];
+	$id = $_POST['doctor_id'];
 
 	$post_id = wp_insert_post( wp_slash( array(
 		'post_status'   => 'draft',
-		'post_title'    => 'Новый отзыв',
+		'post_title'    => $fio,
 		'post_type'     => 'doctor-rew',
 		'post_author'   => 1,
 		'ping_status'   => get_option( 'default_ping_status' ),
@@ -409,9 +415,18 @@ function add_review() {
 		'meta_input'    => [ 'meta_key' => 'meta_value' ],
 	) ) );
 
-	$doctor = get_post( 55 );
+	$doctor = get_post( $id );
 
-	update_field( 'rating', '2', $post_id );
+	update_field( 'rating', $rating, $post_id );
 	update_field( 'doctor', $doctor, $post_id );
 	update_field( 'text', $text, $post_id );
+
+	$rating_doctor = get_field('rating', $doctor);
+	$count_revs = get_field('count_revs', $doctor);
+	$count_revs++;
+	$rating_doctor = ($rating + $rating_doctor) / $count_revs;
+	$rating_doctor = intval($rating_doctor);
+
+	update_field( 'rating', $rating_doctor, $doctor );
+	update_field( 'count_revs', $count_revs, $doctor );
 }

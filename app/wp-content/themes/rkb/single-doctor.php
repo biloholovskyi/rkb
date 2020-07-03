@@ -52,16 +52,47 @@
               </div>
               <div class="specialist-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/mail.svg" alt="icon"><a href="mailto:<?php the_field('e-mail'); ?>"><?php the_field('e-mail'); ?></a></div>
               <div class="rank">
+                <?php
+                $rating = get_field('rating');
+                $rating_disable = 5 - $rating;
+                $count_revs = get_field('count_revs');
+                $count_string = null;
+
+                if($count_revs == 0) {
+	                $count_string = '';
+                }
+                if($count_revs == 1 or $count_revs == 21) {
+                  $count_string = $count_revs . ' отзыв';
+                }
+                if($count_revs == 2 or $count_revs == 3 or $count_revs == 4)  {
+	                $count_string = $count_revs . ' отзыва';
+                }
+                if($count_revs > 4 and $count_revs < 21)  {
+	                $count_string = $count_revs . ' отзывов';
+                }
+                if($count_revs > 21 and $count_revs < 25)  {
+	                $count_string = $count_revs . ' отзыва';
+                }
+                ?>
                 <div class="star-block">
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                  <?php
+                  while($rating > 0) {
+                    ?>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+                    <?php
+                      $rating--;
+                  }
+                  while($rating_disable > 0) {
+	                  ?>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+	                  <?php
+                      $rating_disable--;
+                  }
+                  ?>
                 </div>
-                <p>8 отзывов</p>
+                <p><?php echo $count_string; ?></p>
               </div>
-              <button class="anhors">  <a href="#feedback">Оставить отзыв           </a></button>
+              <button class="anhors">  <a href="#feedback">Оставить отзыв</a></button>
             </div>
           </div>
         </div>
@@ -70,48 +101,56 @@
         <div class="col-12">
           <div class="feedback">
             <h2 class="small-title">Отзывы</h2>
-            <div class="feedback-item">
-              <h3>Герман Эчпочмак</h3>
-              <div class="rank">
-                <div class="star-block">
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+	          <?php
+            $current_doctor_id = get_the_ID();
+	          $cur_post = $posts;
+	          $args = array(
+		          'numberposts' => -1,
+		          'orderby' => 'date',
+		          'order' => 'DESC',
+		          'post_type' => 'doctor-rew',
+		          'suppress_filters' => true,
+	          );
+
+	          $posts = get_posts($args);
+
+	          foreach ($posts as $post) {
+		          setup_postdata($post);
+	            $rating_rev = get_field('rating');
+	            $rating_rev_dis = 5 - $rating_rev;
+	            $doctor_id = get_field('doctor')->ID;
+	            if($current_doctor_id == $doctor_id) {
+	              ?>
+                <div class="feedback-item">
+                  <h3><?php the_title(); ?></h3>
+                  <div class="rank">
+                    <div class="star-block">
+			            <?php
+			            while($rating_rev > 0) {
+				            ?>
+                          <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+				            <?php
+				            $rating_rev--;
+			            }
+			            while($rating_rev_dis > 0) {
+				            ?>
+                          <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+				            <?php
+				            $rating_rev_dis--;
+			            }
+			            ?>
+                    </div>
+                    <div class="date"><?php the_date('d.m.Y'); ?></div>
+                  </div>
+                  <p><?php the_field('text'); ?></p>
                 </div>
-                <div class="date">10.10.2019</div>
-              </div>
-              <p>Врач ушел за час до окончания приема, принимать перестал за полтора, несмотря на очередь к его кабинету. В регистратуре вместо общения с посетителями протаскивают клиентов вне очереди (видимо, не за просто так).</p>
-            </div>
-            <div class="feedback-item">
-              <h3>Герман Эчпочмак</h3>
-              <div class="rank">
-                <div class="star-block">
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                </div>
-                <div class="date">10.10.2019</div>
-              </div>
-              <p>Андрей Анатольевич, от души благодарствую вас и клинику, за радушный прием и оказанную мне медицинскую помощь. Чувствую себя сейчас превосходно. Спасибо Вам, что еще есть такие врачи！Рекомендую!</p>
-            </div>
-            <div class="feedback-item">
-              <h3>Алексей Кочерыжкин</h3>
-              <div class="rank">
-                <div class="star-block">
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                  <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-                </div>
-                <div class="date">10.10.2019</div>
-              </div>
-              <p>Врач ушел за час до окончания приема, принимать перестал за полтора, несмотря на очередь к его кабинету. В регистратуре вместо общения с посетителями протаскивают клиентов вне очереди (видимо, не за просто так).    </p>
-            </div>
+	              <?php
+              }
+	          }
+	          wp_reset_postdata(); // сброс
+	          $posts = $cur_post;
+	          ?>
+
           </div>
           <div class="form_spec" id="feedback">
             <div class="rank">
@@ -125,13 +164,15 @@
               <p>Поставьте оценку</p>
             </div>
             <form id="rev-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+              <input type="text" placeholder="Введите ваше ФИО" name="fio">
+              <input type="hidden" name="rating_count" id="rev-input-rating" value="">
               <textarea placeholder="Введите текст сообщения" name="text"></textarea>
               <input type="hidden" name="action" value="doctor-review">
               <input type="hidden" name="doctor_id" value="<?php the_ID(); ?>">
               <input type="hidden" name="rating" value="5">
               <div class="icon icon--first"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/add_file.svg" alt="image"></div>
               <div class="icon"> <img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/smile.svg" alt="image"></div>
-              <button class="form__submit" type="submit">Оставить отзыв </button>
+              <button class="form__submit" type="submit" disabled>Оставить отзыв</button>
             </form>
           </div>
         </div>
@@ -199,7 +240,10 @@
       url:"<?php echo esc_url(admin_url('admin-ajax.php')); ?>",
       data:$(this).serialize(),
       success:function(data){
-
+        $('#rev-form input, #rev-form textarea').val('');
+        $('.form_spec .rank .star-block button').each(function () {
+          $(this).children('img').attr('src', 'http://localhost:3000/rkb/app/wp-content/themes/rkb/media/icon/specialist/star-disable.svg');
+        });
       }
     });
   })
