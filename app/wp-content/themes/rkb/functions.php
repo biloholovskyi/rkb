@@ -11,11 +11,11 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 function menu() {
 	register_nav_menu( 'header', 'Главное меню в шапке' );
-	add_theme_support( 'post-thumbnails', array( 'post', 'doctor', 'main-slider','Specialist','diplom-slider','benefits', 'service-category') );
+	add_theme_support( 'post-thumbnails', array( 'post', 'doctor', 'main-slider','Specialist','diplom-slider','benefits', 'service-category', 'PacientServis', 'TypesOfAssistance','companiess', 'way') );  
 	add_filter( 'excerpt_more', function ( $more ) {
 		return '';
 	} );
-}
+} 
 
 function style_them() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -469,8 +469,249 @@ function register_post_types() {
 		'query_var'           => true,
 	) );
 
+	
 
+	register_post_type( 'TypesOfAssistance', array(
+		'label'               => null,
+		'labels'              => array(
+			'name'               => 'Виды оказания помощи', // основное название для типа записи
+			'singular_name'      => 'Вид помощи', // название для одной записи этого типа
+			'add_new'            => 'Добавить вид помощи', // для добавления новой записи
+			'add_new_item'       => 'Добавление вида помощи', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование вида помощи', // для редактирования типа записи
+			'new_item'           => 'Новый вид помощи', // текст новой записи
+			'view_item'          => 'Смотреть вид помощи', // для просмотра записи этого типа.
+			'search_items'       => 'Искать вид помощи', // для поиска по этим типам записи
+			'not_found'          => 'Не найден вид помощи', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найден вид помощи в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Виды оказания помощи', // название меню
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		// зависит от public
+		'exclude_from_search' => true,
+		// зависит от public
+		'show_ui'             => true,
+		// зависит от public
+		'show_in_menu'        => true,
+		// показывать ли в меню адмнки
+		'show_in_admin_bar'   => true,
+		// по умолчанию значение show_in_menu
+		'show_in_nav_menus'   => true,
+		// зависит от public
+		'show_in_rest'        => null,
+		// добавить в REST API. C WP 4.7
+		'rest_base'           => null,
+		// $post_type. C WP 4.7
+		'menu_position'       => 8,
+		'menu_icon'           => 'dashicons-plus',
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array( 'title' ,'thumbnail' ),
+		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => array( '' ),
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	) );
 
+	register_post_type( 'PacientServis', array(
+		'label'               => null,
+		'labels'              => array(
+			'name'               => 'Службы стр.посетителям', // основное название для типа записи
+			'singular_name'      => 'служба', // название для одной записи этого типа
+			'add_new'            => 'Добавить службу', // для добавления новой записи
+			'add_new_item'       => 'Добавление службы', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование службы', // для редактирования типа записи
+			'new_item'           => 'Новая служба', // текст новой записи
+			'view_item'          => 'Смотреть службу', // для просмотра записи этого типа.
+			'search_items'       => 'Искать службу', // для поиска по этим типам записи
+			'not_found'          => 'Не найденая служба', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найденая служба в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Службы стр.посетителям', // название меню
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		// зависит от public
+		'exclude_from_search' => true,
+		// зависит от public
+		'show_ui'             => true,
+		// зависит от public
+		'show_in_menu'        => true,
+		// показывать ли в меню адмнки
+		'show_in_admin_bar'   => true,
+		// по умолчанию значение show_in_menu
+		'show_in_nav_menus'   => true,
+		// зависит от public
+		'show_in_rest'        => null,
+		// добавить в REST API. C WP 4.7
+		'rest_base'           => null,
+		// $post_type. C WP 4.7
+		'menu_position'       => 7,
+		'menu_icon'           => 'dashicons-phone',
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array( 'title' ,'thumbnail'),
+		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => array( '' ),
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	) );
+
+	register_post_type( 'Documents', array(
+		'label'               => null,
+		'labels'              => array(
+			'name'               => 'Важние документы', // основное название для типа записи
+			'singular_name'      => 'документ', // название для одной записи этого типа
+			'add_new'            => 'Добавить документ', // для добавления новой записи
+			'add_new_item'       => 'Добавление документа', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование документа', // для редактирования типа записи
+			'new_item'           => 'Новый документ', // текст новой записи
+			'view_item'          => 'Смотреть документ', // для просмотра записи этого типа.
+			'search_items'       => 'Искать документ', // для поиска по этим типам записи
+			'not_found'          => 'Не найден документ', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найден документ в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Важние документы', // название меню
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		// зависит от public
+		'exclude_from_search' => true,
+		// зависит от public
+		'show_ui'             => true,
+		// зависит от public
+		'show_in_menu'        => true,
+		// показывать ли в меню адмнки
+		'show_in_admin_bar'   => true,
+		// по умолчанию значение show_in_menu
+		'show_in_nav_menus'   => true,
+		// зависит от public
+		'show_in_rest'        => null,
+		// добавить в REST API. C WP 4.7
+		'rest_base'           => null,
+		// $post_type. C WP 4.7
+		'menu_position'       => 8,
+		'menu_icon'           => 'dashicons-welcome-write-blog',
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array( 'title' ,'thumbnail'),
+		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => array( '' ),
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	) );
+
+	
+
+	register_post_type( 'companiess', array(
+		'label'               => null,
+		'labels'              => array(
+			'name'               => 'Страховие компании', // основное название для типа записи
+			'singular_name'      => 'Страховие компании', // название для одной записи этого типа
+			'add_new'            => 'Добавить компанию', // для добавления новой записи
+			'add_new_item'       => 'Добавление компании', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование компании', // для редактирования типа записи
+			'new_item'           => 'Новая компания', // текст новой записи
+			'view_item'          => 'Смотреть компанию', // для просмотра записи этого типа.
+			'search_items'       => 'Искать компанию', // для поиска по этим типам записи
+			'not_found'          => 'Не найдена компания', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найдена компания в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Страховие компании', // название меню
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		// зависит от public
+		'exclude_from_search' => true,
+		// зависит от public
+		'show_ui'             => true,
+		// зависит от public
+		'show_in_menu'        => true,
+		// показывать ли в меню адмнки
+		'show_in_admin_bar'   => true,
+		// по умолчанию значение show_in_menu
+		'show_in_nav_menus'   => true,
+		// зависит от public
+		'show_in_rest'        => null,
+		// добавить в REST API. C WP 4.7
+		'rest_base'           => null,
+		// $post_type. C WP 4.7
+		'menu_position'       => 8,
+		'menu_icon'           => 'dashicons-portfolio',
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array( 'title', 'thumbnail', ),
+		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => array( '' ),
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	) );
+
+	register_post_type( 'way', array(
+		'label'               => null,
+		'labels'              => array(
+			'name'               => 'Как добраться?', // основное название для типа записи
+			'singular_name'      => 'Как добраться?', // название для одной записи этого типа
+			'add_new'            => 'Добавить маршрут', // для добавления новой записи
+			'add_new_item'       => 'Добавление маршрута', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование маршрута', // для редактирования типа записи
+			'new_item'           => 'Новый маршрут', // текст новой записи
+			'view_item'          => 'Смотреть маршрут', // для просмотра записи этого типа.
+			'search_items'       => 'Искать маршрут', // для поиска по этим типам записи
+			'not_found'          => 'Не найден маршрут', // если в результате поиска ничего не было найдено
+			'not_found_in_trash' => 'Не найден маршрут в корзине', // если не было найдено в корзине
+			'parent_item_colon'  => '', // для родителей (у древовидных типов)
+			'menu_name'          => 'Как добраться?', // название меню
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		// зависит от public
+		'exclude_from_search' => true,
+		// зависит от public
+		'show_ui'             => true,
+		// зависит от public
+		'show_in_menu'        => true,
+		// показывать ли в меню адмнки
+		'show_in_admin_bar'   => true,
+		// по умолчанию значение show_in_menu
+		'show_in_nav_menus'   => true,
+		// зависит от public
+		'show_in_rest'        => null,
+		// добавить в REST API. C WP 4.7
+		'rest_base'           => null,
+		// $post_type. C WP 4.7
+		'menu_position'       => 10,
+		'menu_icon'           => 'dashicons-admin-post',
+		//'capability_type'   => 'post',
+		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		'hierarchical'        => false,
+		'supports'            => array( 'title', 'thumbnail', ),
+		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => array( '' ),
+		'has_archive'         => false,
+		'rewrite'             => true,
+		'query_var'           => true,
+	) );
 
 }
 

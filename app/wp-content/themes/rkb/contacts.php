@@ -10,50 +10,45 @@ get_header();
     <div class="row">
       <div class="col-6">
         <div class="contacts__title">Контактная <br> информация</div>
-        <div class="contacts__desc">Государственное автономное учреждение здравоохранения «Республиканская клиническая больница Министерства здравоохранения Республики Татарстан»(ГАУЗ «РКБ МЗ РТ»)</div>
+        <div class="contacts__desc"><?php the_field('contac-desc'); ?></div>
       </div>
       <div class="col-6">
         <div class="contacts__info">
           <div class="double">
             <div class="item">
-              <div class="info__title">Приемная главного врача</div><a class="info__contact" href="tel:88432316595">8 (843) 231-65-95</a><a class="info__contact" href="mailto:mz.rkb@tatar.ru">mz.rkb@tatar.ru</a>
+              <div class="info__title">Приемная главного врача</div><a class="info__contact" href="tel:<?php the_field('mainDoctorTel'); ?>"><?php the_field('mainDoctorTel'); ?></a><a class="info__contact" href="mailto:<?php the_field('mainDoctorEmail'); ?>"><?php the_field('mainDoctorEmail'); ?></a>
             </div>
             <div class="item">
-              <div class="info__title">Приемное отделение</div><a class="info__contact" href="tel:88432316595">8 (843) 231-65-95</a><a class="info__contact" href="mailto:mz.rkb@tatar.ru">mz.rkb@tatar.ru</a>
+              <div class="info__title">Приемное отделение</div><a class="info__contact" href="tel:<?php the_field('department_tel'); ?>"><?php the_field('department_tel'); ?></a><a class="info__contact" href="mailto:<?php the_field('department_email'); ?>"><?php the_field('department_email'); ?></a>
             </div>
           </div>
-          <div class="info__title">Адрес местонахождения юридического лица</div>
-          <div class="info__contact">420064, Республика Татарстан, г. Казань, <br> Оренбургский тракт, 138.</div>
+          <div class="info__title">Адрес местонахождения юридического лица</div> 
+          <div class="info__contact"><?php the_field('addresContact'); ?></div>
           <div class="contacts__path">
             <div class="info__title">Как добраться?</div>
+            <?php
+            $args = array(
+              'numberposts' => -1, // если -1 то выводит все
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'post_type' => 'way', // тип поста
+              'suppress_filters' => true,
+            );
+
+            $posts = get_posts($args);
+
+            foreach ($posts as $post) {  
+              setup_postdata($post);
+              ?>  
             <div class="item">
-              <div class="title">Вахитовский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
+              <div class="title"><?php the_title(); ?></div>
+              <div class="path"><?php the_field('way_desc'); ?></div>
             </div>
-            <div class="item">
-              <div class="title">Ново-Савиновский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
-            <div class="item">
-              <div class="title">Вахитовский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
-            <div class="item">
-              <div class="title">Московский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
-            <div class="item">
-              <div class="title">Авиастроительный район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
-            <div class="item">
-              <div class="title">Приволжский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
-            <div class="item">
-              <div class="title">Советский район</div>
-              <div class="path">На автобусе №3 до станции “Альберт”</div>
-            </div>
+            <?php
+              }
+              wp_reset_postdata(); // сброс
+              ?>  
+         
           </div>
         </div>
       </div>
