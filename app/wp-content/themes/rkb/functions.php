@@ -11,11 +11,23 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 function menu() {
 	register_nav_menu( 'header', 'Главное меню в шапке' );
-	add_theme_support( 'post-thumbnails', array( 'post', 'doctor', 'main-slider','Specialist','diplom-slider','benefits', 'service-category', 'PacientServis', 'TypesOfAssistance','companiess', 'way') );  
+	add_theme_support( 'post-thumbnails', array(
+		'post',
+		'doctor',
+		'main-slider',
+		'Specialist',
+		'diplom-slider',
+		'benefits',
+		'service-category',
+		'PacientServis',
+		'TypesOfAssistance',
+		'companiess',
+		'way'
+	) );
 	add_filter( 'excerpt_more', function ( $more ) {
 		return '';
 	} );
-} 
+}
 
 function style_them() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -317,7 +329,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail', ),
+		'supports'            => array( 'title', 'thumbnail', ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -365,7 +377,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail'),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -413,7 +425,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail'),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -461,7 +473,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail'),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -469,7 +481,6 @@ function register_post_types() {
 		'query_var'           => true,
 	) );
 
-	
 
 	register_post_type( 'TypesOfAssistance', array(
 		'label'               => null,
@@ -511,7 +522,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail' ),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -559,7 +570,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail'),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -607,7 +618,7 @@ function register_post_types() {
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array( 'title' ,'thumbnail'),
+		'supports'            => array( 'title', 'thumbnail' ),
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array( '' ),
 		'has_archive'         => false,
@@ -615,7 +626,6 @@ function register_post_types() {
 		'query_var'           => true,
 	) );
 
-	
 
 	register_post_type( 'companiess', array(
 		'label'               => null,
@@ -729,13 +739,13 @@ add_action( 'wp_ajax_doctor-review', 'add_review' );
 add_action( 'wp_ajax_doctor-review', 'add_review' );
 
 function add_review() {
-	$text = $_POST['text'];
+	$text   = $_POST['text'];
 	$rating = $_POST['rating_count'];
-	if($rating == '') {
+	if ( $rating == '' ) {
 		$rating = 1;
 	}
 	$fio = $_POST['fio'];
-	$id = $_POST['doctor_id'];
+	$id  = $_POST['doctor_id'];
 
 	$post_id = wp_insert_post( wp_slash( array(
 		'post_status'   => 'draft',
@@ -758,12 +768,30 @@ function add_review() {
 	update_field( 'doctor', $doctor, $post_id );
 	update_field( 'text', $text, $post_id );
 
-	$rating_doctor = get_field('rating', $doctor);
-	$count_revs = get_field('count_revs', $doctor);
-	$count_revs++;
-	$rating_doctor = ($rating + $rating_doctor) / $count_revs;
-	$rating_doctor = intval($rating_doctor);
-
-	update_field( 'rating', $rating_doctor, $doctor );
-	update_field( 'count_revs', $count_revs, $doctor );
+//	$rating_doctor = get_field( 'rating', $doctor );
+//	$count_revs    = get_field( 'count_revs', $doctor );
+//	$count_revs ++;
+//	$rating_doctor = ( $rating + $rating_doctor ) / $count_revs;
+//	$rating_doctor = intval( $rating_doctor );
+//
+//	update_field( 'rating', $rating_doctor, $doctor );
+//	update_field( 'count_revs', $count_revs, $doctor );
 }
+
+function confirm_doctor_rev( $new_status, $old_status, $post ) {
+	if (
+		'publish' === $new_status &&
+		'publish' !== $old_status &&
+		'doctor-rew' === $post->post_type
+	) {
+		$id_doctor = get_field('doctor', $post->ID)->ID;
+		$old_rating = get_field('rating', $id_doctor);
+		$new_rating = intval($old_rating) + intval(get_field('rating', $post->ID));
+		$old_count = get_field('count_revs', $id_doctor);
+		$new_count = intval($old_count) + 1;
+		update_field( 'rating', $new_rating, $id_doctor );
+		update_field( 'count_revs', $new_count, $id_doctor );
+	}
+}
+
+add_action( 'transition_post_status', 'confirm_doctor_rev', 10, 3 );

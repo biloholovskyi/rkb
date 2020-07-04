@@ -54,8 +54,10 @@
               <div class="rank">
                 <?php
                 $rating = get_field('rating');
-                $rating_disable = 5 - $rating;
                 $count_revs = get_field('count_revs');
+                $rating = $rating / $count_revs;
+                $rating = intval($rating);
+                $rating_disable = 5 - $rating;
                 $count_string = null;
 
                 if($count_revs == 0) {

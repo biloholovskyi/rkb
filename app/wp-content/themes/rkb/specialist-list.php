@@ -200,10 +200,10 @@ get_header();
     names.each(function () {
       if ($(this).html()[0] === currentLatter) {
         if(serv === null) {
-          $(this).parent('.info').parent('.item').addClass('item--show');
+          $(this).parent('.info').parent('.item').addClass('item--show').removeClass('item--hidden');
         } else {
          if($(this).parent('.info').parent('.item').hasClass('category-' + serv)) {
-           $(this).parent('.info').parent('.item').addClass('item--show');
+           $(this).parent('.info').parent('.item').addClass('item--show').removeClass('item--hidden');
          }
         }
       }
