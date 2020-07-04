@@ -101,7 +101,6 @@ get_header();
                 <li>
                   <div class="acc-item">
                     <p><?php the_field('typesAssDesc'); ?></p>
-                   
                   </div>
                 </li>
               </ul>
