@@ -98,7 +98,7 @@ get_header();
           }
         </script>
       </div>
-      <div class="col-12 col-lg-6 order-4 order-lg-4">
+      <div class="col-12 col-lg-6 order-4 order-lg-4 col-form">
         <form class="contacts__form">
           <div class="form__title">Форма для жалоб и предложений</div>
           <label for="contacts-name">Ваше имя
