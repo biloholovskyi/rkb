@@ -8,11 +8,11 @@ get_header();
 <div class="contacts">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-lg-6 col-md-12 col-sm-12 order-1 order-lg-first">
         <div class="contacts__title">Контактная <br> информация</div>
         <div class="contacts__desc"><?php the_field('contac-desc'); ?></div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6 col-md-12 col-sm-12 order-3 order-lg-2">
         <div class="contacts__info">
           <div class="double">
             <div class="item">
@@ -52,11 +52,11 @@ get_header();
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
+    <!-- </div>
+  </div> -->
+  <!-- <div class="container">
+    <div class="row"> -->
+      <div class="col-12 col-lg-6 order-2 order-lg-3">
         <script src="https://api-maps.yandex.ru/2.1/?apikey=&lt;ваш API-ключ&gt;&amp;lang=ru_RU" type="text/javascript"></script>
         <div class="contacts__map" id="contacts__map">
           <div class="pin"></div>
@@ -98,7 +98,7 @@ get_header();
           }
         </script>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6 order-4 order-lg-4">
         <form class="contacts__form">
           <div class="form__title">Форма для жалоб и предложений</div>
           <label for="contacts-name">Ваше имя

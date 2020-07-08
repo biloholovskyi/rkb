@@ -1,0 +1,284 @@
+@media screen and (max-width: 991px) {
+  .aside {
+    margin-bottom: 40px;
+    h2 {
+      display: none;
+    }
+    ul {
+      display: flex;
+      li {
+        border-left: none;
+        border-bottom: 2px solid rgba(0,0,0,.1);
+        padding-left: 0;
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .aside {
+    h2 {
+      display: none;
+    }
+    ul {
+      li {
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .pacient-contact {
+    .contacts-container {
+      .contacts-wrap {
+        .contact-item {
+          h4 {
+            font-size: 12px;
+          }
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .pacient-servis {
+    .pacient-servis-wrap {
+      .pacient-serv-item {
+        flex: 50%;
+        h3 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .document-container {
+    .document-wrap {
+      .document-item {
+        width: 48%;
+        margin: 0 6px 16px 0; 
+        .document-info {
+          h4 {
+            font-size: 14px; 
+          }
+        }
+      }
+    }
+  }
+  .pacient-slider {
+    .opacity-block,
+    .opacity-block2 {
+      display: none;
+    }
+    .pacient-slider__body {
+      .owl-nav {
+        top: -69px;
+        right: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  
+  .pacients-page {
+    p {
+      display: none;
+    }
+    h1 {
+      display: none;
+    }
+    .aside {
+      p {
+        display: block;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 12px;
+      }
+      h2 {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 34px;
+        color: #111111;
+        margin-bottom: 12px;
+      }
+      ul {
+        overflow: scroll; 
+        border-bottom: 2px solid #EDEDED;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        li {
+          height: 56px;
+          border-bottom: none;
+          a {
+            width: max-content;
+            font-size: 14px;
+            line-height: 22px;
+            text-transform: uppercase;
+          }
+        }
+        .active { 
+          border-bottom: 2px solid rgba(21, 129, 221, .9);
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+      }
+     
+    }
+  }
+  .pacient-contact {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    .contacts-container {
+      flex-direction: column;
+      .contacts-wrap {
+        flex-direction: column;
+        .contact-item {
+         h4 {
+          font-size: 16px;
+          line-height: 22px;
+         }
+         a {
+          font-size: 20px;
+         }
+        }
+      }
+    }
+  }
+  .pacient-servis {
+    h2 {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 25px;
+    }
+    .pacient-servis-wrap {
+      .pacient-serv-item {
+        flex: 100%;
+        margin-bottom: 24px;
+        h3 {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        a {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .small-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .servis-acc {
+    ul {
+      .dropdown {
+        button {
+          font-size: 14px;
+          line-height: 20px;
+          text-align: left;
+        }
+        .dropdown-menu {
+          li {
+            .acc-item {
+              p {
+                display: block;
+                font-size: 14px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .document-container {
+    .document-wrap {
+      margin-bottom: 24px;
+      .document-item {
+        width: 100%;
+        margin: 0 0px 4px 0;
+        .document-info {
+          h4 {
+            font-size: 16px;
+            line-height: 22px;
+          }
+          p {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .pacient-slider {
+    padding-bottom: 24px;
+    .pacient__title {
+      font-size: 20px;
+    line-height: 26px;
+    }
+    .pacient-slider__body {
+      margin-bottom: 40px;
+      .owl-nav {
+        top: 100%;
+        left: 50%;
+        right: unset;
+        transform: translateX(-50%);
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+      }
+      .owl-dots {
+        position: absolute;
+        transform: translateX(-50%);
+        top: 100%;
+        left: 50%;
+        margin-top: 20px;
+        .owl-dot {
+          span {
+            width: 6px;
+            height: 6px;
+          }
+          &:hover span {
+            background-color: #1E6BD0;
+          }
+        }
+      }
+    }
+  }
+  .form {
+    padding: 32px 0;
+    .form__title {
+      text-align: left;
+      font-size: 20px;
+      line-height: 26px;
+    }
+    .contact-form-block {
+      form {
+        .input-wrapper {
+          margin-bottom: 16px;
+          input {
+            line-height: 24px; 
+            font-size: 16px;
+          }
+        }
+        .input-wrapper::after { 
+          font-size: 16px;
+          line-height: 24px; 
+        }
+        .input-wrapper--input::after { 
+          font-size: 12px;
+          line-height: 18px;
+        } 
+        .submit { 
+          width: 100%;
+          display: flex;
+          justify-content: center; 
+        }
+      }
+    } 
+  }
+}

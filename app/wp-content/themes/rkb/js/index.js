@@ -63,7 +63,17 @@ $(document).ready((e) => {
     nav: true,
     dots: false,
     margin: 16,
-    items: 4
+    items: 4,
+    responsive : {
+      0: {
+        dots:true,
+        items: 3
+      },
+      575: { 
+        dots: false,
+        items: 4
+      }
+    }
   });
    // diploms slider on  for specialist page
    $('.diplom-slider__body').owlCarousel({

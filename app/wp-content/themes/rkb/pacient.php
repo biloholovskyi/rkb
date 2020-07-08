@@ -8,9 +8,10 @@ get_header();
 <div class="pacients-page">
   <div class="container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-12 col-lg-3 col-md-12">
         <div class="aside anhors">
           <h2>Посетителям</h2>
+          <p><?php the_field('pacient_desc'); ?></p>
           <ul>
             <li class="active"><a href="#contact">Контакты</a></li>
             <li><a href="#servis">Службы</a></li>
@@ -20,7 +21,7 @@ get_header();
           </ul>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-12 col-lg-9 col-md-12">
         <h1 class="big-title"><?php the_field('pacient_title'); ?></h1>
         <p><?php the_field('pacient_desc'); ?></p>
         <div class="pacient-contact">

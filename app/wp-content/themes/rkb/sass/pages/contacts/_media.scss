@@ -1,0 +1,15 @@
+@media screen and (max-width: 1340px) {
+  .contacts__map {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .contacts__desc {
+    margin-bottom: 40px;
+  }
+  .contacts__map {
+    margin-bottom: 40px;
+    height: 625px; 
+  }
+}

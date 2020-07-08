@@ -1,0 +1,58 @@
+@media screen and (max-width: 1199px) {
+  .accordion {
+    .accordion_item {
+      .accordion__title {
+        font-size: 18px;
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: 991px) {
+  .accordion {
+    .accordion_item {
+      
+       flex: 50%;
+      
+    }
+  } 
+}
+
+@media screen and (max-width: 767px) {
+  .accordion {
+    .accordion_item {
+      align-items: center;
+       flex: 100%;
+      
+    }
+  } 
+}
+
+@media screen and (max-width: 575px) {
+  .servis-page {
+    padding-bottom: 7px;
+  }
+  .big-form__form input[type=text] {
+    &::placeholder {
+      
+      font-size: 15px;
+      
+    }
+  }
+  .accordion {
+    .accordion_item {
+      align-items: flex-start;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #EDEDED;
+      margin-bottom: 24px;
+      .accordion__title {
+        font-size: 20px;
+      }
+    }
+
+    & .accordion_item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  } 
+}
