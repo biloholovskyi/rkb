@@ -8,9 +8,10 @@ get_header();
 <div class="for_specialist-page">
   <div class="container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-12 col-lg-3 col-md-12">
         <div class="aside anhors">
-          <h2>Специалистам</h2>
+          <h2><?php the_field('spec_title'); ?></h2>
+          <p><?php the_field('spec_desc'); ?></p>
           <ul>
             <li class="active"><a href="#about">О клинике</a></li>
             <li><a href="#activity">Научная деятельность</a></li>
@@ -21,9 +22,9 @@ get_header();
           </ul>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-12 col-lg-9 col-md-12">
         <h1 class="big-title"><?php the_field('spec_title'); ?></h1>
-        <p><?php the_field('spec_desc'); ?></p>
+        <p class="firstpargh"><?php the_field('spec_desc'); ?></p>
         <h3 class="small-title" id="about"><?php the_field('spec_subtitle'); ?></h3>
         <div class="big-slider">
           <div class="big-slider__btn next"></div>

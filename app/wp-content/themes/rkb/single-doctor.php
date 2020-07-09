@@ -7,8 +7,8 @@
         <div class="col-12"><a class="btn_back" href="/specialists">Вернуться к списку специалистов</a></div>
       </div>
       <div class="row">
-        <div class="col-3"><img class="specialist-photo" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="image"></div>
-        <div class="col-9">
+        <div class="col-12 col-lg-3 col-md-6"><img class="specialist-photo" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="image"></div>
+        <div class="col-12 col-lg-9 col-md-6">
           <div class="specialist-wrap">
             <h1 class="big-title"><?php the_title(); ?></h1>
             <p><?php the_field('post'); ?></p>
@@ -183,37 +183,37 @@
         <div class="col-12">
           <h2 class="small-title blog_title">Публикации</h2>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019 </div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019 </div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019 </div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019</div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019 </div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019 </div></a></div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
           <div class="blog_item"><a href="#">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019                       </div></a></div>
