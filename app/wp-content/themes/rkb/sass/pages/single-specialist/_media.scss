@@ -1,0 +1,135 @@
+@media screen and (max-width: 1340px) {
+  .specialist-photo {
+    width: 100%;
+  }
+  .specialist-wrap {
+    h1 {
+      font-size: 25px;
+      line-height: 30px;
+    }
+    p {
+      font-size: 14px;
+    line-height: 7px;
+    }
+    .specialist-info {
+      .experience {
+        ul {
+          .dropdown {
+            a p {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+      .specialist-item {
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .show-phone {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .specialist-photo {
+   margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .btn_back {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .photo-row {
+    padding: 0;
+    z-index: 1;
+    &:after {
+      content: "";
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 47.5%), url(ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+  }
+  .block_blog {
+    margin-bottom: 24px;
+    .more {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .specialist-photo {
+    border-radius: 0;
+    height: 240px;
+    margin-bottom: 16px;
+  }
+ .specialist-wrap {
+   padding-left: 0;
+   margin-bottom: 16px;
+   h1 {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 8px;
+   }
+
+   p {
+    font-size: 14px;
+    line-height: 20px;
+   }
+   .anhors {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   }
+ }
+ .specialist-info {
+  padding-top: 16px;
+  border-top: 1px solid #EDEDED;
+  .experience {
+    ul {
+      .dropdown {
+        a {
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+          .arrow {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+  ul .dropdown>.dropdown-menu { 
+    li {
+      .acc-item {
+        .info {
+          p {
+            font-size: 14px;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .specialist-item {
+
+  }
+ }
+}

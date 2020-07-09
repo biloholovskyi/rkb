@@ -7,7 +7,7 @@
         <div class="col-12"><a class="btn_back" href="/specialists">Вернуться к списку специалистов</a></div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-3 col-md-6"><img class="specialist-photo" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="image"></div>
+        <div class="col-12 col-lg-3 col-md-6 photo-row"><img class="specialist-photo" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="image"></div>
         <div class="col-12 col-lg-9 col-md-6">
           <div class="specialist-wrap">
             <h1 class="big-title"><?php the_title(); ?></h1>
@@ -103,6 +103,7 @@
         <div class="col-12">
           <div class="feedback">
             <h2 class="small-title">Отзывы</h2>
+            
 	          <?php
             $current_doctor_id = get_the_ID();
 	          $cur_post = $posts;
@@ -218,6 +219,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
               <div class="date">10.10.2019                       </div></a></div>
         </div>
+        <div class="more">Показать еще</div>
       </div>
     </div>
   </div>

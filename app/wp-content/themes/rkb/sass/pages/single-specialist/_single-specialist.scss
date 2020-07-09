@@ -1,5 +1,5 @@
 @import "./accordion";
-@import "media";
+
 
 .single-specialist {
   // padding-top: 24px;
@@ -367,6 +367,37 @@
 // section blog
 .block_blog {
   margin-bottom: 80px;
+  .more {
+    display: none;
+  
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    cursor: pointer;
+    border: 1px solid #2560a9;
+    border-radius: 10px;
+    padding: 17px 50px 17px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2560a9;
+    position: relative;
+
+    &::after {
+      content: '';
+    position: absolute;
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../media/icon/blue-arrow-down.svg);
+    top: 50%;
+    margin-top: -12px;
+    right: 18px;
+    }
+  }
 }
 
 .blog_title {
@@ -479,3 +510,6 @@
     }
   }
 }
+
+
+@import "media";
