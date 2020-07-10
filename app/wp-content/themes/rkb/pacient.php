@@ -9,7 +9,7 @@ get_header();
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-3 col-md-12">
-        <div class="aside anhors">
+        <div class="aside anhors aside-pacient">
           <h2>Посетителям</h2>
           <p><?php the_field('pacient_desc'); ?></p>
           <ul>

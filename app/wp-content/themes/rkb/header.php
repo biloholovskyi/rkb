@@ -68,9 +68,7 @@
               ] );
               ?>
               </div>
-              <div class="middle">
-                <input type="search" placeholder="Поиск">
-              </div>
+              
               <div class="right">
                 <a class="header__search" href="#">
                 <img alt="search"
@@ -80,11 +78,26 @@
                 <div class="header__menu-btn">Меню
                   <div class="humb"></div>
                 </div>
-                <div class="modal__menu-btn">
-                  Закрить
-                  <div class="close"></div>
-                </div>
               </div>
+            </div>
+            <div class="bot-modal">
+              <div class="left"><a class="home-link" href="<?php echo get_home_url(); ?>"><img alt="rkb"
+                      src="<?php echo get_template_directory_uri() ?>/media/icon/logo-white.svg">
+                    <div class="home-link__text">
+                      <div class="title">Республиканская <br> Клиническая Больница</div>
+                      <div class="small">Министерства здравоохранения <br> Республики Татарстан</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="middle">
+                  <input type="search" placeholder="Поиск">
+                </div>
+                <div class="right">
+                  <div class="modal__menu-btn">
+                    Закрить
+                    <div class="close"></div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>

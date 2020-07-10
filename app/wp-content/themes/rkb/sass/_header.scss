@@ -68,7 +68,8 @@
     padding: 19px 0;
     border-bottom: 1px solid #EDEDED;
 
-    .bot-wrapper {
+    .bot-wrapper,
+    .bot-modal {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -170,6 +171,24 @@
         }
       }
     }
+    .bot-modal {
+      .left {
+        .home-link {
+          &__text {
+            .title {
+             color: #fff;
+            }
+            .small {
+              color: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+
+      }
+    }
+    .bot-modal {
+      display: none;
+    }
   }
 }
 
@@ -259,11 +278,11 @@
   width: 100%;
   max-width: 779px;
   padding: 0 40px;
-  display: none;
-
+  display: block;
+  position: relative;
   input {
     width: 100%;
-    padding: 16px;
+    padding: 16px 16px 16px 54px;
     border-radius: 10px;
     border: none;
     font-style: normal;
@@ -279,6 +298,19 @@
       color: #999999;
     }
   }
+  &::after {
+    content: "";
+    background-image: url(../media/icon/search.svg);
+    background-position: center;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .5;
+  }
 }
 
 .modal__menu-btn {
@@ -290,7 +322,7 @@
   text-align: right;
   color: #fff;
   cursor: pointer;
-  display: none;
+  
 
   .close {
     margin-left: 8px;
@@ -304,6 +336,12 @@
   }
 }
 
+
+
+
+.bot-modal.active {
+  display: flex; 
+}
 .modal-overlay.active {
   display: block;
 }

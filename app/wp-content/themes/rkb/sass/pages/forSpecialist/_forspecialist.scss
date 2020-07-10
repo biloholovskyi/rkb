@@ -5,6 +5,10 @@
 .for_specialist-page {
   padding-top: 40px;
 
+    .aside-col {
+      background-color: #fff;
+      z-index: 2;
+    }
 
   .big-slider {
     margin-bottom: 24px;
@@ -12,6 +16,8 @@
 
   .aside {
     max-width: 260px;
+    background-color: #fff;
+    z-index: 2;
   }
 
 

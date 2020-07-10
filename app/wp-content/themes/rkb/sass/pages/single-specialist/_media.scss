@@ -35,6 +35,21 @@
     }
   }
 }
+@media screen and (max-width: 991px) {
+  .experience {
+    ul .dropdown>.dropdown-menu {
+      li {
+        .acc-item {
+          .info {
+             p span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 767px) {
   .specialist-photo {
