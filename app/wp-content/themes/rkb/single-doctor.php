@@ -25,15 +25,25 @@
                     </a>
 
                     <ul class="dropdown-menu">
-                      <?php
-                      $img = get_template_directory_uri() . "/media/icon/specialist/circle.svg";
-                      $exp = get_field('exp');
-                      $exp = preg_replace("/\[/", '<span>', $exp);
-                      $exp = preg_replace("/]/", '</span>', $exp);
-                      $exp = preg_replace('/<li>(.*?)<\/li>/', '<li><div class="acc-item"><div class="icon-wrap exp"><img src alt="image"></div><div class="info"><p>$1</p></div></div></li>', $exp);
-                      $exp = preg_replace("/src/", 'src="'.$img.'"', $exp);
-                      echo $exp;
-                      ?>
+	                    <?php
+	                    $exp = CFS()->get('exp');
+	                    if (!empty($exp)) {
+	                      foreach ($exp as $one_exp) {
+		                      ?>
+                           <li>
+                             <div class="acc-item">
+                               <div class="icon-wrap exp">
+                                 <img src="//localhost:3000/rkb/app/wp-content/themes/rkb/media/icon/specialist/circle.svg" alt="image">
+                               </div>
+                               <div class="info">
+                                 <p><?php echo $one_exp['name']; ?> <span><?php echo $one_exp['time']; ?></span></p>
+                               </div>
+                             </div>
+                           </li>
+		                      <?php
+	                      }
+	                    }
+	                    ?>
                     </ul>
                   </li>
                 </ul>
