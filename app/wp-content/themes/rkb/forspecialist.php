@@ -189,55 +189,39 @@ get_header();
         </div>
         <div class="spec-blog" id="blog">
           <h3 class="small-title">Научные публикации специалистов</h3>
-          <div class="spec-blog-wrap"><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src=".<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a><a class="spec-blog-item" href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ex non magna.</p>
-              <div class="blog-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-                <div class="name">Аббазов Ренас Ринатович</div>
-              </div></a></div>
+          <div class="spec-blog-wrap">
+	          <?php
+	          $cur_post = $posts;
+	          $args = array(
+		          'numberposts' => -1,
+		          'orderby' => 'date',
+		          'order' => 'DESC',
+		          'post_type' => 'post',
+		          'suppress_filters' => true,
+	          );
+
+	          $posts = get_posts($args);
+            print_r(get_field('author'));
+	          foreach ($posts as $post) {
+		          setup_postdata($post);
+	            $doctor_id = get_field('author')->ID;
+	            $doctor_name = get_field('author')->post_title;
+	            $doctor_photo = get_field('author')->post_thumbnail;
+		          if(get_field('art_doctor')) {
+		          ?>
+                <a class="spec-blog-item" href="<?php the_permalink(); ?>">
+                  <p><?php the_title(); ?></p>
+                  <div class="blog-item"><img src="<?php echo get_the_post_thumbnail_url($doctor_id); ?>" alt="image">
+                    <div class="name"><?php echo $doctor_name; ?></div>
+                  </div>
+                </a>
+		          <?php
+              }
+	          }
+	          wp_reset_postdata(); // сброс
+	          $posts = $cur_post;
+	          ?>
+          </div>
         </div>
       </div>
     </div>

@@ -7,13 +7,13 @@
   .spec-blog-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex: 31%;
     padding: 19px;
     border: 1px solid #EDEDED;
     border-radius: 10px;
     max-width: 308px;
     margin: 0 16px 16px 0;
-    max-height: 163px;
 
     p {
       font-style: normal !important;

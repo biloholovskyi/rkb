@@ -185,41 +185,37 @@
         <div class="col-12">
           <h2 class="small-title blog_title">Публикации</h2>
         </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019 </div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019 </div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019 </div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019</div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019 </div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019 </div></a></div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="blog_item"><a href="#">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-              <div class="date">10.10.2019                       </div></a></div>
-        </div>
+	      <?php
+	      $cur_post = $posts;
+	      $args = array(
+		      'numberposts' => -1,
+		      'orderby' => 'date',
+		      'order' => 'DESC',
+		      'post_type' => 'post',
+		      'suppress_filters' => true,
+	      );
+
+	      $posts = get_posts($args);
+
+	      foreach ($posts as $post) {
+		      setup_postdata($post);
+		      $doctor_id = get_field('author')->ID;
+		      if($current_doctor_id == $doctor_id) {
+			      ?>
+            <div class="col-12 col-lg-3 col-md-4 col-sm-6">
+              <div class="blog_item">
+                <a href="<?php the_permalink(); ?>">
+                  <p><?php the_title(); ?></p>
+                  <div class="date"><?php the_date('d.m.Y'); ?></div>
+                </a>
+              </div>
+            </div>
+			      <?php
+		      }
+	      }
+	      wp_reset_postdata(); // сброс
+	      $posts = $cur_post;
+	      ?>
         <div class="more">Показать еще</div>
       </div>
     </div>
