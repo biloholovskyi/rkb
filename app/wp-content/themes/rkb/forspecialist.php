@@ -130,6 +130,7 @@ get_header();
             $main_doctors = get_field('main_doctor');
 
 
+
             foreach ($main_doctors as $doctor) {
               ?>
               <a class="main-spec-item" href="<?php echo get_the_permalink($doctor->ID); ?>">
