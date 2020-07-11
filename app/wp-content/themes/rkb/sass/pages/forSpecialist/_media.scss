@@ -17,6 +17,12 @@
   }
 }
 @media screen and (max-width: 1199px) {
+  .for_specialist-page {
+    .aside {
+      max-width: 210px;
+    }
+  }
+
   .spec-blog {
     .spec-blog-wrap {
       .spec-blog-item {
@@ -44,6 +50,8 @@
   .for_specialist-page {
     .aside {
       max-width: 100%;
+      position: relative;
+      top: 0 !important;
       ul {
         overflow: scroll;
         li {
