@@ -8,8 +8,8 @@ get_header();
 <div class="for_specialist-page">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-lg-3 col-md-12">
-        <div class="aside anhors">
+      <div class="col-12 col-lg-3 col-md-12 aside-col">
+        <div class="aside anhors" id="top_nav">
           <h2><?php the_field('spec_title'); ?></h2>
           <p><?php the_field('spec_desc'); ?></p>
           <ul>
@@ -114,7 +114,7 @@ get_header();
               <div class="diplom"><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="image">
                 <div class="diplom-overlay"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/hover.svg" alt="image"></div>
               </div>
-              <div class="text"><?php the_field('diplom_desc'); ?></div>
+              <div class="text"><?php the_title(); ?></div>
             </div>
             <?php
               }

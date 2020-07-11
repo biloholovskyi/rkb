@@ -2,7 +2,7 @@
   width: 100%;
   // position: sticky;
   // top: 50px;
-
+  position: fixed;
   h2 {
     font-style: normal;
     font-weight: 600;
@@ -41,4 +41,9 @@ p {
       border-color: #1E6BD0;
     }
   }
+}
+
+.aside-pacient {
+  position: sticky;
+  top: 50px;
 }

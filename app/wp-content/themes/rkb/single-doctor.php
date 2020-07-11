@@ -56,8 +56,9 @@
                 $rating = get_field('rating');
                 $count_revs = get_field('count_revs');
                 $rating = $rating / $count_revs;
-                $rating = intval($rating);
-                $rating_disable = 5 - $rating;
+
+                $percent = $rating / 5 * 100;
+
                 $count_string = null;
 
                 if($count_revs == 0) {
@@ -76,21 +77,23 @@
 	                $count_string = $count_revs . ' отзыва';
                 }
                 ?>
+                
                 <div class="star-block">
-                  <?php
-                  while($rating > 0) {
-                    ?>
+
+                <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
+                  
+                
+                <div class="star-block color-block" style="width: <?php echo $percent; ?>%">
                     <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
-                    <?php
-                      $rating--;
-                  }
-                  while($rating_disable > 0) {
-	                  ?>
-                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-disable.svg" alt="icon"></button>
-	                  <?php
-                      $rating_disable--;
-                  }
-                  ?>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+                    <button><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/star-color.svg" alt="icon"></button>
+                  </div>
                 </div>
                 <p><?php echo $count_string; ?></p>
               </div>
@@ -173,8 +176,6 @@
               <input type="hidden" name="action" value="doctor-review">
               <input type="hidden" name="doctor_id" value="<?php the_ID(); ?>">
               <input type="hidden" name="rating" value="5">
-              <div class="icon icon--first"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/add_file.svg" alt="image"></div>
-              <div class="icon"> <img src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/smile.svg" alt="image"></div>
               <button class="form__submit" type="submit" disabled>Оставить отзыв</button>
             </form>
           </div>

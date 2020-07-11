@@ -153,7 +153,9 @@
       max-width: 500px;
       margin: 0 auto;
 
-      .photo {}
+      .photo {
+        border-radius: 10px;
+      }
 
       .week__info {
         position: absolute;
@@ -167,7 +169,8 @@
         z-index: 2;
         background: linear-gradient(180deg, rgba(21, 129, 221, 0) 30.63%, rgba(21, 129, 221, 0.8) 83.66%), url(ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg);
         max-width: 704px;
-
+        padding: 20px;
+        border-radius: 10px;
         .title {
           max-width: 255px;
         }
