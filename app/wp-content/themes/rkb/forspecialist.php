@@ -125,67 +125,28 @@ get_header();
         </div>
         <div class="main-spec">
           <h3 class="small-title" id="spec">Главные специалисты</h3>
-          <div class="main-spec-wrap"><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a><a class="main-spec-item" href="#"> <img class="spec-icon" src="<?php echo get_template_directory_uri(); ?>/media/icon/position.svg" alt="image">
-              <div class="spec-info">
-                <h4>Поликлиническая служба</h4>
-                <p class="name">Абашина Лариса Викторовна</p>
-                <p class="position">Старшая медицинская сестра</p>
-              </div></a></div>
+          <div class="main-spec-wrap">
+            <?php
+            $main_doctors = get_field('main_doctor');
+
+
+            foreach ($main_doctors as $doctor) {
+              ?>
+              <a class="main-spec-item" href="<?php echo get_the_permalink($doctor->ID); ?>">
+                <img class="spec-icon" src="<?php echo get_the_post_thumbnail_url($doctor->ID); ?>" alt="image">
+                <div class="spec-info">
+                  <?php
+                    $serv = $doctor->service;
+                  ?>
+                  <h4><?php echo get_the_title($serv); ?></h4>
+                  <p class="name"><?php echo $doctor->post_title; ?></p>
+                  <p class="position"><?php echo $doctor->post; ?></p>
+                </div>
+              </a>
+              <?php
+            }
+            ?>
+            </div>
         </div>
         <div class="spec-blog" id="blog">
           <h3 class="small-title">Научные публикации специалистов</h3>
