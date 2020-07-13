@@ -1,76 +1,33 @@
-<!DOCTYPE html>
-<html lang="ru-RU">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>РКБ</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__top">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="top__wrapper">
-                <div class="left">
-                  <div class="header__lang-wrapper"><a class="header__lang header__lang--active" href="#">RU</a><a class="header__lang" href="#">ENG</a><a class="header__lang" href="#">TAT</a></div><a class="header__link"><img src="./media/icon/eye.svg" alt="eye"><span>Версия для слабовидящих</span></a><a class="header__link"><img src="./media/icon/map.svg" alt="map"><span>Карта РКБ</span></a>
-                </div>
-                <div class="right"><a class="header__number" href="tel:88432312090">8 (843) 231-20-90<span> — круглосуточно</span></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header__bot">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="bot-wrapper">
-                <div class="left"><a class="home-link" href="/"><img alt="rkb" src="./media/icon/logo.svg">
-                    <div class="home-link__text">
-                      <div class="title">Республиканская <br> Клиническая Больница</div>
-                      <div class="small">Министерства здравоохранения <br> Республики Татарстан</div>
-                    </div></a>
-                  <nav class="header__navigation">
-                    <ul>
-                      <li><a href="/pacients.html">Посетителям</a></li>
-                      <li><a href="/forspecialist.html">Специалистам</a></li>
-                      <li><a href="/servis.html">Службы</a></li>
-                      <li><a href="/single-servises.html">Служба</a></li>
-                      <li><a href="/specialists.html">Поиск</a></li>
-                      <li><a href="/contacts.html">Контакты</a></li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="right"><a class="header__search" href="#"><img alt="search" src="./media/icon/search.svg"></a>
-                  <div class="header__menu-btn">Меню
-                    <div class="humb"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="single-servis">
+
+<?php
+/*
+Template Name: singleServis
+*/
+get_header();
+?>
+
+<div class="single-servis">
       <div class="container">
         <div class="row">
-          <div class="col-12"><a class="btn_back" href="/">Вернуться к списку служб</a></div>
+          <div class="col-12"><a class="btn_back" href="/"><span>Вернуться к списку служб</span><span>Назад</span></a></div>
         </div>
         <div class="row">
           <div class="col-12">
             <h1 class="big-title">Клинико-экспертная служба</h1>
           </div>
+          <div class="col-12">
+              <div class="aside anhors">
+              <ul>
+                <li class="active"><a href="#servises">Услуги</a></li>
+                <li><a href="#departments">Отделения</a></li>
+                <li><a href="#desc">Описание</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <h2 class="small-title">Услуги</h2> 
+          <div class="col-12 col-lg-8">
+            <h2 id="servises" class="small-title">Услуги</h2> 
             <div class="servis-btn-block">
               <button>Удаление почки  </button>
               <button>Капельница</button>
@@ -90,12 +47,12 @@
               <button>Осмотр</button>
               <button>Лоботомия </button>
             </div>
-            <h2 class="small-title">Отделения</h2>
+            <h2 id="departments" class="small-title">Отделения</h2>
             <div class="servis-acc">
               <ul class="list">
                 <li class="dropdown servisDrop">
                   <input type="checkbox">
-                  <button data-toggle="dropdown">Организационно-методический отдел<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
+                  <button data-toggle="dropdown">Организационно-методический отдел<img class="arrow" src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -107,7 +64,7 @@
                 </li>
                 <li class="dropdown servisDrop">
                   <input type="checkbox">
-                  <button data-toggle="dropdown">Патологоанатомическое отделение<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
+                  <button data-toggle="dropdown">Патологоанатомическое отделение<img class="arrow" src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -119,7 +76,7 @@
                 </li>
                 <li class="dropdown servisDrop">
                   <input type="checkbox">
-                  <button data-toggle="dropdown">Отделение клинической фармакологии<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
+                  <button data-toggle="dropdown">Отделение клинической фармакологии<img class="arrow" src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -131,7 +88,7 @@
                 </li>
                 <li class="dropdown servisDrop">
                   <input type="checkbox">
-                  <button data-toggle="dropdown">Клинико-экспертное отделение<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
+                  <button data-toggle="dropdown">Клинико-экспертное отделение<img class="arrow" src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -143,7 +100,7 @@
                 </li>
                 <li class="dropdown servisDrop">
                   <input type="checkbox">
-                  <button data-toggle="dropdown">Отдел организации высокотехнологичной медицинской помощи<img class="arrow" src="../../media/icon/specialist/arrow-right.svg" alt="icon"></button>
+                  <button data-toggle="dropdown">Отдел организации высокотехнологичной медицинской помощи<img class="arrow" src="<?php echo get_template_directory_uri(); ?>/media/icon/specialist/arrow-right.svg" alt="icon"></button>
                   <ul class="dropdown-menu">
                     <li>
                       <div class="acc-item">
@@ -157,12 +114,12 @@
             </div>
             <div class="line"></div>
             <div class="desc-serv">
-              <h2 class="small-title">Описание</h2>
+              <h2 id="desc" class="small-title">Описание</h2>
               <p>Служба клинико-экспертной работы организована с целью обеспечения контроля качества медицинской помощи, оказываемой населению на базе ГАУЗ «РКБ МЗ РТ»  и включает в себя экспертизу процесса оказания медицинской помощи конкретному пациенту, выявление и изучение дефектах лечебно-диагностического процесса, а также разработку мероприятий для  улучшения качества медицинской помощи на основании анализа выявленных дефектов.</p>
               <p>Контроль качества медицинской помощи в ГАУЗ «РКБ МЗ РТ»  осуществляется на основе стандартов медицинской помощи и протоколов ведения больных по нозологиям и профилям путем ежемесячного анализа первичной медицинской документации (в стационаре – не менее 10% законченных случаев лечения). Отделение разрабатывает внутрибольничную систему управления качеством лечебно-диагностического процесса и, с привлечением необходимых специалистов, организует ее внедрение в структурных подразделениях больницы.</p>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-lg-4">
             <div class="contact-wrap">
               <h3>Контакты</h3>
               <div class="contact-item">
@@ -193,11 +150,11 @@
               <div class="big-slider">
                 <div class="big-slider__btn next"></div>
                 <div class="big-slider__btn prev disabled"></div>
-                <div class="item"><img alt="img" src="/media/image/big1.jpg"></div>
-                <div class="item"><img alt="img" src="/media/image/big2.jpg"></div>
-                <div class="item"><img alt="img" src="/media/image/big3.jpg"></div>
-                <div class="item"><img alt="img" src="/media/image/big1.jpg"></div>
-                <div class="item"><img alt="img" src="/media/image/big2.jpg"></div>
+                <div class="item"><img alt="img" src="<?php echo get_template_directory_uri(); ?>/media/image/big1.jpg"></div>
+                <div class="item"><img alt="img" src="<?php echo get_template_directory_uri(); ?>/media/image/big2.jpg"></div>
+                <div class="item"><img alt="img" src="<?php echo get_template_directory_uri(); ?>/media/image/big3.jpg"></div>
+                <div class="item"><img alt="img" src="<?php echo get_template_directory_uri(); ?>/media/image/big1.jpg"></div>
+                <div class="item"><img alt="img" src="<?php echo get_template_directory_uri(); ?>/media/image/big2.jpg"></div>
               </div>
             </div>
           </div>
@@ -207,7 +164,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div class="form__title">Остались вопросы?<br>Свяжитесь с нами</div>
+              <div class="form__title">Остались вопросы?<br>Свяжитесь с нами</div> 
             </div>
           </div>
           <div class="row">
@@ -231,55 +188,4 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer__body">
-              <div class="footer__left"><a class="footer__logo"><img src="./media/icon/logo-white.svg" alt="rkb">
-                  <div class="text">
-                    <div class="title">Республиканская <br> Клиническая Больница</div>
-                    <div class="small">Министерства здравоохранения <br> Республики Татарстан</div>
-                  </div></a>
-                <div class="footer__btns"><a class="footer__btn" href="#">Сихат РКБ</a><a class="footer__btn footer__btn--transparent" href="#">Оставить отзыв</a></div>
-              </div>
-              <div class="footer__nav-wrapper">
-                <nav class="footer__nav">
-                  <div class="title">Документация</div>
-                  <ul>
-                    <li><a href="#">Политика обработки <br> персональных данных</a></li>
-                    <li><a href="#">Документация для <br> сотрудников</a></li>
-                    <li><a href="#">Для партнеров и контрагентов</a></li>
-                    <li><a href="#">Для пациентов</a></li>
-                  </ul>
-                </nav>
-                <nav class="footer__nav">
-                  <div class="title">Контакты</div>
-                  <ul>
-                    <li><a href="#">Карта корпусов</a></li>
-                    <li><a href="#">Контакты служб</a></li>
-                    <li><a href="#">Для партнеров и контрагентов</a></li>
-                    <li><a href="#">Телефонный справочник <br> РКБ МЗ РТ</a></li>
-                  </ul>
-                </nav>
-                <nav class="footer__nav">
-                  <div class="title">О клинике</div>
-                  <ul>
-                    <li><a href="#">Защита персональных данных</a></li>
-                    <li><a href="#">Шефы клиник ГАУЗ "РКБ МЗ РТ"</a></li>
-                    <li><a href="#">Охрана труда</a></li>
-                    <li><a href="#">Информация об учреждении</a></li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="footer__btns mobile-btn"><a class="footer__btn" href="#">Сихат РКБ</a><a class="footer__btn footer__btn--transparent" href="#">Оставить отзыв        </a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="buildjs/owl.carousel.js"></script>
-    <script src="buildjs/index.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>

@@ -23,6 +23,9 @@
   }
 }
 .single-servis {
+  .aside {
+    display: none;
+  }
   .big-slider {
     margin: 40px 0;
   }
@@ -110,3 +113,6 @@
   }
 }
 //  end servis contact block
+
+
+@import './media';

@@ -18,6 +18,10 @@
   align-items: center;
   margin-top: 25px;
   margin-bottom: 24px;
+
+  & span:last-child {
+    display: none;
+  }
 }
 
 .btn_back:before {

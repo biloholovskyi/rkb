@@ -6,11 +6,11 @@
         
             <nav class="footer__nav">
               <ul class="main-footer">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Службы</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/services">Службы</a></li>
                 <li><a href="#">Отделения</a></li>
-                <li><a href="#">Карта сайта</a></li>
-                <li><a href="#">Документация</a></li>
+                <li><a href="/contacts">Карта сайта</a></li>
+                <li><a href="/document">Документация</a></li>
               </ul>
               <div class="footer__btns">
                 <a class="footer__btn" href="#">Сихат РКБ</a>
@@ -19,8 +19,8 @@
               <nav class="footer__nav information_block">
                 <div class="title">Информация</div>
                 <ul class="information">
-                  <li><a href="#">Посетителям</a></li>
-                  <li><a href="#">Специалистам</a></li>
+                  <li><a href="/pacient">Посетителям</a></li>
+                  <li><a href="/forspecialist">Специалистам</a></li>
                   <li><a href="#">Партнерам</a></li>
                 </ul>
                 <div class="title">Новости</div>

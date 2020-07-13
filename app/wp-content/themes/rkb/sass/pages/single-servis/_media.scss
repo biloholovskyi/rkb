@@ -1,0 +1,151 @@
+@media screen and (max-width: 991px) {
+  .single-servis {
+    .contact-wrap {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .single-servis {
+    .big-title {
+      font-size: 30px;
+    }
+    .small-title {
+      font-size: 25px;
+    }
+    .servis-acc {
+      .list {
+        .dropdown {
+          button {
+            font-size: 13px;
+          }
+          .dropdown-menu {
+            li .acc-item p {
+              font-size: 15px; 
+            }
+          }
+        }
+      }
+    }
+    .big-slider {
+      .item {
+        width: 100%!important;
+        transform: translateX(0px)!important;
+      }
+      .big-slider__btn.next {
+        right: 20px;
+      }
+      .big-slider__btn.prev {
+        left: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .single-servis {
+    .aside {
+      position: relative;
+      margin-bottom: 25px; 
+      display: block;
+      ul {
+        overflow: scroll; 
+        border-bottom: 2px solid #EDEDED;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        li {
+          height: 56px;
+          border-bottom: none;
+          a {
+            width: max-content;
+            font-size: 14px;
+            line-height: 22px;
+            text-transform: uppercase;
+            color: #999;
+          }
+        }
+        .active { 
+          border-bottom: 2px solid rgba(21, 129, 221, .9);
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          a {
+            color: #1581DD;
+          }
+        }
+      }
+     
+    }
+    .btn_back {
+      position: relative;
+      margin: 0;
+      & span:first-child {
+        display: none;
+      }
+      & span:last-child {
+        display: block;
+        color: #1E6BD0;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    .big-title {
+      font-size: 24px;
+      line-height: 34px;
+      margin: 17px 0 8px 0;
+
+    }
+    .small-title {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    .servis-btn-block {
+      margin: 20px 0 24px;
+      padding-bottom: 24px;
+      button {
+        font-size: 12px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        line-height: 20px;
+        padding: 4px 8px;
+      }
+    }
+    .servis-acc {
+      .list {
+        .dropdown {
+          button {
+            font-size: 16px;
+            align-items: center;
+          }
+          .dropdown-menu {
+            li .acc-item p {
+              font-size: 13px; 
+            }
+          }
+        }
+      }
+    }
+    .big-slider {
+      min-height: 240px;
+      max-height: 240px;
+      .item {
+        height: 100%!important;
+        margin-top: 0!important;
+      }
+      .big-slider__btn {
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        background-size: 18px;
+      }
+      .big-slider__btn.next {
+        right: 16px;
+      }
+      .big-slider__btn.prev {
+        left: 16px;
+      }
+    }
+  }
+}

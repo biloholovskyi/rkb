@@ -38,6 +38,7 @@ gulp.task('default', function () {
   browserSync.init({
     proxy: "http://localhost:8888/rkb/app"
   });
+  
   gulp.watch("app_old/pug/**/*.pug", function () {
     return gulp.src('app/pug/pages/*.pug')
       .pipe(pug({
