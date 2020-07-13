@@ -93,29 +93,11 @@
       }
     }
   }
-  // .contacts__form {
-  //   border-radius: 0;
-  //   .form__title {
-  //     text-align: left;
-  //     font-size: 20px;
-  //   line-height: 26px;
-  //   margin-bottom: 32px;
-  //   }
-  //   .form__double {
-  //     flex-direction: column;
-
-  //     & label:first-child {
-  //       margin-bottom: 15px;
-  //       margin-right: 0;
-  //     }
-  //     & label:last-child {
-  //       margin-left: 0;
-  //     }
-  //   }
-  //   .submit-wrapper {
-  //     input {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
+  .contact-modal {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    bottom: 16px;
+    max-width: 288px;
+  }
 }

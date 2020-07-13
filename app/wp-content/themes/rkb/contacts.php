@@ -150,4 +150,9 @@ get_header();
   </div>
 </div>
 
+<div class="contact-modal">
+  <img src="<?php echo get_template_directory_uri(); ?>/media/icon/ok.svg" alt="icon">
+  <p>Ваше сообщение отправлено</p>
+</div>
+
 <?php get_footer(); ?>
