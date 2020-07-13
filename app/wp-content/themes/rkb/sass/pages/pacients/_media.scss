@@ -1,10 +1,36 @@
+@media screen and (max-width: 1340px) {
+  .document-container {
+    .document-wrap {
+      .document-item {
+        width: 32%;
+      }
+    }
+  }
+}
 @media screen and (max-width: 1199px) {
   .pacient-slider {
     .opacity-block,
     .opacity-block2 {
      bottom: 35px;
     }
-   
+  }
+  .document-container {
+    .document-wrap {
+      .document-item {
+        width: 31%;
+        .document-icon {
+          margin: 0 8px;
+        }
+        .document-info {
+          h4 {
+            font-size: 13px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 991px) {
@@ -72,6 +98,9 @@
             font-size: 14px; 
           }
         }
+      }
+      & .document-item:nth-child(3n) {
+        margin-right: 6px;
       }
     }
   }
@@ -221,6 +250,9 @@
             display: block;
           }
         }
+      }
+      & .document-item:nth-child(3n) {
+        margin-right: 0px;
       }
     }
   }

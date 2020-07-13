@@ -15,7 +15,7 @@
   }
 
   .aside {
-    max-width: 260px;
+   
     background-color: #fff;
     z-index: 2;
   }
@@ -24,7 +24,9 @@
   overflow-x: hidden;
 
   .aside {
+  ul {
     max-width: 260px;
+  }
   }
 
   h1 {

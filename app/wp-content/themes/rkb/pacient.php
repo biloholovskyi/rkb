@@ -131,12 +131,13 @@ get_header();
 
             foreach ($posts as $post) {  
               setup_postdata($post); 
+              $file = get_field('doc');
               ?>  
-          <a class="document-item" href="<?php the_field('doc'); ?>" download>
+          <a class="document-item" href="<?php echo $file[url] ?>" download>
               <div class="document-icon"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/download.svg" alt="image"></div>
               <div class="document-info">
                 <h4><?php the_title(); ?></h4>
-                <p class="size"><?php the_field('doc_desc'); ?></p>
+                <p class="size">.<?php echo $file[subtype]; ?> / <?php echo size_format(filesize( get_attached_file( $file[ID] ) ), 0); ?></p>
               </div>
             </a>
             <?php
