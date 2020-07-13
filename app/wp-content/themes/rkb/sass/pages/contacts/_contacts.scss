@@ -1,5 +1,6 @@
 @import "info";
 @import "bottom";
+@import './tabs';
 
 .contacts {
   padding: 64px 0 80px;
@@ -16,6 +17,42 @@
     font-size: 16px;
     line-height: 24px;
     color: #333333;
+  }
+
+  .form {
+    padding: 52px 40px 40px;
+    background: linear-gradient(312.62deg, #004C89 0%, #1E6BD0 100%);
+    border-radius: 10px;
+    .form__title {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      color: #FFFFFF;
+    }
+    .contact-form-block {
+      .double {
+        display: flex;
+        & .input-wrapper:first-child {
+          margin-right: 32px;
+        }
+      }
+      
+        .message-wrap {
+          height: 172px; 
+          .message {
+            height: 172px; 
+          }
+        }
+        .submit {
+          padding: 20px 32px;
+          background: #1E6BD0;
+          border-radius: 10px;
+          color: #fff;
+          margin: 0 0 0 auto;
+        }
+      
+    }
   }
 }
 

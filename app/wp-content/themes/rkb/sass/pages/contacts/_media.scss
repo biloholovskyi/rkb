@@ -3,7 +3,16 @@
     height: 100%;
   }
 }
-
+@media screen and (max-width: 1199px) {
+  #tabs {
+    .tab-title {
+      .tab {
+        padding: 0 8px 20px;
+        font-size: 13px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 991px) {
   .contacts__desc {
     margin-bottom: 40px;
@@ -11,6 +20,12 @@
   .contacts__map {
     margin-bottom: 40px;
     height: 625px; 
+  }
+  #tabs {
+    display: none;
+  }
+  .col-path {
+    display: block;
   }
 }
 
@@ -48,30 +63,59 @@
   }
   .col-form {
     padding: 0;
-  }
-  .contacts__form {
-    border-radius: 0;
-    .form__title {
-      text-align: left;
-      font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 32px;
+    .form {
+      border-radius: 0px;
+      background: #2A75D8;
+      padding: 32px 16px;
+      .form__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+      }
+      .contact-form-block {
+        .double {
+          flex-direction: column; 
+        }
+        .message-wrap {
+          height: 112px;
+          .message {
+            height: 112px;
+          }
+        }
+        .submit {
+          background-color: #fff;
+          color: #1E6BD0;
+          padding: 13px 0;
+        }
+      }
     }
-    .form__double {
-      flex-direction: column;
+  }
+  // .contacts__form {
+  //   border-radius: 0;
+  //   .form__title {
+  //     text-align: left;
+  //     font-size: 20px;
+  //   line-height: 26px;
+  //   margin-bottom: 32px;
+  //   }
+  //   .form__double {
+  //     flex-direction: column;
 
-      & label:first-child {
-        margin-bottom: 15px;
-        margin-right: 0;
-      }
-      & label:last-child {
-        margin-left: 0;
-      }
-    }
-    .submit-wrapper {
-      input {
-        width: 100%;
-      }
-    }
-  }
+  //     & label:first-child {
+  //       margin-bottom: 15px;
+  //       margin-right: 0;
+  //     }
+  //     & label:last-child {
+  //       margin-left: 0;
+  //     }
+  //   }
+  //   .submit-wrapper {
+  //     input {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
 }

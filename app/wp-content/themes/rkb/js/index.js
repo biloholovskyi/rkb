@@ -11,6 +11,7 @@ import { bigSliderRender, bigSliderNext, bigSliderPrev } from "./bigSlider";
 import { listDoctorMore } from "./listDoctorMore";
 import { revActiveButton, revAddRating } from "./revDoctor";
 import './sticky'; 
+import './tabs';
 
 
 $(document).ready((e) => {

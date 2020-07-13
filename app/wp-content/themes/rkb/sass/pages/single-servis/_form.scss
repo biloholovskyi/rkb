@@ -50,9 +50,28 @@
         }
       }
 
+      &--tel2 {
+        &::after {
+          content: 'Телефон';
+        }
+      }
+
+      &--email {
+        &::after {
+          content: 'Email';
+        }
+      }
+
       &--comment {
         &::after {
           content: 'Ваш вопрос (необязательно)';
+          top: 30px;
+        }
+      }
+
+      &--comment2 {
+        &::after {
+          content: 'Ваш вопрос';
           top: 30px;
         }
       }

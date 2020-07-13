@@ -32,31 +32,40 @@
     }
   }
 
+  
+}
+.col-path {
+  display: none;
   .contacts__path {
-    margin-top: 32px;
-
-    .info__title {
-      margin-bottom: 8px;
-    }
-
-    .item {
-      min-height: 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .title {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 22px;
-        color: #111111;
-      }
-
-      .path {
-        font-size: 14px;
-        line-height: 20px;
-        color: #111111;
-      }
-    }
-  }
+    margin-bottom: 32px;
+   
+     .info__title {
+       margin-bottom: 8px;
+       font-style: normal;
+       font-weight: 600;
+       font-size: 16px;
+       line-height: 22px;
+       color: #1E6BD0;
+     }
+   
+     .item {
+       min-height: 64px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       margin-bottom: 16px;
+       .title {
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 22px;
+         color: #111111;
+       }
+   
+       .path {
+         font-size: 14px;
+         line-height: 20px;
+         color: #111111;
+       }
+     }
+   }
 }
