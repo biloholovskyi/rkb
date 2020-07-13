@@ -29,9 +29,23 @@
     }
   }
 
+ .footer {
   .footer__btns .footer__btn {
     padding: 0 17px;
   }
+  .footer__body {
+    .footer__contact {
+      p {
+        font-size: 14px;
+      }
+    }
+    .footer__nav {
+      .title {
+        font-size: 15px;
+      }
+    }
+  }
+ }
 
   // HEADER 
   .header {
@@ -110,16 +124,36 @@
     }
   }
 
-  .footer__btns .footer__btn {
-    padding: 0 8px;
-    font-size: 14px;
-  }
-
-  .footer__nav-wrapper {
-    .footer__nav {
-      ul li a {
-        font-size: 14px;
-        line-height: 21px;
+  .footer {
+    .footer__btns .footer__btn {
+      padding: 0 8px;
+      font-size: 14px;
+    }
+  
+    .footer__body {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .footer__nav {
+        flex: 50%;
+      margin-bottom: 50px;
+        ul li a {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+      .footer__contact {
+        p {
+          max-width: 300px;
+        }
+      }
+    }
+    .footer-info {
+      p {
+        max-width: 400px;
+      }
+      & .ministry .ministry-item {
+        margin-right: 20px;
       }
     }
   }
@@ -218,35 +252,11 @@
     padding: 36px 0;
 
     .footer__body {
-      flex-direction: column;
+     
 
       .footer__left {
         display: flex;
         justify-content: center;
-
-        .footer__logo {
-          margin-bottom: 36px;
-
-          img {
-            width: 82.97px;
-            height: 60px;
-
-          }
-          
-          .text {
-            .title {
-              font-size: 15px; 
-            }
-
-            .small {
-              font-size: 11px; 
-            }
-          }
-        }
-
-        .footer__btns {
-          display: none;
-        }
       }
 
       .footer__nav-wrapper {
@@ -278,6 +288,29 @@
           line-height: 22px;
           padding: 11px 7px;
         }
+      }
+    }
+    .footer-info {
+      flex-direction: column-reverse; 
+      .ministry {
+        flex-direction: row;
+        justify-content: center;
+        .ministry-item {
+          margin-bottom: 25px;
+          margin-right: 50px;
+          p {
+            text-align: left;
+            font-size: 12px;
+          }
+        }
+        & .ministry-item:last-child {
+          margin-bottom: 36px;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 12px;
+        margin: 0 auto;
       }
     }
   }
@@ -371,6 +404,43 @@
       margin-bottom: 20px;
     }
   }
+  .footer {
+    .footer__body {
+      .footer__contact {
+        p {
+          font-size: 13px;
+        }
+      }
+      .footer__nav {
+        .title {
+          font-size: 13px;
+        }
+      }
+    }
+    .footer-info {
+      flex-direction: column-reverse; 
+      .ministry {
+        flex-direction: column;
+        .ministry-item {
+          margin-bottom: 25px;
+          margin-right: 0;
+          justify-content: center;
+          p {
+            text-align: left;
+            font-size: 12px;
+            margin: 0;
+          }
+        }
+        & .ministry-item:last-child { 
+          margin-bottom: 36px;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 11px;
+      }
+    }
+   }
 }
 
 @media screen and (max-width: 575px) {
@@ -626,4 +696,68 @@
     line-height: 26px;
     }
   }
+  .footer {
+    padding: 32px 0;
+    .footer__row {
+      padding-bottom: 0;
+    }
+    .footer__body {
+      .footer__contact {
+        p {
+          font-size: 16px;
+        }
+      }
+      .footer__nav {
+        flex: 100%;
+        margin-bottom: 32px;
+        .main-footer {
+          li a {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+        .footer__btns {
+          .footer__btn {
+            margin-right: 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .title {
+          font-size: 16px;
+          line-height: 22px;
+        }
+        ul {
+          li a {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+      .footer__contact2 {
+        padding-top: 0;
+      }
+    }
+    .footer-info {
+      flex-direction: column-reverse; 
+      .ministry {
+        flex-direction: column;
+        .ministry-item {
+          margin-bottom: 25px;
+          margin-right: 0;
+          p {
+            text-align: left;
+            font-size: 12px;
+          }
+        }
+        & .ministry-item:last-child {
+          margin-bottom: 36px;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 11px;
+      }
+    }
+   }
 }

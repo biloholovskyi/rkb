@@ -1,45 +1,82 @@
 <footer class="footer">
   <div class="container">
-    <div class="row">
+    <div class="row footer__row">
       <div class="col-12">
         <div class="footer__body">
-          <div class="footer__left"><a class="footer__logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/media/icon/logo-white.svg" alt="rkb">
-              <div class="text">
-                <div class="title">Республиканская <br> Клиническая Больница</div>
-                <div class="small">Министерства здравоохранения <br> Республики Татарстан</div>
-              </div></a>
-            <div class="footer__btns"><a class="footer__btn" href="#">Сихат РКБ</a><a class="footer__btn footer__btn--transparent" href="#">Оставить отзыв</a></div>
+        
+            <nav class="footer__nav">
+              <ul class="main-footer">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Службы</a></li>
+                <li><a href="#">Отделения</a></li>
+                <li><a href="#">Карта сайта</a></li>
+                <li><a href="#">Документация</a></li>
+              </ul>
+              <div class="footer__btns">
+                <a class="footer__btn" href="#">Сихат РКБ</a>
+            </div>
+            </nav>
+              <nav class="footer__nav information_block">
+                <div class="title">Информация</div>
+                <ul class="information">
+                  <li><a href="#">Посетителям</a></li>
+                  <li><a href="#">Специалистам</a></li>
+                  <li><a href="#">Партнерам</a></li>
+                </ul>
+                <div class="title">Новости</div>
+                <ul>
+                  <li><a href="#">Новости РКБ</a></li>
+                  <li><a href="#">Новости Минздрав РТ</a></li>
+                  <li><a href="#">Новости Минздрав РФ</a></li>
+                </ul>
+              </nav>
+              <nav class="footer__nav footer__contact">
+                <div class="title">Контакты</div>
+                <div class="title">АДРЕС</div>
+                <p>420064, Республика Татарстан, г. Казань, Оренбургский тракт, 138.</p> 
+                <div class="title">Приемная главного врача</div>
+                <a href="tel:8 (843) 231-65-95">8 (843) 231-65-95</a>
+                <a href="mailto:mz.rkb@tatar.ru">mz.rkb@tatar.ru</a> 
+              </nav>
+              <nav class="footer__nav footer__contact2">
+                <div class="title">Приемное отделение</div>
+                <a href="tel:8 (843) 231-65-95">8 (843) 231-65-95</a>
+                <a href="mailto:mz.rkb@tatar.ru">mz.rkb@tatar.ru</a>
+                <div class="title soc-title">СОЦСЕТИ</div>
+                <div class="social-icon">
+                  <a href="#" target="_blank"> 
+                    <img src="<?php echo get_template_directory_uri() ?>/media/icon/insta.svg" alt="icon">
+                  </a>
+                  <a href="#" target="_blank">
+                  <img src="<?php echo get_template_directory_uri() ?>/media/icon/facebook.svg" alt="icon">
+                  </a>
+                  <a href="#" target="_blank">
+                  <img src="<?php echo get_template_directory_uri() ?>/media/icon/twit.svg" alt="icon">
+                  </a>
+                  <a href="#" target="_blank">
+                  <img src="<?php echo get_template_directory_uri() ?>/media/icon/youtube.svg" alt="icon">
+                  </a>
+                </div>
+              </nav>
+          
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-info">
+          <p>Лицензия № ЛО-16-01-007884 от 29 октября 2019г.,<br>выдана Министерством Здравоохранения Республики Татарстан.</p>
+          <div class="ministry">
+            <div class="ministry-item">
+              <img src="<?php echo get_template_directory_uri() ?>/media/icon/gerb.svg" alt="icon">
+              <p>Министерства здравоохранения <br>Республики Татарстан</p>
+            </div>
+            <div class="ministry-item">
+              <img src="<?php echo get_template_directory_uri() ?>/media/icon/gerb2.svg" alt="icon">
+              <p>Министерства здравоохранения <br>Российской Федерации</p>
+            </div>
           </div>
-          <div class="footer__nav-wrapper">
-            <nav class="footer__nav">
-              <div class="title">Документация</div>
-              <ul>
-                <li><a href="#">Политика обработки <br> персональных данных</a></li>
-                <li><a href="#">Документация для <br> сотрудников</a></li>
-                <li><a href="#">Для партнеров и контрагентов</a></li>
-                <li><a href="#">Для пациентов</a></li>
-              </ul>
-            </nav>
-            <nav class="footer__nav">
-              <div class="title">Контакты</div>
-              <ul>
-                <li><a href="#">Карта корпусов</a></li>
-                <li><a href="#">Контакты служб</a></li>
-                <li><a href="#">Для партнеров и контрагентов</a></li>
-                <li><a href="#">Телефонный справочник <br> РКБ МЗ РТ</a></li>
-              </ul>
-            </nav>
-            <nav class="footer__nav">
-              <div class="title">О клинике</div>
-              <ul>
-                <li><a href="#">Защита персональных данных</a></li>
-                <li><a href="#">Шефы клиник ГАУЗ "РКБ МЗ РТ"</a></li>
-                <li><a href="#">Охрана труда</a></li>
-                <li><a href="#">Информация об учреждении</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__btns mobile-btn"><a class="footer__btn" href="#">Сихат РКБ</a><a class="footer__btn footer__btn--transparent" href="#">Оставить отзыв        </a></div>
         </div>
       </div>
     </div>

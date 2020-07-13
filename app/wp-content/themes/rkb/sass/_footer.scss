@@ -1,85 +1,23 @@
 .footer {
   background: linear-gradient(346.42deg, #004C89 0%, #1E6BD0 100%);
-  padding: 40px 0 60px;
+  padding: 32px 0 36px;
 
+  &__row {
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 36px;
+  }
   &__body {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__logo {
-    display: flex;
-    align-items: center;
-
-    img {
-      width: 89.97px;
-      height: 66px;
-      margin-right: 20px;
-    }
-
-    .text {
-      .title {
+    
+    .footer__nav {
+      flex: 25%;
+      .title,
+      .main-footer {
         font-weight: 600;
         font-size: 16px;
-        line-height: 20px;
-        color: #FFFFFF;
-        margin-bottom: 6px;
-      }
-
-      .small {
-        font-size: 12px;
-        line-height: 16px;
-        color: #FFFFFF;
-      }
-    }
-  }
-
-  &__btns {
-    margin-top: 40px;
-    display: flex;
-
-    .footer__btn {
-      display: block;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 48px;
-      color: #FFFFFF;
-      background: #1E6BD0;
-      border-radius: 10px;
-      padding: 0 32px;
-      margin-right: 16px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &--transparent {
-        background-color: transparent;
-        font-size: 14px;
-        border: 1px solid #FFFFFF;
-      }
-    }
-    
-  }
-
-  .mobile-btn {
-    display: none;
-  }
-  &__nav-wrapper {
-    display: flex;
-    justify-content: flex-end;
-
-    .footer__nav {
-      margin-right: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      .title {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 24px;
+        line-height: 22px;
         color: #FFFFFF;
         margin-bottom: 16px;
       }
@@ -100,6 +38,126 @@
           }
         }
       }
+      .information {
+        margin-bottom: 24px;
+      }
+      .social-icon {
+        display: flex;
+  
+        a {
+          display: block;
+          margin-right: 20px;
+  
+          img {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+  
+        & a:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .information_block {
+      ul {
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .footer__contact,
+    .footer__contact2 {
+      display: flex;
+      flex-direction: column;
+      .title {
+        text-transform: uppercase;
+      }
+      & .title:first-child {
+        margin-bottom: 24px;
+      }
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        margin-bottom: 24px;
+      }
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        margin-bottom: 8px;
+      }
+      .soc-title {
+        margin-top: 16px;
+      }
+    }
+    .footer__contact2 {
+      padding-top: 46px;
+      & .title:first-child {
+        margin-bottom: 12px;
+      }
     }
   }
+
+  
+  &__btns {
+    margin-top: 32px;
+    display: flex;
+
+    .footer__btn {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 48px;
+      color: #FFFFFF;
+      background: #1E6BD0;
+      border-radius: 10px;
+      padding: 0 32px;
+      margin-right: 16px;
+    }
+  }
+
+  .mobile-btn {
+    display: none;
+  }
+  
+  .footer-info {
+    display: flex;
+   
+    justify-content: space-between;
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: #FFFFFF;
+    }
+    .ministry {
+      display: flex;
+      
+      .ministry-item {
+        display: flex;
+       margin-right: 60px;
+       align-items: center;
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          object-position: center;
+          margin-right: 12px;
+        }
+      }
+      & .ministry-item:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
 }
