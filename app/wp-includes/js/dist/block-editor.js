@@ -17866,7 +17866,7 @@ function (_Component) {
 
       var hasItems = !Object(external_this_lodash_["isEmpty"])(suggestedItems) || !Object(external_this_lodash_["isEmpty"])(reusableItems) || !Object(external_this_lodash_["isEmpty"])(itemsPerCategory) || !Object(external_this_lodash_["isEmpty"])(itemsPerCollection);
       var hoveredItemBlockType = hoveredItem ? Object(external_this_wp_blocks_["getBlockType"])(hoveredItem.name) : null;
-      var hasHelpPanel = hasItems && showInserterHelpPanel; // Disable reason (no-autofocus): The inserter menu is a modal display, not one which
+      var hasHelpPanel = hasItems && showInserterHelpPanel; // Disable reason (no-autofocus): The inserter menu is a headerMenu display, not one which
       // is always visible, and one which already incurs this behavior of autoFocus via
       // Popover's focusOnMount.
       // Disable reason (no-static-element-interactions): Navigational key-presses within
@@ -20213,7 +20213,7 @@ var keyboard_return = __webpack_require__(192);
 
 
  // Since URLInput is rendered in the context of other inputs, but should be
-// considered a separate modal node, prevent keyboard events from propagating
+// considered a separate headerMenu node, prevent keyboard events from propagating
 // as being considered from the input.
 
 var stopEventPropagation = function stopEventPropagation(event) {
@@ -22620,10 +22620,10 @@ function (_Component) {
         className: "components-toolbar__control",
         isPressed: !!url
       }), expanded && Object(external_this_wp_element_["createElement"])("form", {
-        className: "block-editor-url-input__button-modal",
+        className: "block-editor-url-input__button-headerMenu",
         onSubmit: this.submitLink
       }, Object(external_this_wp_element_["createElement"])("div", {
-        className: "block-editor-url-input__button-modal-line"
+        className: "block-editor-url-input__button-headerMenu-line"
       }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         className: "block-editor-url-input__back",
         icon: arrow_left,

@@ -369,7 +369,7 @@ Manage = MediaFrame.extend(/** @lends wp.media.view.MediaFrame.Manage.prototype 
 	},
 
 	/**
-	 * Open the Edit Attachment modal.
+	 * Open the Edit Attachment headerMenu.
 	 */
 	openEditAttachmentModal: function( model ) {
 		// Create a new EditAttachment frame, passing along the library and the attachment model.
@@ -461,7 +461,7 @@ var Details = wp.media.view.Attachment.Details,
  * wp.media.view.Attachment.Details.TwoColumn
  *
  * A similar view to media.view.Attachment.Details
- * for use in the Edit Attachment modal.
+ * for use in the Edit Attachment headerMenu.
  *
  * @memberOf wp.media.view.Attachment.Details
  *
@@ -547,7 +547,7 @@ var Router = Backbone.Router.extend(/** @lends wp.media.view.MediaFrame.Manage.R
 		jQuery( '#media-search-input' ).val( query ).trigger( 'input' );
 	},
 
-	// Show the modal with a specific item.
+	// Show the headerMenu with a specific item.
 	showItem: function( query ) {
 		var media = wp.media,
 			frame = media.frames.browse,
@@ -570,7 +570,7 @@ var Router = Backbone.Router.extend(/** @lends wp.media.view.MediaFrame.Manage.R
 		}
 	},
 
-	// Show the modal in edit mode with a specific item.
+	// Show the headerMenu in edit mode with a specific item.
 	editItem: function( query ) {
 		this.showItem( query );
 		wp.media.frames.edit.content.mode( 'edit-details' );
@@ -636,7 +636,7 @@ var Frame = wp.media.view.Frame,
  *
  * A frame for editing the details of a specific media item.
  *
- * Opens in a modal by default.
+ * Opens in a headerMenu by default.
  *
  * Requires an attachment model to be passed in the options hash under `model`.
  *
@@ -699,12 +699,12 @@ EditAttachments = MediaFrame.extend(/** @lends wp.media.view.MediaFrame.EditAtta
 	},
 
 	bindModelHandlers: function() {
-		// Close the modal if the attachment is deleted.
+		// Close the headerMenu if the attachment is deleted.
 		this.listenTo( this.model, 'change:status destroy', this.close, this );
 	},
 
 	createModal: function() {
-		// Initialize modal container view.
+		// Initialize headerMenu container view.
 		if ( this.options.modal ) {
 			this.modal = new wp.media.view.Modal({
 				controller:     this,
@@ -713,19 +713,19 @@ EditAttachments = MediaFrame.extend(/** @lends wp.media.view.MediaFrame.EditAtta
 			});
 
 			this.modal.on( 'open', _.bind( function () {
-				$( 'body' ).on( 'keydown.media-modal', _.bind( this.keyEvent, this ) );
+				$( 'body' ).on( 'keydown.media-headerMenu', _.bind( this.keyEvent, this ) );
 			}, this ) );
 
-			// Completely destroy the modal DOM element when closing it.
+			// Completely destroy the headerMenu DOM element when closing it.
 			this.modal.on( 'close', _.bind( function() {
 				// Remove the keydown event.
-				$( 'body' ).off( 'keydown.media-modal' );
+				$( 'body' ).off( 'keydown.media-headerMenu' );
 				// Move focus back to the original item in the grid if possible.
 				$( 'li.attachment[data-id="' + this.model.get( 'id' ) +'"]' ).focus();
 				this.resetRoute();
 			}, this ) );
 
-			// Set this frame as the modal's content.
+			// Set this frame as the headerMenu's content.
 			this.modal.content( this );
 			this.modal.open();
 		}

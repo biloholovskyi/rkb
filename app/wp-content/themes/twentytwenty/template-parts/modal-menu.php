@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the menu icon and modal
+ * Displays the menu icon and headerMenu
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -143,6 +143,6 @@
 
 		</div><!-- .menu-wrapper -->
 
-	</div><!-- .menu-modal-inner -->
+	</div><!-- .menu-headerMenu-inner -->
 
-</div><!-- .menu-modal -->
+</div><!-- .menu-headerMenu -->

@@ -420,7 +420,7 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	}
 
 	/**
-	 * Prints the info for a theme (to be used in the theme installer modal).
+	 * Prints the info for a theme (to be used in the theme installer headerMenu).
 	 *
 	 * @global array $themes_allowedtags
 	 *

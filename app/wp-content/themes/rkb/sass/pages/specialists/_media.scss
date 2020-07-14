@@ -29,43 +29,31 @@
     }
   }
 
- .footer {
-  .footer__btns .footer__btn {
-    padding: 0 17px;
-  }
-  .footer__body {
-    .footer__contact {
-      p {
-        font-size: 14px;
-      }
+  .footer {
+    .footer__btns .footer__btn {
+      padding: 0 17px;
     }
-    .footer__nav {
-      .title {
-        font-size: 15px;
-      }
-    }
-  }
- }
 
-  // HEADER 
-  .header {
-    .header__bot {
-      .bot-wrapper {
-        .left {
-          .home-link {
-            .home-link__text {
-              display: none;
-            }
-          }
+    .footer__body {
+      .footer__contact {
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .footer__nav {
+        .title {
+          font-size: 15px;
         }
       }
     }
   }
-  // end header
+
   .links {
-    margin-left: 10px!important;
+    margin-left: 10px !important;
+
     .link {
-      padding: 0px 10px!important;
+      padding: 0px 10px !important;
     }
   }
 }
@@ -73,12 +61,13 @@
 @media screen and (max-width: 1199px) {
   .spec-slider__body {
     flex-direction: column;
-    .slider{
+
+    .slider {
       margin: 0 auto;
     }
 
     .links {
-      margin-left: 0!important;
+      margin-left: 0 !important;
       display: flex;
       margin-top: 15px;
 
@@ -129,47 +118,52 @@
       padding: 0 8px;
       font-size: 14px;
     }
-  
+
     .footer__body {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+
       .footer__nav {
         flex: 50%;
-      margin-bottom: 50px;
+        margin-bottom: 50px;
+
         ul li a {
           font-size: 14px;
           line-height: 21px;
         }
       }
+
       .footer__contact {
         p {
           max-width: 300px;
         }
       }
     }
+
     .footer-info {
       p {
         max-width: 400px;
       }
+
       & .ministry .ministry-item {
         margin-right: 20px;
       }
     }
   }
-    // HEADER 
-    .header {
-      .header__bot {
-        .bot-wrapper {
-          .left {
-            .header__navigation {
-              display: none;
-            }
+  // HEADER
+  .header {
+    .header__bot {
+      .bot-wrapper {
+        .left {
+          .header__navigation {
+            display: none;
           }
         }
       }
     }
-    // end header
+  }
+  // end header
 }
 
 @media screen and (max-width: 991px) {
@@ -205,6 +199,7 @@
         max-width: 704px;
         padding: 20px;
         border-radius: 10px;
+
         .title {
           max-width: 255px;
         }
@@ -252,7 +247,7 @@
     padding: 36px 0;
 
     .footer__body {
-     
+
 
       .footer__left {
         display: flex;
@@ -290,23 +285,29 @@
         }
       }
     }
+
     .footer-info {
-      flex-direction: column-reverse; 
+      flex-direction: column-reverse;
+
       .ministry {
         flex-direction: row;
         justify-content: center;
+
         .ministry-item {
           margin-bottom: 25px;
           margin-right: 50px;
+
           p {
             text-align: left;
             font-size: 12px;
           }
         }
+
         & .ministry-item:last-child {
           margin-bottom: 36px;
         }
       }
+
       p {
         text-align: center;
         font-size: 12px;
@@ -316,13 +317,13 @@
   }
 
   // end footer 
-      // HEADER 
-      .header {
-        .header__top {
-          display: none;
-        }
-      }
-      // end header
+  // HEADER
+  .header {
+    .header__top {
+      display: none;
+    }
+  }
+  // end header
 }
 
 @media screen and (max-width: 767px) {
@@ -411,36 +412,43 @@
           font-size: 13px;
         }
       }
+
       .footer__nav {
         .title {
           font-size: 13px;
         }
       }
     }
+
     .footer-info {
-      flex-direction: column-reverse; 
+      flex-direction: column-reverse;
+
       .ministry {
         flex-direction: column;
+
         .ministry-item {
           margin-bottom: 25px;
           margin-right: 0;
           justify-content: center;
+
           p {
             text-align: left;
             font-size: 12px;
             margin: 0;
           }
         }
-        & .ministry-item:last-child { 
+
+        & .ministry-item:last-child {
           margin-bottom: 36px;
         }
       }
+
       p {
         text-align: center;
         font-size: 11px;
       }
     }
-   }
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -527,6 +535,7 @@
   .news-tab {
     padding-top: 36px;
     padding-bottom: 22px;
+
     .news-tab__body {
       .other-news {
         .item {
@@ -612,10 +621,11 @@
       margin-left: 0;
     }
   }
-   // HEADER 
-   .header {
+  // HEADER
+  .header {
     .header__bot {
       border-bottom: 0;
+
       .bot-wrapper {
         .left {
           .home-link {
@@ -625,6 +635,7 @@
             }
           }
         }
+
         .right {
           .header__search {
             display: none;
@@ -635,30 +646,35 @@
   }
   // end header
   .thanks-slider__body {
-    display: none!important;  
+    display: none !important;
   }
   .thanks-slider {
     padding: 36px 0 0;
+
     .thanks__title {
       font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 0;
+      line-height: 26px;
+      margin-bottom: 0;
     }
   }
   .thanks_block--body {
     display: block;
     display: flex;
     flex-direction: column;
+
     .item {
       padding: 20px 8px;
+
       .name {
         font-size: 14px;
-    line-height: 24px;
+        line-height: 24px;
       }
+
       .medium {
         display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
         .date {
           margin-left: 4px;
         }
@@ -680,8 +696,8 @@
     border-radius: 10px;
     padding: 16px 25px;
     width: 288px;
-    margin: 16px auto 36px; 
-  } 
+    margin: 16px auto 36px;
+  }
   .news-btns {
     margin-top: 40px;
     margin-bottom: 0;
@@ -693,29 +709,34 @@
     .text {
       margin-bottom: 16px;
       font-size: 20px;
-    line-height: 26px;
+      line-height: 26px;
     }
   }
   .footer {
     padding: 32px 0;
+
     .footer__row {
       padding-bottom: 0;
     }
+
     .footer__body {
       .footer__contact {
         p {
           font-size: 16px;
         }
       }
+
       .footer__nav {
         flex: 100%;
         margin-bottom: 32px;
+
         .main-footer {
           li a {
             font-size: 16px;
             line-height: 22px;
           }
         }
+
         .footer__btns {
           .footer__btn {
             margin-right: 0;
@@ -723,10 +744,12 @@
             text-align: center;
           }
         }
+
         .title {
           font-size: 16px;
           line-height: 22px;
         }
+
         ul {
           li a {
             font-size: 16px;
@@ -734,30 +757,37 @@
           }
         }
       }
+
       .footer__contact2 {
         padding-top: 0;
       }
     }
+
     .footer-info {
-      flex-direction: column-reverse; 
+      flex-direction: column-reverse;
+
       .ministry {
         flex-direction: column;
+
         .ministry-item {
           margin-bottom: 25px;
           margin-right: 0;
+
           p {
             text-align: left;
             font-size: 12px;
           }
         }
+
         & .ministry-item:last-child {
           margin-bottom: 36px;
         }
       }
+
       p {
         text-align: center;
         font-size: 11px;
       }
     }
-   }
+  }
 }

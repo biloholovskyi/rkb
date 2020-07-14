@@ -1417,7 +1417,7 @@ module.exports = Query;
  *
  * An instance of an image that's been embedded into a post.
  *
- * Used in the embedded image attachment display settings modal - @see wp.media.view.MediaFrame.ImageDetails.
+ * Used in the embedded image attachment display settings headerMenu - @see wp.media.view.MediaFrame.ImageDetails.
  *
  * @memberOf wp.media.model
  *
@@ -1625,7 +1625,7 @@ Selection = Attachments.extend(/** @lends wp.media.model.Selection.prototype */{
 	},
 
 	/**
-	 * Fired when toggling (clicking on) an attachment in the modal.
+	 * Fired when toggling (clicking on) an attachment in the headerMenu.
 	 *
 	 * @param {undefined|boolean|wp.media.model.Attachment} model
 	 *

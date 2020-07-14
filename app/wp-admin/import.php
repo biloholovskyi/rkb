@@ -198,7 +198,7 @@ if ( empty( $importers ) ) {
 				network_admin_url( 'plugin-install.php' )
 			);
 			$action .= sprintf(
-				' | <a href="%1$s" class="thickbox open-plugin-details-modal" aria-label="%2$s">%3$s</a>',
+				' | <a href="%1$s" class="thickbox open-plugin-details-headerMenu" aria-label="%2$s">%3$s</a>',
 				esc_url( $url ),
 				/* translators: %s: Importer name. */
 				esc_attr( sprintf( __( 'More information about %s' ), $data[0] ) ),

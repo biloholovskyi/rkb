@@ -2916,7 +2916,7 @@ var Frame = wp.media.view.Frame,
 /**
  * wp.media.view.MediaFrame
  *
- * The frame used to create the media modal.
+ * The frame used to create the media headerMenu.
  *
  * @memberOf wp.media.view
  *
@@ -2951,7 +2951,7 @@ MediaFrame = Frame.extend(/** @lends wp.media.view.MediaFrame.prototype */{
 		// Ensure core UI is enabled.
 		this.$el.addClass('wp-core-ui');
 
-		// Initialize modal container view.
+		// Initialize headerMenu container view.
 		if ( this.options.modal ) {
 			this.modal = new wp.media.view.Modal({
 				controller: this,
@@ -2988,9 +2988,9 @@ MediaFrame = Frame.extend(/** @lends wp.media.view.MediaFrame.prototype */{
 		// Bind default menu.
 		this.on( 'menu:create:default', this.createMenu, this );
 
-		// Set the menu ARIA tab panel attributes when the modal opens.
+		// Set the menu ARIA tab panel attributes when the headerMenu opens.
 		this.on( 'open', this.setMenuTabPanelAriaAttributes, this );
-		// Set the router ARIA tab panel attributes when the modal opens.
+		// Set the router ARIA tab panel attributes when the headerMenu opens.
 		this.on( 'open', this.setRouterTabPanelAriaAttributes, this );
 
 		// Update the menu ARIA tab panel attributes when the content updates.
@@ -3219,7 +3219,7 @@ MediaFrame = Frame.extend(/** @lends wp.media.view.MediaFrame.prototype */{
 	}
 });
 
-// Map some of the modal's methods to the frame.
+// Map some of the headerMenu's methods to the frame.
 _.each(['open','close','attach','detach','escape'], function( method ) {
 	/**
 	 * @function open
@@ -3754,7 +3754,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						frame.close();
 					}
 
-					// Move focus to the modal after canceling a Gallery.
+					// Move focus to the headerMenu after canceling a Gallery.
 					this.controller.modal.focusManager.focus();
 				}
 			},
@@ -3781,7 +3781,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						frame.close();
 					}
 
-					// Move focus to the modal after canceling an Audio Playlist.
+					// Move focus to the headerMenu after canceling an Audio Playlist.
 					this.controller.modal.focusManager.focus();
 				}
 			},
@@ -3808,7 +3808,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						frame.close();
 					}
 
-					// Move focus to the modal after canceling a Video Playlist.
+					// Move focus to the headerMenu after canceling a Video Playlist.
 					this.controller.modal.focusManager.focus();
 				}
 			},
@@ -3853,7 +3853,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 
 			click: function() {
 				this.controller.content.mode('browse');
-				// Move focus to the modal when jumping back from Edit Selection to Add Media view.
+				// Move focus to the headerMenu when jumping back from Edit Selection to Add Media view.
 				this.controller.modal.focusManager.focus();
 			}
 		});
@@ -3953,7 +3953,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 				// Jump to Edit Gallery view.
 				this.controller.setState( 'gallery-edit' );
 
-				// Move focus to the modal after jumping to Edit Gallery view.
+				// Move focus to the headerMenu after jumping to Edit Gallery view.
 				this.controller.modal.focusManager.focus();
 			}
 		});
@@ -3983,7 +3983,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 				// Jump to Edit Audio Playlist view.
 				this.controller.setState( 'playlist-edit' );
 
-				// Move focus to the modal after jumping to Edit Audio Playlist view.
+				// Move focus to the headerMenu after jumping to Edit Audio Playlist view.
 				this.controller.modal.focusManager.focus();
 			}
 		});
@@ -4013,7 +4013,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 				// Jump to Edit Video Playlist view.
 				this.controller.setState( 'video-playlist-edit' );
 
-				// Move focus to the modal after jumping to Edit Video Playlist view.
+				// Move focus to the headerMenu after jumping to Edit Video Playlist view.
 				this.controller.modal.focusManager.focus();
 			}
 		});
@@ -4083,7 +4083,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						edit.get('library').add( state.get('selection').models );
 						state.trigger('reset');
 						controller.setState('gallery-edit');
-						// Move focus to the modal when jumping back from Add to Gallery to Edit Gallery view.
+						// Move focus to the headerMenu when jumping back from Add to Gallery to Edit Gallery view.
 						this.controller.modal.focusManager.focus();
 					}
 				}
@@ -4142,7 +4142,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						edit.get('library').add( state.get('selection').models );
 						state.trigger('reset');
 						controller.setState('playlist-edit');
-						// Move focus to the modal when jumping back from Add to Audio Playlist to Edit Audio Playlist view.
+						// Move focus to the headerMenu when jumping back from Add to Audio Playlist to Edit Audio Playlist view.
 						this.controller.modal.focusManager.focus();
 					}
 				}
@@ -4198,7 +4198,7 @@ Post = Select.extend(/** @lends wp.media.view.MediaFrame.Post.prototype */{
 						edit.get('library').add( state.get('selection').models );
 						state.trigger('reset');
 						controller.setState('video-playlist-edit');
-						// Move focus to the modal when jumping back from Add to Video Playlist to Edit Video Playlist view.
+						// Move focus to the headerMenu when jumping back from Add to Video Playlist to Edit Video Playlist view.
 						this.controller.modal.focusManager.focus();
 					}
 				}
@@ -4404,7 +4404,7 @@ var $ = jQuery,
 /**
  * wp.media.view.Modal
  *
- * A modal view, which the media modal uses as its default container.
+ * A headerMenu view, which the media headerMenu uses as its default container.
  *
  * @memberOf wp.media.view
  *
@@ -4415,7 +4415,7 @@ var $ = jQuery,
  */
 Modal = wp.media.View.extend(/** @lends wp.media.view.Modal.prototype */{
 	tagName:  'div',
-	template: wp.template('media-modal'),
+	template: wp.template('media-headerMenu'),
 
 	events: {
 		'click .media-modal-backdrop, .media-modal-close': 'escapeHandler',
@@ -4515,7 +4515,7 @@ Modal = wp.media.View.extend(/** @lends wp.media.view.Modal.prototype */{
 		}
 
 		// Set initial focus on the content instead of this view element, to avoid page scrolling.
-		this.$( '.media-modal' ).focus();
+		this.$( '.media-headerMenu' ).focus();
 
 		// Hide the page content from assistive technologies.
 		this.focusManager.setAriaHiddenOnBodyChildren( $el );
@@ -4535,18 +4535,18 @@ Modal = wp.media.View.extend(/** @lends wp.media.view.Modal.prototype */{
 		// Enable page scrolling.
 		$( 'body' ).removeClass( 'modal-open' );
 
-		// Hide modal and remove restricted media modal tab focus once it's closed.
+		// Hide headerMenu and remove restricted media headerMenu tab focus once it's closed.
 		this.$el.hide().undelegate( 'keydown' );
 
 		/*
 		 * Make visible again to assistive technologies all body children that
-		 * have been made hidden when the modal opened.
+		 * have been made hidden when the headerMenu opened.
 		 */
 		this.focusManager.removeAriaHiddenFromBodyChildren();
 
-		// Move focus back in useful location once modal is closed.
+		// Move focus back in useful location once headerMenu is closed.
 		if ( null !== this.clickedOpenerEl ) {
-			// Move focus back to the element that opened the modal.
+			// Move focus back to the element that opened the headerMenu.
 			this.clickedOpenerEl.focus();
 		} else {
 			// Fallback to the admin page main element.
@@ -4578,17 +4578,17 @@ Modal = wp.media.View.extend(/** @lends wp.media.view.Modal.prototype */{
 	},
 
 	/**
-	 * @param {Array|Object} content Views to register to '.media-modal-content'
+	 * @param {Array|Object} content Views to register to '.media-headerMenu-content'
 	 * @return {wp.media.view.Modal} Returns itself to allow chaining.
 	 */
 	content: function( content ) {
-		this.views.set( '.media-modal-content', content );
+		this.views.set( '.media-headerMenu-content', content );
 		return this;
 	},
 
 	/**
-	 * Triggers a modal event and if the `propagate` option is set,
-	 * forwards events to the modal's controller.
+	 * Triggers a headerMenu event and if the `propagate` option is set,
+	 * forwards events to the headerMenu's controller.
 	 *
 	 * @param {string} id
 	 * @return {wp.media.view.Modal} Returns itself to allow chaining.
@@ -4606,7 +4606,7 @@ Modal = wp.media.View.extend(/** @lends wp.media.view.Modal.prototype */{
 	 * @param {Object} event
 	 */
 	keydown: function( event ) {
-		// Close the modal when escape is pressed.
+		// Close the headerMenu when escape is pressed.
 		if ( 27 === event.which && this.$el.is(':visible') ) {
 			this.escape();
 			event.stopImmediatePropagation();
@@ -4685,14 +4685,14 @@ var FocusManager = wp.media.View.extend(/** @lends wp.media.view.FocusManager.pr
 	},
 
 	/**
-	 * Moves focus to the modal dialog.
+	 * Moves focus to the headerMenu dialog.
 	 *
 	 * @since 3.5.0
 	 *
 	 * @return {void}
 	 */
 	focus: function() {
-		this.$( '.media-modal' ).focus();
+		this.$( '.media-headerMenu' ).focus();
 	},
 
 	/**
@@ -4714,7 +4714,7 @@ var FocusManager = wp.media.View.extend(/** @lends wp.media.view.FocusManager.pr
 
 		tabbables = this.getTabbables();
 
-		// Keep tab focus within media modal while it's open.
+		// Keep tab focus within media headerMenu while it's open.
 		if ( tabbables.last()[0] === event.target && ! event.shiftKey ) {
 			tabbables.first().focus();
 			return false;
@@ -4730,10 +4730,10 @@ var FocusManager = wp.media.View.extend(/** @lends wp.media.view.FocusManager.pr
 	 * Sets an `aria-hidden="true"` attribute on all the body children except
 	 * the provided element and other elements that should not be hidden.
 	 *
-	 * The reason why we use `aria-hidden` is that `aria-modal="true"` is buggy
-	 * in Safari 11.1 and support is spotty in other browsers. Also, `aria-modal="true"`
+	 * The reason why we use `aria-hidden` is that `aria-headerMenu="true"` is buggy
+	 * in Safari 11.1 and support is spotty in other browsers. Also, `aria-headerMenu="true"`
 	 * prevents the `wp.a11y.speak()` ARIA live regions to work as they're outside
-	 * of the modal dialog and get hidden from assistive technologies.
+	 * of the headerMenu dialog and get hidden from assistive technologies.
 	 *
 	 * @since 5.2.3
 	 *
@@ -4754,7 +4754,7 @@ var FocusManager = wp.media.View.extend(/** @lends wp.media.view.FocusManager.pr
 
 		// Loop through the body children and hide the ones that should be hidden.
 		_.each( bodyChildren, function( element ) {
-			// Don't hide the modal element.
+			// Don't hide the headerMenu element.
 			if ( element === visibleElement[0] ) {
 				return;
 			}
@@ -4823,7 +4823,7 @@ var FocusManager = wp.media.View.extend(/** @lends wp.media.view.FocusManager.pr
 
 	/**
 	 * Stores an array of DOM elements that should be hidden from assistive
-	 * technologies, for example when the media modal dialog opens.
+	 * technologies, for example when the media headerMenu dialog opens.
 	 *
 	 * @since 5.2.3
 	 */
@@ -5613,7 +5613,7 @@ UploaderStatus = View.extend(/** @lends wp.media.view.UploaderStatus.prototype *
 			_.invoke( errors, 'remove' );
 		}
 		wp.Uploader.errors.reset();
-		// Move focus to the modal after the dismiss button gets removed from the DOM.
+		// Move focus to the headerMenu after the dismiss button gets removed from the DOM.
 		if ( this.controller.modal ) {
 			this.controller.modal.focusManager.focus();
 		}
@@ -7210,7 +7210,7 @@ Attachments = View.extend(/** @lends wp.media.view.Attachments.prototype */{
 
 		this._viewsByCid = {};
 		this.$window = $( window );
-		this.resizeEvent = 'resize.media-modal-columns';
+		this.resizeEvent = 'resize.media-headerMenu-columns';
 
 		this.collection.on( 'add', function( attachment ) {
 			this.views.add( this.createAttachmentView( attachment ), {
@@ -7288,10 +7288,10 @@ Attachments = View.extend(/** @lends wp.media.view.Attachments.prototype */{
 		 * Additionally: this view is used for both the attachments list and
 		 * the list of selected attachments in the bottom media toolbar. Thus, when
 		 * uploading attachments, it is called twice and returns two different `this`.
-		 * `this.columns` is truthy within the modal.
+		 * `this.columns` is truthy within the headerMenu.
 		 */
 		if ( this.columns ) {
-			// Move focus to the grid list within the modal.
+			// Move focus to the grid list within the headerMenu.
 			this.$el.focus();
 		}
 	},
@@ -8048,7 +8048,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 			/*
 			 * Create a multi-purpose toolbar. Used as main toolbar in the Media Library
 			 * and also for other things, for example the "Drag and drop to reorder" and
-			 * "Suggested dimensions" info in the media modal.
+			 * "Suggested dimensions" info in the media headerMenu.
 			 */
 			this.createToolbar();
 		} else {
@@ -8153,7 +8153,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 		if ( showFilterByType || this.options.date ) {
 			/*
 			 * Create a h2 heading before the select elements that filter attachments.
-			 * This heading is visible in the modal and visually hidden in the grid.
+			 * This heading is visible in the headerMenu and visually hidden in the grid.
 			 */
 			this.toolbar.set( 'filters-heading', new wp.media.view.Heading( {
 				priority:   -100,
@@ -8617,7 +8617,7 @@ Selection = wp.media.View.extend(/** @lends wp.media.view.Selection.prototype */
 		event.preventDefault();
 		this.collection.reset();
 
-		// Move focus to the modal.
+		// Move focus to the headerMenu.
 		this.controller.modal.focusManager.focus();
 	}
 });
@@ -9070,7 +9070,7 @@ Details = Attachment.extend(/** @lends wp.media.view.Attachment.Details.prototyp
 			return;
 		}
 
-		// Fallback: move focus to the "Select Files" button in the media modal.
+		// Fallback: move focus to the "Select Files" button in the media headerMenu.
 		if ( this.controller.uploader && this.controller.uploader.$browser ) {
 			this.controller.uploader.$browser.focus();
 			return;
@@ -9096,7 +9096,7 @@ Details = Attachment.extend(/** @lends wp.media.view.Attachment.Details.prototyp
 	 * Deletes an attachment.
 	 *
 	 * Deletes an attachment after asking for confirmation. After deletion,
-	 * keeps focus in the modal.
+	 * keeps focus in the headerMenu.
 	 *
 	 * @since 3.5.0
 	 *
@@ -10164,7 +10164,7 @@ module.exports = Spinner;
  *
  * A reusable heading component for the media library
  *
- * Used to add accessibility friendly headers in the media library/modal.
+ * Used to add accessibility friendly headers in the media library/headerMenu.
  *
  * @class
  * @augments wp.media.View

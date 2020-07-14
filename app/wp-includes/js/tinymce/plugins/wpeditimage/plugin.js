@@ -530,7 +530,7 @@ tinymce.PluginManager.add( 'wpeditimage', function( editor ) {
 		// Mark the image node so we can select it later.
 		editor.$( img ).attr( 'data-wp-editing', 1 );
 
-		// Manipulate the metadata by reference that is fed into the PostImage model used in the media modal.
+		// Manipulate the metadata by reference that is fed into the PostImage model used in the media headerMenu.
 		wp.media.events.trigger( 'editor:image-edit', {
 			editor: editor,
 			metadata: metadata,

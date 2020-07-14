@@ -91,25 +91,25 @@ wp.themePluginEditor = (function( $ ) {
 	};
 
 	/**
-	 * Set up and display the warning modal.
+	 * Set up and display the warning headerMenu.
 	 *
 	 * @since 4.9.0
 	 * @return {void}
 	 */
 	component.showWarning = function() {
-		// Get the text within the modal.
+		// Get the text within the headerMenu.
 		var rawMessage = component.warning.find( '.file-editor-warning-message' ).text();
 		// Hide all the #wpwrap content from assistive technologies.
 		$( '#wpwrap' ).attr( 'aria-hidden', 'true' );
-		// Detach the warning modal from its position and append it to the body.
+		// Detach the warning headerMenu from its position and append it to the body.
 		$( document.body )
 			.addClass( 'modal-open' )
 			.append( component.warning.detach() );
-		// Reveal the modal and set focus on the go back button.
+		// Reveal the headerMenu and set focus on the go back button.
 		component.warning
 			.removeClass( 'hidden' )
 			.find( '.file-editor-warning-go-back' ).focus();
-		// Get the links and buttons within the modal.
+		// Get the links and buttons within the headerMenu.
 		component.warningTabbables = component.warning.find( 'a, button' );
 		// Attach event handlers.
 		component.warningTabbables.on( 'keydown', component.constrainTabbing );
@@ -121,7 +121,7 @@ wp.themePluginEditor = (function( $ ) {
 	};
 
 	/**
-	 * Constrain tabbing within the warning modal.
+	 * Constrain tabbing within the warning headerMenu.
 	 *
 	 * @since 4.9.0
 	 * @param {object} event jQuery event object.
@@ -147,7 +147,7 @@ wp.themePluginEditor = (function( $ ) {
 	};
 
 	/**
-	 * Dismiss the warning modal.
+	 * Dismiss the warning headerMenu.
 	 *
 	 * @since 4.9.0
 	 * @return {void}
@@ -158,7 +158,7 @@ wp.themePluginEditor = (function( $ ) {
 			pointer: component.themeOrPlugin + '_editor_notice'
 		});
 
-		// Hide modal.
+		// Hide headerMenu.
 		component.warning.remove();
 		$( '#wpwrap' ).removeAttr( 'aria-hidden' );
 		$( 'body' ).removeClass( 'modal-open' );

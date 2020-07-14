@@ -2723,7 +2723,7 @@
 
 /* Responsive on portrait and landscape */
 @media only screen and (max-width: 640px), screen and (max-height: 400px) {
-	/* Full-bleed modal */
+	/* Full-bleed headerMenu */
 	.media-modal,
 	.image-details .media-modal {
 		position: fixed;

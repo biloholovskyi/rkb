@@ -1772,9 +1772,9 @@
 
 				// Pressing the escape key fires a theme:collapse event.
 				if ( 27 === event.keyCode ) {
-					if ( section.$body.hasClass( 'modal-open' ) ) {
+					if ( section.$body.hasClass( 'headerMenu-open' ) ) {
 
-						// Escape from the details modal.
+						// Escape from the details headerMenu.
 						section.closeDetails();
 					} else {
 
@@ -2449,7 +2449,7 @@
 		},
 
 		/**
-		 * Advance the modal to the next theme.
+		 * Advance the headerMenu to the next theme.
 		 *
 		 * @since 4.2.0
 		 *
@@ -2488,7 +2488,7 @@
 		},
 
 		/**
-		 * Advance the modal to the previous theme.
+		 * Advance the headerMenu to the previous theme.
 		 *
 		 * @since 4.2.0
 		 * @return {void}
@@ -2582,7 +2582,7 @@
 			section.overlay.find( 'button.preview, button.preview-theme' ).toggleClass( 'disabled', disableSwitchButtons() );
 			section.overlay.find( 'button.theme-install' ).toggleClass( 'disabled', disableInstallButtons() );
 
-			section.$body.addClass( 'modal-open' );
+			section.$body.addClass( 'headerMenu-open' );
 			section.containFocus( section.overlay );
 			section.updateLimits();
 			wp.a11y.speak( api.settings.l10n.announceThemeDetails.replace( '%s', theme.name ) );
@@ -2592,7 +2592,7 @@
 		},
 
 		/**
-		 * Close the theme details modal.
+		 * Close the theme details headerMenu.
 		 *
 		 * @since 4.2.0
 		 *
@@ -2600,13 +2600,13 @@
 		 */
 		closeDetails: function () {
 			var section = this;
-			section.$body.removeClass( 'modal-open' );
+			section.$body.removeClass( 'headerMenu-open' );
 			section.overlay.fadeOut( 'fast' );
 			api.control( section.params.action + '_theme_' + section.currentTheme ).container.find( '.theme' ).focus();
 		},
 
 		/**
-		 * Keep tab focus within the theme details modal.
+		 * Keep tab focus within the theme details headerMenu.
 		 *
 		 * @since 4.2.0
 		 *
@@ -3110,7 +3110,7 @@
 				panel.installTheme( event );
 			});
 
-			// Update a theme. Theme cards have the class, the details modal has the id.
+			// Update a theme. Theme cards have the class, the details headerMenu has the id.
 			panel.contentContainer.on( 'click', '.update-theme, #update-theme', function( event ) {
 
 				// #update-theme is a link.
@@ -3254,10 +3254,10 @@
 					api.control.add( themeControl );
 					api.control( themeControl.id ).container.trigger( 'render-screenshot' );
 
-					// Close the details modal if it's open to the installed theme.
+					// Close the details headerMenu if it's open to the installed theme.
 					api.section.each( function( section ) {
 						if ( 'themes' === section.params.type ) {
-							if ( theme.id === section.currentTheme ) { // Don't close the modal if the user has navigated elsewhere.
+							if ( theme.id === section.currentTheme ) { // Don't close the headerMenu if the user has navigated elsewhere.
 								section.closeDetails();
 							}
 						}
@@ -3444,7 +3444,7 @@
 				slug: theme
 			} );
 
-			// Close modal and focus the section.
+			// Close headerMenu and focus the section.
 			section.closeDetails();
 			section.focus();
 		}
@@ -4182,7 +4182,7 @@
 	});
 
 	/**
-	 * A control that implements the media modal.
+	 * A control that implements the media headerMenu.
 	 *
 	 * @class    wp.customize.MediaControl
 	 * @augments wp.customize.Control
@@ -4277,7 +4277,7 @@
 		},
 
 		/**
-		 * Open the media modal.
+		 * Open the media headerMenu.
 		 */
 		openFrame: function( event ) {
 			if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
@@ -4294,7 +4294,7 @@
 		},
 
 		/**
-		 * Create a media modal select frame, and store it so the instance can be reused when needed.
+		 * Create a media headerMenu select frame, and store it so the instance can be reused when needed.
 		 */
 		initFrame: function() {
 			this.frame = wp.media({
@@ -4316,11 +4316,11 @@
 		},
 
 		/**
-		 * Callback handler for when an attachment is selected in the media modal.
+		 * Callback handler for when an attachment is selected in the media headerMenu.
 		 * Gets the selected image information, and sets it within the control.
 		 */
 		select: function() {
-			// Get the attachment from the modal frame.
+			// Get the attachment from the headerMenu frame.
 			var node,
 				attachment = this.frame.state().get( 'selection' ).first().toJSON(),
 				mejsSettings = window._wpmejsSettings || {};
@@ -4370,7 +4370,7 @@
 	});
 
 	/**
-	 * An upload control, which utilizes the media modal.
+	 * An upload control, which utilizes the media headerMenu.
 	 *
 	 * @class    wp.customize.UploadControl
 	 * @augments wp.customize.MediaControl
@@ -4378,11 +4378,11 @@
 	api.UploadControl = api.MediaControl.extend(/** @lends wp.customize.UploadControl.prototype */{
 
 		/**
-		 * Callback handler for when an attachment is selected in the media modal.
+		 * Callback handler for when an attachment is selected in the media headerMenu.
 		 * Gets the selected image information, and sets it within the control.
 		 */
 		select: function() {
-			// Get the attachment from the modal frame.
+			// Get the attachment from the headerMenu frame.
 			var node,
 				attachment = this.frame.state().get( 'selection' ).first().toJSON(),
 				mejsSettings = window._wpmejsSettings || {};
@@ -4439,7 +4439,7 @@
 		},
 
 		/**
-		 * Callback handler for when an attachment is selected in the media modal.
+		 * Callback handler for when an attachment is selected in the media headerMenu.
 		 * Does an additional AJAX request for setting the background context.
 		 */
 		select: function() {
@@ -4503,7 +4503,7 @@
 	api.CroppedImageControl = api.MediaControl.extend(/** @lends wp.customize.CroppedImageControl.prototype */{
 
 		/**
-		 * Open the media modal to the library state.
+		 * Open the media headerMenu to the library state.
 		 */
 		openFrame: function( event ) {
 			if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
@@ -4515,7 +4515,7 @@
 		},
 
 		/**
-		 * Create a media modal select frame, and store it so the instance can be reused when needed.
+		 * Create a media headerMenu select frame, and store it so the instance can be reused when needed.
 		 */
 		initFrame: function() {
 			var l10n = _wpMediaViewsL10n;
@@ -4548,7 +4548,7 @@
 		},
 
 		/**
-		 * After an image is selected in the media modal, switch to the cropper
+		 * After an image is selected in the media headerMenu, switch to the cropper
 		 * state if the image isn't the right size.
 		 */
 		onSelect: function() {
@@ -4703,7 +4703,7 @@
 	api.SiteIconControl = api.CroppedImageControl.extend(/** @lends wp.customize.SiteIconControl.prototype */{
 
 		/**
-		 * Create a media modal select frame, and store it so the instance can be reused when needed.
+		 * Create a media headerMenu select frame, and store it so the instance can be reused when needed.
 		 */
 		initFrame: function() {
 			var l10n = _wpMediaViewsL10n;
@@ -4736,7 +4736,7 @@
 		},
 
 		/**
-		 * After an image is selected in the media modal, switch to the cropper
+		 * After an image is selected in the media headerMenu, switch to the cropper
 		 * state if the image isn't the right size.
 		 */
 		onSelect: function() {
@@ -4999,7 +4999,7 @@
 		},
 
 		/**
-		 * After an image is selected in the media modal,
+		 * After an image is selected in the media headerMenu,
 		 * switch to the cropper state.
 		 */
 		onSelect: function() {
@@ -5131,7 +5131,7 @@
 					return control.touchDrag = false;
 				}
 
-				// Prevent the modal from showing when the user clicks the action button.
+				// Prevent the headerMenu from showing when the user clicks the action button.
 				if ( $( event.target ).is( '.theme-actions .button, .update-theme' ) ) {
 					return;
 				}
@@ -8445,7 +8445,7 @@
 
 			/*
 			 * Abort if the event target is not the body (the default) and not inside of #customize-controls.
-			 * This ensures that ESC meant to collapse a modal dialog or a TinyMCE toolbar won't collapse something else.
+			 * This ensures that ESC meant to collapse a headerMenu dialog or a TinyMCE toolbar won't collapse something else.
 			 */
 			if ( ! $( event.target ).is( 'body' ) && ! $.contains( $( '#customize-controls' )[0], event.target ) ) {
 				return;
@@ -8479,7 +8479,7 @@
 				if ( 'themes' === collapsedObject.params.type ) {
 
 					// Themes panel or section.
-					if ( body.hasClass( 'modal-open' ) ) {
+					if ( body.hasClass( 'headerMenu-open' ) ) {
 						collapsedObject.closeDetails();
 					} else if ( api.panel.has( 'themes' ) ) {
 

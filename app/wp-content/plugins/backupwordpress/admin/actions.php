@@ -582,7 +582,7 @@ function heartbeat_received( $response, $data ) {
 add_filter( 'heartbeat_received', 'HM\BackUpWordPress\heartbeat_received', 10, 2 );
 
 /**
- * Load the enable support modal contents
+ * Load the enable support headerMenu contents
  *
  * @return void
  */

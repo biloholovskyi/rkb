@@ -2147,7 +2147,7 @@ function wp_ajax_inline_save_tax() {
 }
 
 /**
- * Ajax handler for querying posts for the Find Posts modal.
+ * Ajax handler for querying posts for the Find Posts headerMenu.
  *
  * @see window.findPosts
  *
@@ -2459,7 +2459,7 @@ function wp_ajax_media_create_image_subsizes() {
 		// The old (inline) uploader. Only needs the attachment_id.
 		$response = array( 'id' => $attachment_id );
 	} else {
-		// Media modal and Media Library grid view.
+		// Media headerMenu and Media Library grid view.
 		$response = wp_prepare_attachment_for_js( $attachment_id );
 
 		if ( ! $response ) {

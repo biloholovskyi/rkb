@@ -919,7 +919,7 @@ msgid "Sorry, the post could not be created."
 msgstr "К сожалению, запись не может быть создана."
 
 #. translators: Minimum input length in characters to start searching posts in
-#. the "Insert/edit link" modal.
+#. the "Insert/edit link" headerMenu.
 #: wp-includes/script-loader.php:1125
 msgctxt "minimum input length for searching post links"
 msgid "3"
@@ -950,12 +950,12 @@ msgid "No Preview Available."
 msgstr "Предварительный просмотр недоступен."
 
 #: wp-includes/media-template.php:181
-msgctxt "media modal menu actions"
+msgctxt "media headerMenu menu actions"
 msgid "Actions"
 msgstr "Действия"
 
 #: wp-includes/media-template.php:183
-msgctxt "media modal menu"
+msgctxt "media headerMenu menu"
 msgid "Menu"
 msgstr "Меню"
 

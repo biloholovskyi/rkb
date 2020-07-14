@@ -683,7 +683,7 @@
 		},
 		/**
 		 * 'select' callback for Featured Image workflow, triggered when
-		 *  the 'Set Featured Image' button is clicked in the media modal.
+		 *  the 'Set Featured Image' button is clicked in the media headerMenu.
 		 *
 		 * @this wp.media.controller.FeaturedImage
 		 */
@@ -932,7 +932,7 @@
 		send: {
 			/**
 			 * Called when sending an attachment to the editor
-			 *   from the medial modal.
+			 *   from the medial headerMenu.
 			 *
 			 * @param {Object} props Attachment details (align, link, size, etc).
 			 * @param {Object} attachment The attachment object, media version of Post.

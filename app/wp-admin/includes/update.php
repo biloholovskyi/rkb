@@ -467,7 +467,7 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 				$plugin_name,
 				esc_url( $details_url ),
 				sprintf(
-					'class="thickbox open-plugin-details-modal" aria-label="%s"',
+					'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 					/* translators: 1: Plugin name, 2: Version number. */
 					esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $plugin_name, $response->new_version ) )
 				),
@@ -480,7 +480,7 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 				$plugin_name,
 				esc_url( $details_url ),
 				sprintf(
-					'class="thickbox open-plugin-details-modal" aria-label="%s"',
+					'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 					/* translators: 1: Plugin name, 2: Version number. */
 					esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $plugin_name, $response->new_version ) )
 				),
@@ -494,7 +494,7 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 					$plugin_name,
 					esc_url( $details_url ),
 					sprintf(
-						'class="thickbox open-plugin-details-modal" aria-label="%s"',
+						'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 						/* translators: 1: Plugin name, 2: Version number. */
 						esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $plugin_name, $response->new_version ) )
 					),
@@ -513,7 +513,7 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 					$plugin_name,
 					esc_url( $details_url ),
 					sprintf(
-						'class="thickbox open-plugin-details-modal" aria-label="%s"',
+						'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 						/* translators: 1: Plugin name, 2: Version number. */
 						esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $plugin_name, $response->new_version ) )
 					),
@@ -653,7 +653,7 @@ function wp_theme_update_row( $theme_key, $theme ) {
 			$theme['Name'],
 			esc_url( $details_url ),
 			sprintf(
-				'class="thickbox open-plugin-details-modal" aria-label="%s"',
+				'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 				/* translators: 1: Theme name, 2: Version number. */
 				esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme['Name'], $response['new_version'] ) )
 			),
@@ -666,7 +666,7 @@ function wp_theme_update_row( $theme_key, $theme ) {
 			$theme['Name'],
 			esc_url( $details_url ),
 			sprintf(
-				'class="thickbox open-plugin-details-modal" aria-label="%s"',
+				'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 				/* translators: 1: Theme name, 2: Version number. */
 				esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme['Name'], $response['new_version'] ) )
 			),
@@ -679,7 +679,7 @@ function wp_theme_update_row( $theme_key, $theme ) {
 			$theme['Name'],
 			esc_url( $details_url ),
 			sprintf(
-				'class="thickbox open-plugin-details-modal" aria-label="%s"',
+				'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
 				/* translators: 1: Theme name, 2: Version number. */
 				esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme['Name'], $response['new_version'] ) )
 			),

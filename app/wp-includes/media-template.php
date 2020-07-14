@@ -157,7 +157,7 @@ function wp_underscore_video_template() {
  */
 function wp_print_media_templates() {
 	global $is_IE;
-	$class = 'media-modal wp-core-ui';
+	$class = 'media-headerMenu wp-core-ui';
 	if ( $is_IE && strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 7' ) !== false ) {
 		$class .= ' ie7';
 	}
@@ -175,12 +175,12 @@ function wp_print_media_templates() {
 	);
 	?>
 
-	<?php // Template for the media frame: used both in the media grid and in the media modal. ?>
+	<?php // Template for the media frame: used both in the media grid and in the media headerMenu. ?>
 	<script type="text/html" id="tmpl-media-frame">
 		<div class="media-frame-title" id="media-frame-title"></div>
-		<h2 class="media-frame-menu-heading"><?php _ex( 'Actions', 'media modal menu actions' ); ?></h2>
+		<h2 class="media-frame-menu-heading"><?php _ex( 'Actions', 'media headerMenu menu actions' ); ?></h2>
 		<button type="button" class="button button-link media-frame-menu-toggle" aria-expanded="false">
-			<?php _ex( 'Menu', 'media modal menu' ); ?>
+			<?php _ex( 'Menu', 'media headerMenu menu' ); ?>
 			<span class="dashicons dashicons-arrow-down" aria-hidden="true"></span>
 		</button>
 		<div class="media-frame-menu"></div>
@@ -198,7 +198,7 @@ function wp_print_media_templates() {
 		<div class="media-frame-uploader"></div>
 	</script>
 
-	<?php // Template for the media modal. ?>
+	<?php // Template for the media headerMenu. ?>
 	<script type="text/html" id="tmpl-media-modal">
 		<div tabindex="0" class="<?php echo $class; ?>" role="dialog" aria-labelledby="media-frame-title">
 			<# if ( data.hasCloseButton ) { #>

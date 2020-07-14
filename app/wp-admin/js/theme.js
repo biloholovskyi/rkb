@@ -444,13 +444,13 @@ themes.view.Theme = wp.Backbone.View.extend({
 			return this.touchDrag = false;
 		}
 
-		// Prevent the modal from showing when the user clicks
+		// Prevent the headerMenu from showing when the user clicks
 		// one of the direct action buttons.
 		if ( $( event.target ).is( '.theme-actions a' ) ) {
 			return;
 		}
 
-		// Prevent the modal from showing when the user clicks one of the direct action buttons.
+		// Prevent the headerMenu from showing when the user clicks one of the direct action buttons.
 		if ( $( event.target ).is( '.theme-actions a, .update-message, .button-link, .notice-dismiss' ) ) {
 			return;
 		}
@@ -655,7 +655,7 @@ themes.view.Theme = wp.Backbone.View.extend({
 });
 
 // Theme Details view.
-// Sets up a modal overlay with the expanded theme data.
+// Sets up a headerMenu overlay with the expanded theme data.
 themes.view.Details = wp.Backbone.View.extend({
 
 	// Wrap theme data on a div.theme element.
@@ -692,7 +692,7 @@ themes.view.Details = wp.Backbone.View.extend({
 		this.$el.toggleClass( 'active', this.model.get( 'active' ) );
 	},
 
-	// Set initial focus and constrain tabbing within the theme browser modal.
+	// Set initial focus and constrain tabbing within the theme browser headerMenu.
 	containFocus: function( $el ) {
 
 		// Set initial focus on the primary action control.
@@ -700,7 +700,7 @@ themes.view.Details = wp.Backbone.View.extend({
 			$( '.theme-overlay' ).focus();
 		}, 100 );
 
-		// Constrain tabbing within the modal.
+		// Constrain tabbing within the headerMenu.
 		$el.on( 'keydown.wp-themes', function( event ) {
 			var $firstFocusable = $el.find( '.theme-header button:not(.disabled)' ).first(),
 				$lastFocusable = $el.find( '.theme-actions a:visible' ).last();
@@ -740,7 +740,7 @@ themes.view.Details = wp.Backbone.View.extend({
 
 			// With a quick fade out animation.
 			this.$el.fadeOut( 130, function() {
-				// Clicking outside the modal box closes the overlay.
+				// Clicking outside the headerMenu box closes the overlay.
 				$( 'body' ).removeClass( 'closing-overlay' );
 				// Handle event cleanup.
 				self.closeOverlay();
@@ -868,7 +868,7 @@ themes.view.Details = wp.Backbone.View.extend({
 });
 
 // Theme Preview view.
-// Sets up a modal overlay with the expanded theme data.
+// Sets up a headerMenu overlay with the expanded theme data.
 themes.view.Preview = themes.view.Details.extend({
 
 	className: 'wp-full-overlay expanded',
@@ -1174,7 +1174,7 @@ themes.view.Themes = wp.Backbone.View.extend({
 			// ...and append them to div.themes.
 			self.$el.append( self.theme.el );
 
-			// Binds to theme:expand to show the modal box
+			// Binds to theme:expand to show the headerMenu box
 			// with the theme details.
 			self.listenTo( self.theme, 'theme:expand', self.expand, self );
 		});
@@ -1259,7 +1259,7 @@ themes.view.Themes = wp.Backbone.View.extend({
 	},
 
 	/*
-	 * This method renders the next theme on the overlay modal
+	 * This method renders the next theme on the overlay headerMenu
 	 * based on the current position in the collection.
 	 *
 	 * @params [model cid]
@@ -1287,7 +1287,7 @@ themes.view.Themes = wp.Backbone.View.extend({
 	},
 
 	/*
-	 * This method renders the previous theme on the overlay modal
+	 * This method renders the previous theme on the overlay headerMenu
 	 * based on the current position in the collection.
 	 *
 	 * @params [model cid]

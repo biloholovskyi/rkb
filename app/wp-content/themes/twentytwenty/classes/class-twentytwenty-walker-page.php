@@ -100,7 +100,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Page' ) ) {
 				// Add a toggle to items with children.
 				if ( isset( $args['pages_with_children'][ $page->ID ] ) ) {
 
-					$toggle_target_string = '.menu-modal .page-item-' . $page->ID . ' > ul';
+					$toggle_target_string = '.menu-headerMenu .page-item-' . $page->ID . ' > ul';
 					$toggle_duration      = twentytwenty_toggle_duration();
 
 					// Add the sub menu toggle.

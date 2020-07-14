@@ -46,7 +46,7 @@ final class _WP_Editors {
 	 *     @type string     $default_editor    When both TinyMCE and Quicktags are used, set which
 	 *                                         editor is shown on page load. Default empty.
 	 *     @type bool       $drag_drop_upload  Whether to enable drag & drop on the editor uploading. Default false.
-	 *                                         Requires the media modal.
+	 *                                         Requires the media headerMenu.
 	 *     @type string     $textarea_name     Give the textarea a unique name here. Square brackets
 	 *                                         can be used here. Default $editor_id.
 	 *     @type int        $textarea_rows     Number rows in the editor textarea. Default 20.
@@ -1393,7 +1393,7 @@ final class _WP_Editors {
 				'Text'                                 => _x( 'Text', 'Name for the Text editor tab (formerly HTML)' ), // Editor switch tab label.
 				'Add Media'                            => array( __( 'Add Media' ), 'accessM' ), // Tooltip for the 'Add Media' button in the block editor Classic block.
 
-				// Shortcuts help modal.
+				// Shortcuts help headerMenu.
 				'Keyboard Shortcuts'                   => array( __( 'Keyboard Shortcuts' ), 'accessH' ),
 				'Classic Block Keyboard Shortcuts'     => __( 'Classic Block Keyboard Shortcuts' ),
 				'Default shortcuts,'                   => __( 'Default shortcuts,' ),

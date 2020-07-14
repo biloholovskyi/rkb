@@ -47,10 +47,10 @@
 
 			// Create the media frame.
 			frame = wp.media.frames.customHeader = wp.media({
-				// Set the title of the modal.
+				// Set the title of the headerMenu.
 				title: $el.data('choose'),
 
-				// Tell the modal to show only images.
+				// Tell the headerMenu to show only images.
 				library: {
 					type: 'image'
 				},
@@ -59,7 +59,7 @@
 				button: {
 					// Set the text of the button.
 					text: $el.data('update'),
-					// Tell the button not to close the modal, since we're
+					// Tell the button not to close the headerMenu, since we're
 					// going to refresh the page when the image is selected.
 					close: false
 				}

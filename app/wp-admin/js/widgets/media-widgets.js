@@ -717,7 +717,7 @@ wp.mediaWidgets = ( function( $ ) {
 		},
 
 		/**
-		 * Handle click on link to Media Library to open modal, such as the link that appears when in the missing attachment error notice.
+		 * Handle click on link to Media Library to open headerMenu, such as the link that appears when in the missing attachment error notice.
 		 *
 		 * @param {jQuery.Event} event - Event.
 		 * @return {void}
@@ -808,8 +808,8 @@ wp.mediaWidgets = ( function( $ ) {
 			}
 
 			/*
-			 * Make sure focus is set inside of modal so that hitting Esc will close
-			 * the modal and not inadvertently cause the widget to collapse in the customizer.
+			 * Make sure focus is set inside of headerMenu so that hitting Esc will close
+			 * the headerMenu and not inadvertently cause the widget to collapse in the customizer.
 			 */
 			mediaFrame.$el.find( '.media-frame-menu .media-menu-item.active' ).focus();
 		},

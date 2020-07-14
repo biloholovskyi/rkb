@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  //modal show tel
+  //headerMenu show tel
   $('.show-phone').on('click', function(){
     $('.showTel-overlay').fadeIn().css('display', 'flex');
   });
@@ -8,14 +8,14 @@ $(document).ready(function(){
   });
 
 
-  // show diplom modal
+  // show diplom headerMenu
   $('.diplom-overlay').on('click', function(){
     const current = $(this);
     const img     = current.parent().find('img').attr('src');
     
-    $('.modal-img').css('background-image', 'url(' + img + ')');
+    $('.headerMenu-img').css('background-image', 'url(' + img + ')');
 
-    $('.diplom-overlay-modal').css('display', 'flex');
+    $('.diplom-overlay-headerMenu').css('display', 'flex');
  
     
   });
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 
 $(document).on('click', function(e){
-  let modal = $('.showTel-modal');
+  let modal = $('.showTel-headerMenu');
   let btn   = $('.show-phone');
   
   if(!btn.is(e.target) && btn.has(e.target).length === 0) {
@@ -38,7 +38,7 @@ $(document).on('click', function(e){
 let imgModal = $('.diplom-overlay');
 
 if(!imgModal.is(e.target) && imgModal.has(e.target).length === 0) {
-  $('.diplom-overlay-modal').fadeOut().css('display', 'none');
+  $('.diplom-overlay-headerMenu').fadeOut().css('display', 'none');
 }
 
 

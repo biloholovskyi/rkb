@@ -832,7 +832,7 @@ function (_Component) {
         Object(external_this_lodash_["castArray"])(this.props.value).forEach(function (id) {
           selection.add(wp.media.attachment(id));
         });
-      } // load the images so they are available in the media modal.
+      } // load the images so they are available in the media headerMenu.
 
 
       getAttachmentsCollection(Object(external_this_lodash_["castArray"])(this.props.value)).more();

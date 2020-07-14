@@ -643,7 +643,7 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 			editor.addShortcut( 'access+z', '', 'WP_Adv' );
 		}
 
-		// Workaround for not triggering the global help modal in the block editor by the Classic block shortcut.
+		// Workaround for not triggering the global help headerMenu in the block editor by the Classic block shortcut.
 		editor.on( 'keydown', function( event ) {
 			var match;
 

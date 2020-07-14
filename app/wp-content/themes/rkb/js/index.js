@@ -12,10 +12,14 @@ import { listDoctorMore } from "./listDoctorMore";
 import { revActiveButton, revAddRating } from "./revDoctor";
 import './sticky'; 
 import './tabs';
+import HeaderMenu from "./headerMenu/headerMenu";
+
+const headerMenu = new HeaderMenu();
 
 
 $(document).ready((e) => {
   bigSliderRender();
+  headerMenu.shadow();
 
   // specialists slider
   $('.spec-slider__body .slider').owlCarousel({
@@ -106,7 +110,8 @@ $(document).ready((e) => {
   $('.search-doctor-list .list__body .more').on('click', listDoctorMore);
   $('#rev-form input, #rev-form textarea').on('input', revActiveButton);
   $('.form_spec .rank .star-block button').on('click', (e) => revAddRating(e));
-
+  $('.menu-item-has-children a').on('click', (e) => headerMenu.subMenu(e))
+  $('.header__menu-btn').on('click', headerMenu.mobileMenu);
 
   // aside bar add active
   $('.aside ul li').on('click', function(){
@@ -116,39 +121,16 @@ $(document).ready((e) => {
     }
   });
 
-  // main modal menu
-  $('.header__menu-btn').on('click', function(){
-    $('.modal-overlay').toggleClass('active');
-    $('.header').toggleClass('active');
-    $(this).parents('.header').children('.header__bot').find('.bot-wrapper').css({'display' : 'none'});
-    $(this).parents('.header').children('.header__bot').find('.bot-modal').toggleClass('active');
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__link').css({'color': '#fff'});
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__link').find('img').css({'filter': 'invert(1)'}); 
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__lang-wrapper').find('.header__lang').css({'color': 'rgba(255, 255, 255, 0.6)'});  
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__lang-wrapper').find('.header__lang--active').css({'color': '#fff'});  
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.right').find('.header__number').css({'color': '#fff'}); 
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.right').find('.header__number').find('span').css({'color': 'rgba(255, 255, 255, 0.6)'}); 
-    $(this).parents('.header').children('.header__top').css({'border-color': 'rgba(255,255,255,.2)'});
-    
-  });
-  $('.modal__menu-btn').on('click', function(){
-    $('.modal-overlay').toggleClass('active');
-    $('.header').toggleClass('active');
-    $(this).parents('.header').children('.header__bot').find('.bot-wrapper').css({'display' : 'flex'});
-    $(this).parents('.header').children('.header__bot').find('.bot-modal').toggleClass('active');
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__link').css({'color': '#111'});
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__link').find('img').css({'filter': 'invert(0)'});  
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.right').find('.header__number').css({'color': '#111'}); 
-    $(this).parents('.header').children('.header__top').css({'border-color': '#ededed'});
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.right').find('.header__number').find('span').css({'color': '#999'}); 
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__lang-wrapper').find('.header__lang').css({'color': '#999'});  
-    $(this).parents('.header').children('.header__top').find('.top__wrapper').children('.left').find('.header__lang-wrapper').find('.header__lang--active').css({'color': '#111'});
-  });
+  // body click
+  document.body.addEventListener('click', (e) => headerMenu.closeMenu(e))
+  // body scroll
+  window.addEventListener('scroll', headerMenu.shadow);
 }); 
 
 $(window).resize(() => {
-
+  headerMenu.shadow();
 });
+
 
 
 
