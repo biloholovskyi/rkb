@@ -119,3 +119,21 @@
     }
   }
 }
+
+
+// mobile sidebar
+.mobile-sidebar {
+  overflow: hidden;
+  position: relative;
+  max-height: 0;
+  display: none;
+  .mobile-options {
+    display: block!important;
+    border: none;
+  }
+}
+
+.mobile-sidebar.active {
+  height: fit-content; 
+  max-height: max-content;
+}

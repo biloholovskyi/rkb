@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(this).children('a').find('.arrow').toggleClass('active');
   });
 
-
+  
 
   $(".servisDrop").click(function() {
     $(this).closest('li').siblings().find('.dropdown-menu').removeClass('active').parent('.dropdown').children('button').find('.arrow').removeClass('active');

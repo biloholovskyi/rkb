@@ -12,6 +12,7 @@ import { listDoctorMore } from "./listDoctorMore";
 import { revActiveButton, revAddRating } from "./revDoctor";
 import './sticky'; 
 import './tabs';
+import './mobileList';
 import HeaderMenu from "./headerMenu/headerMenu";
 
 const headerMenu = new HeaderMenu();

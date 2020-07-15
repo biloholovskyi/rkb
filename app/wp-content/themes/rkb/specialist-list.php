@@ -15,9 +15,49 @@ get_header();
 </div>
 <div class="letters">
   <div class="container">
-    <div class="row">
+    <div class="row more__btn--row">
       <div class="col-12">
-        <div class="more mobile-more">Все отделения</div>
+        <div class="more mobile-more">
+          Все отделения
+          <img src="<?php echo get_template_directory_uri(); ?>/media/icon/blue-arrow-down.svg" alt="">
+        </div>
+        <div class="search-doctor-sidebar mobile-sidebar">
+          <div class="sidebar__options mobile-options">
+            <div class="options__list">
+              <div class="option">
+                <div class="check active"></div>
+                <div class="name">Все отделения</div>
+              </div>
+                <?php
+                $cur_post = $posts;
+                $args     = array(
+                  'numberposts'      => - 1,
+                  'orderby'          => 'id',
+                  'order'            => 'ASC',
+                  'post_type'        => 'doctor-service',
+                  'suppress_filters' => true,
+                );
+
+                $posts = get_posts( $args );
+
+                foreach ( $posts as $post ) {
+                  setup_postdata( $post );
+                  ?>
+                        <div class="option" id="<?php the_ID(); ?>">
+                          <div class="check"></div>
+                          <div class="name"><?php the_title(); ?></div>
+                        </div>
+                  <?php
+                }
+                wp_reset_postdata(); // сброс
+                $posts = $cur_post;
+                ?>
+                  </div>
+                </div>
+                <?php
+                $spec_week = get_field('spec_week');
+                ?>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -71,35 +111,35 @@ get_header();
               <div class="check active"></div>
               <div class="name">Все службы</div>
             </div>
-			  <?php
-			  $cur_post = $posts;
-			  $args     = array(
-				  'numberposts'      => - 1,
-				  'orderby'          => 'id',
-				  'order'            => 'ASC',
-				  'post_type'        => 'doctor-service',
-				  'suppress_filters' => true,
-			  );
+              <?php
+              $cur_post = $posts;
+              $args     = array(
+                'numberposts'      => - 1,
+                'orderby'          => 'id',
+                'order'            => 'ASC',
+                'post_type'        => 'doctor-service',
+                'suppress_filters' => true,
+              );
 
-			  $posts = get_posts( $args );
+              $posts = get_posts( $args );
 
-			  foreach ( $posts as $post ) {
-				  setup_postdata( $post );
-				  ?>
-                <div class="option" id="<?php the_ID(); ?>">
-                  <div class="check"></div>
-                  <div class="name"><?php the_title(); ?></div>
+              foreach ( $posts as $post ) {
+                setup_postdata( $post );
+                ?>
+                      <div class="option" id="<?php the_ID(); ?>">
+                        <div class="check"></div>
+                        <div class="name"><?php the_title(); ?></div>
+                      </div>
+                <?php
+              }
+              wp_reset_postdata(); // сброс
+              $posts = $cur_post;
+              ?>
                 </div>
-				  <?php
-			  }
-			  wp_reset_postdata(); // сброс
-			  $posts = $cur_post;
-			  ?>
-          </div>
-        </div>
-	      <?php
-	      $spec_week = get_field('spec_week');
-	      ?>
+              </div>
+              <?php
+              $spec_week = get_field('spec_week');
+              ?>
         <div class="doctor-of-week"
              style="background-image: url(<?php echo get_the_post_thumbnail_url($spec_week->ID); ?>)">
           <div class="title">Сотрудник недели</div>

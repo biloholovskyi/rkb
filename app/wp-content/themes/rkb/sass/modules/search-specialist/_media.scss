@@ -23,6 +23,40 @@
       display: none;
     }
   }
+  
+  .mobile-more {
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    width: -webkit-max-content; 
+    width: -moz-max-content;
+    width: max-content;
+    cursor: pointer;
+    
+    border-radius: 10px;
+    padding: 16px 24px 16px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2560a9;
+    position: relative;
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      object-position: center;
+      margin-left: 8px;
+      transform: rotate(0deg);
+      transition: .3s;
+    }
+
+    & img.active {
+      transform: rotate(180deg);
+    }
+  }
+  .mobile-sidebar {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -35,36 +69,7 @@
       display: none;
     }
   }
-  .mobile-more {
-    display: block;
-    margin: 17px auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    cursor: pointer;
-    
-    border-radius: 10px;
-    padding: 17px 50px 17px 24px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    color: #2560a9;
-    position: relative;
-    &:after {
-      content: '';
-    position: absolute;
-    min-width: 24px;
-    width: 24px;
-    height: 24px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url(../media/icon/blue-arrow-down.svg);
-    top: 50%;
-    margin-top: -12px;
-    right: 18px;
-    }
-  }
+  
 }
 @media screen and (max-width: 575px) {
   .search-doctor-list {
@@ -118,5 +123,39 @@
     margin-bottom: 24px;
     text-align: left;
     max-width: 226px;
+  }
+  
+
+  // mobile sidebar
+  .mobile-sidebar {
+  
+    .mobile-options {
+      .options__list {
+        padding: 8px 0px;
+        .option {
+          justify-content: center;
+          padding: 15px 27px;
+          .check {
+           display: none;
+          }
+          .name {
+            font-weight: 600; 
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center; 
+          }
+        }
+        & .option:hover {
+          background-color: rgba(30, 107, 208, 0.1);
+          color: #2560A9;
+        }
+        & .option:hover .name {
+          color: #2560A9;
+        }
+      }
+    }
+  }
+  .more__btn--row {
+    border-bottom: 1px solid #ededed;
   }
 }

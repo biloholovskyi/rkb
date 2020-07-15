@@ -1,0 +1,110 @@
+.news-page {
+  .news-tab {
+    padding:  0;
+    margin-bottom: 32px;
+    .news-tab__top {
+      border: none;
+      padding-bottom: 25px;
+      .news-tab__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 42px;
+        line-height: 50px;
+        color: #111111;
+      }
+    }
+  }
+  .news-items {
+    padding-bottom: 54px;
+    .item {
+      display: flex;
+      margin-bottom: 32px;
+      flex-direction: column;
+      
+  
+      img {
+        width: 296px;
+        height: 218px;
+        min-width: 200.76px;
+        border-radius: 5px;
+        margin-right: 0px;
+        margin-bottom: 24px;
+      }
+  
+      .info {
+        &__top {
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+  
+          .category {
+            padding: 7px 22px;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #31588A;
+            border: 1px solid #31588A;
+            border-radius: 4px;
+            margin-right: 20px;
+          }
+  
+          .date {
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+          }
+        }
+  
+        &__desc {
+          font-size: 18px;
+          line-height: 22px;
+          color: #000000;
+        }
+      }
+    }
+  }
+  
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 64px;
+    .pagination__item {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      color: #2560A9;
+      border: 1px solid #EDEDED;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 6px;
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      cursor: pointer;
+      transition: .3s;
+    }
+    & .pagination__item:hover {
+      background: #2560A9;
+      border-color: #2560A9;
+      color: #fff;
+    }
+    & .pagination__item.active {
+      background: #2560A9;
+      border-color: #2560A9;
+      color: #fff;
+    }
+    .pagination__dots {
+      background-image: url(../media/icon/dots.svg);
+      background-position: center;
+      background-size: cover;
+      width: 18px;
+      height: 18px;
+      margin: 0 19px; 
+    }
+}
+
+}
