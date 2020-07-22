@@ -206,7 +206,7 @@ function get_theme_update_available( $theme ) {
 					$theme_name,
 					esc_url( $details_url ),
 					sprintf(
-						'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
+						'class="thickbox open-plugin-details-modal" aria-label="%s"',
 						/* translators: 1: Theme name, 2: Version number. */
 						esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme_name, $update['new_version'] ) )
 					),
@@ -219,7 +219,7 @@ function get_theme_update_available( $theme ) {
 					$theme_name,
 					esc_url( $details_url ),
 					sprintf(
-						'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
+						'class="thickbox open-plugin-details-modal" aria-label="%s"',
 						/* translators: 1: Theme name, 2: Version number. */
 						esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme_name, $update['new_version'] ) )
 					),
@@ -232,7 +232,7 @@ function get_theme_update_available( $theme ) {
 					$theme_name,
 					esc_url( $details_url ),
 					sprintf(
-						'class="thickbox open-plugin-details-headerMenu" aria-label="%s"',
+						'class="thickbox open-plugin-details-modal" aria-label="%s"',
 						/* translators: 1: Theme name, 2: Version number. */
 						esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $theme_name, $update['new_version'] ) )
 					),

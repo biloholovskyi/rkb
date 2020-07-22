@@ -3674,7 +3674,7 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 	
 	
 	/**
-	*  Filters the errors for a file before it is uploaded or displayed in the media headerMenu.
+	*  Filters the errors for a file before it is uploaded or displayed in the media modal.
 	*
 	*  @date	3/07/2015
 	*  @since	5.2.3

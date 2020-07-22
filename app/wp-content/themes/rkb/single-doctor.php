@@ -11,8 +11,11 @@
         <div class="col-12 col-lg-9 col-md-6">
           <div class="specialist-wrap">
             <h1 class="big-title"><?php the_title(); ?></h1>
+            <?php
+            $place_doctor = get_field('place');
+            ?>
             <p><?php the_field('post'); ?></p>
-            <p><?php the_field('place'); ?></p>
+            <p><?php echo $place_doctor->post_title; ?></p>
             <div class="specialist-info">
               <div class="experience">
                 <ul>

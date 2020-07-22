@@ -612,7 +612,7 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 			);
 
 			$action_links[] = sprintf(
-				'<a href="%s" class="thickbox open-plugin-details-headerMenu" aria-label="%s" data-title="%s">%s</a>',
+				'<a href="%s" class="thickbox open-plugin-details-modal" aria-label="%s" data-title="%s">%s</a>',
 				esc_url( $details_link ),
 				/* translators: %s: Plugin name and version. */
 				esc_attr( sprintf( __( 'More information about %s' ), $name ) ),

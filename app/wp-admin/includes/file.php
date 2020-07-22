@@ -2124,7 +2124,7 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 <form action="<?php echo esc_url( $form_post ); ?>" method="post">
 <div id="request-filesystem-credentials-form" class="request-filesystem-credentials-form">
 	<?php
-	// Print a H1 heading in the FTP credentials headerMenu dialog, default is a H2.
+	// Print a H1 heading in the FTP credentials modal dialog, default is a H2.
 	$heading_tag = 'h2';
 	if ( 'plugins.php' === $pagenow || 'plugin-install.php' === $pagenow ) {
 		$heading_tag = 'h1';
@@ -2238,7 +2238,7 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 }
 
 /**
- * Print the filesystem credentials headerMenu when needed.
+ * Print the filesystem credentials modal when needed.
  *
  * @since 4.2.0
  */

@@ -154,7 +154,7 @@ class WP_Widget_Media_Image extends WP_Widget_Media {
 				),
 
 				/*
-				 * There are two additional properties exposed by the PostImage headerMenu
+				 * There are two additional properties exposed by the PostImage modal
 				 * that don't seem to be relevant, as they may only be derived read-only
 				 * values:
 				 * - originalUrl

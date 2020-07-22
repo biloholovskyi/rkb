@@ -386,7 +386,7 @@ function list_plugin_updates() {
 
 		$details_url = self_admin_url( 'plugin-install.php?tab=plugin-information&plugin=' . $plugin_data->update->slug . '&section=changelog&TB_iframe=true&width=640&height=662' );
 		$details     = sprintf(
-			'<a href="%1$s" class="thickbox open-plugin-details-headerMenu" aria-label="%2$s">%3$s</a>',
+			'<a href="%1$s" class="thickbox open-plugin-details-modal" aria-label="%2$s">%3$s</a>',
 			esc_url( $details_url ),
 			/* translators: 1: Plugin name, 2: Version number. */
 			esc_attr( sprintf( __( 'View %1$s version %2$s details' ), $plugin_data->Name, $plugin_data->update->new_version ) ),

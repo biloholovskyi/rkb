@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the search icon and headerMenu
+ * Displays the search icon and modal
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -29,6 +29,6 @@
 
 		</div><!-- .section-inner -->
 
-	</div><!-- .search-headerMenu-inner -->
+	</div><!-- .search-modal-inner -->
 
-</div><!-- .menu-headerMenu -->
+</div><!-- .menu-modal -->

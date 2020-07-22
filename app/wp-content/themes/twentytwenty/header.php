@@ -174,14 +174,14 @@
 			</div><!-- .header-inner -->
 
 			<?php
-			// Output the search headerMenu (if it is activated in the customizer).
+			// Output the search modal (if it is activated in the customizer).
 			if ( true === $enable_header_search ) {
-				get_template_part( 'template-parts/headerMenu-search' );
+				get_template_part( 'template-parts/modal-search' );
 			}
 			?>
 
 		</header><!-- #site-header -->
 
 		<?php
-		// Output the menu headerMenu.
-		get_template_part( 'template-parts/headerMenu-menu' );
+		// Output the menu modal.
+		get_template_part( 'template-parts/modal-menu' );

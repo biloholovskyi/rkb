@@ -1,8 +1,5 @@
 
 <?php
-/*
-Template Name: singleServis
-*/
 get_header();
 ?>
 

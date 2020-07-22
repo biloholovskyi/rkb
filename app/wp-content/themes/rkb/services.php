@@ -25,7 +25,7 @@ get_header();
 				'numberposts'      => - 1,
 				'orderby'          => 'date',
 				'order'            => 'DESC',
-				'post_type'        => 'service-category',
+				'post_type'        => 'doctor-service',
 				'suppress_filters' => true,
 			);
 
@@ -36,7 +36,7 @@ get_header();
 				$current_id = get_the_ID();
 				?>
               <div class="accordion_item">
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="icon"><a href="<?php the_permalink(); ?>"
+                <img src="<?php the_field('serv_logo'); ?>" alt="icon"><a href="<?php the_permalink(); ?>"
                                                                                      class="accordion__title"><?php the_title(); ?></a>
 				  <?php
 				  $cur_post = $posts;

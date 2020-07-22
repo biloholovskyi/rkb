@@ -28679,7 +28679,7 @@ function (_Component) {
      * intentionally distinct from `onClose` since focus loss from the popover
      * is expected to occur when using the Dropdown's toggle button, in which
      * case the correct behavior is to keep the dropdown closed. The same applies
-     * in case when focus is moved to the headerMenu dialog.
+     * in case when focus is moved to the modal dialog.
      */
 
   }, {
@@ -37743,7 +37743,7 @@ var with_focus_return = __webpack_require__(107);
 // EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/higher-order/with-constrained-tabbing/index.js
 var with_constrained_tabbing = __webpack_require__(106);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/headerMenu/frame.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/frame.js
 
 
 
@@ -37817,7 +37817,7 @@ function (_Component) {
       }
     }
     /**
-     * Callback function called when clicked outside the headerMenu.
+     * Callback function called when clicked outside the modal.
      *
      * @param {Object} event Mouse click event.
      */
@@ -37845,7 +37845,7 @@ function (_Component) {
     /**
      * Handles a escape key down event.
      *
-     * Calls onRequestClose and prevents propagation of the event outside the headerMenu.
+     * Calls onRequestClose and prevents propagation of the event outside the modal.
      *
      * @param {Object} event Key down event.
      */
@@ -37874,9 +37874,9 @@ function (_Component) {
       }
     }
     /**
-     * Renders the headerMenu frame element.
+     * Renders the modal frame element.
      *
-     * @return {WPElement} The headerMenu frame element.
+     * @return {WPElement} The modal frame element.
      */
 
   }, {
@@ -37916,7 +37916,7 @@ function (_Component) {
 // EXTERNAL MODULE: ./node_modules/@wordpress/icons/build-module/library/close.js
 var library_close = __webpack_require__(120);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/headerMenu/header.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/header.js
 
 
 /**
@@ -37957,7 +37957,7 @@ var header_ModalHeader = function ModalHeader(_ref) {
 
 /* harmony default export */ var modal_header = (header_ModalHeader);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/headerMenu/aria-helper.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/aria-helper.js
 /**
  * External dependencies
  */
@@ -37970,10 +37970,10 @@ var hiddenElements = [],
  * the provided element and elements that should not be hidden from
  * screen-readers.
  *
- * The reason we do this is because `aria-headerMenu="true"` currently is bugged
+ * The reason we do this is because `aria-modal="true"` currently is bugged
  * in Safari, and support is spotty in other browsers overall. In the future
  * we should consider removing these helper functions in favor of
- * `aria-headerMenu="true"`.
+ * `aria-modal="true"`.
  *
  * @param {Element} unhiddenElement The element that should not be hidden.
  */
@@ -38025,7 +38025,7 @@ function showApp() {
   isHidden = false;
 }
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/headerMenu/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/index.js
 
 
 
@@ -38069,8 +38069,8 @@ function (_Component) {
     return _this;
   }
   /**
-   * Appends the headerMenu's node to the DOM, so the portal can render the
-   * headerMenu in it. Also calls the openFirstModal when this is the first headerMenu to be
+   * Appends the modal's node to the DOM, so the portal can render the
+   * modal in it. Also calls the openFirstModal when this is the first modal to be
    * opened.
    */
 
@@ -38085,8 +38085,8 @@ function (_Component) {
       }
     }
     /**
-     * Removes the headerMenu's node from the DOM. Also calls closeLastModal when this is
-     * the last headerMenu to be closed.
+     * Removes the modal's node from the DOM. Also calls closeLastModal when this is
+     * the last modal to be closed.
      */
 
   }, {
@@ -38103,11 +38103,11 @@ function (_Component) {
     /**
      * Prepares the DOM for the modals to be rendered.
      *
-     * Every headerMenu is mounted in a separate div appended to a parent div
+     * Every modal is mounted in a separate div appended to a parent div
      * that is appended to the document body.
      *
      * The parent div will be created if it does not yet exist, and the
-     * separate div for this specific headerMenu will be appended to that.
+     * separate div for this specific modal will be appended to that.
      */
 
   }, {
@@ -38122,7 +38122,7 @@ function (_Component) {
       parentElement.appendChild(this.node);
     }
     /**
-     * Removes the specific mounting point for this headerMenu from the DOM.
+     * Removes the specific mounting point for this modal from the DOM.
      */
 
   }, {
@@ -38131,11 +38131,11 @@ function (_Component) {
       parentElement.removeChild(this.node);
     }
     /**
-     * Prepares the DOM for this headerMenu and any additional headerMenu to be mounted.
+     * Prepares the DOM for this modal and any additional modal to be mounted.
      *
      * It appends an additional div to the body for the modals to be rendered in,
      * it hides any other elements from screen-readers and adds an additional class
-     * to the body to prevent scrolling while the headerMenu is open.
+     * to the body to prevent scrolling while the modal is open.
      */
 
   }, {
@@ -38145,7 +38145,7 @@ function (_Component) {
       document.body.classList.add(this.props.bodyOpenClassName);
     }
     /**
-     * Cleans up the DOM after the last headerMenu is closed and makes the app available
+     * Cleans up the DOM after the last modal is closed and makes the app available
      * for screen-readers again.
      */
 
@@ -38156,9 +38156,9 @@ function (_Component) {
       showApp();
     }
     /**
-     * Renders the headerMenu.
+     * Renders the modal.
      *
-     * @return {WPElement} The headerMenu element.
+     * @return {WPElement} The modal element.
      */
 
   }, {
@@ -38176,14 +38176,14 @@ function (_Component) {
           isDismissable = _this$props.isDismissable,
           otherProps = Object(objectWithoutProperties["a" /* default */])(_this$props, ["onRequestClose", "title", "icon", "closeButtonLabel", "children", "aria", "instanceId", "isDismissible", "isDismissable"]);
 
-      var headingId = aria.labelledby || "components-headerMenu-header-".concat(instanceId);
+      var headingId = aria.labelledby || "components-modal-header-".concat(instanceId);
 
       if (isDismissable) {
         external_this_wp_deprecated_default()('isDismissable prop of the Modal component', {
           alternative: 'isDismissible prop (renamed) of the Modal component'
         });
       } // Disable reason: this stops mouse events from triggering tooltips and
-      // other elements underneath the headerMenu overlay.
+      // other elements underneath the modal overlay.
 
 
       return Object(external_this_wp_element_["createPortal"])(Object(external_this_wp_element_["createElement"])(modal_frame, Object(esm_extends["a" /* default */])({
@@ -38211,7 +38211,7 @@ function (_Component) {
 }(external_this_wp_element_["Component"]);
 
 modal_Modal.defaultProps = {
-  bodyOpenClassName: 'headerMenu-open',
+  bodyOpenClassName: 'modal-open',
   role: 'dialog',
   title: null,
   focusOnMount: true,

@@ -105,7 +105,7 @@
 			var ed,
 				$body = $( document.body );
 
-			$body.addClass( 'headerMenu-open' );
+			$body.addClass( 'modal-open' );
 			wpLink.modalOpen = true;
 
 			wpLink.range = null;

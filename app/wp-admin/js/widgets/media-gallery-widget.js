@@ -104,7 +104,7 @@
 
 			/*
 			 * Refresh a Gallery widget partial when the user modifies one of the selected attachments.
-			 * This ensures that when an attachment's caption is updated in the media headerMenu the Gallery
+			 * This ensures that when an attachment's caption is updated in the media modal the Gallery
 			 * widget in the preview will then be refreshed to show the change. Normally doing this
 			 * would not be necessary because all of the state should be contained inside the changeset,
 			 * as everything done in the Customizer should not make a change to the site unless the
@@ -310,8 +310,8 @@
 			}
 
 			/*
-			 * Make sure focus is set inside of headerMenu so that hitting Esc will close
-			 * the headerMenu and not inadvertently cause the widget to collapse in the customizer.
+			 * Make sure focus is set inside of modal so that hitting Esc will close
+			 * the modal and not inadvertently cause the widget to collapse in the customizer.
 			 */
 			mediaFrame.$el.find( ':focusable:first' ).focus();
 		},

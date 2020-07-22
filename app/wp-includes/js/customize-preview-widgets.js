@@ -63,7 +63,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 
 		/*
 		 * Refresh a partial when the controls pane requests it. This is used currently just by the
-		 * Gallery widget so that when an attachment's caption is updated in the media headerMenu,
+		 * Gallery widget so that when an attachment's caption is updated in the media modal,
 		 * the widget in the preview will then be refreshed to show the change. Normally doing this
 		 * would not be necessary because all of the state should be contained inside the changeset,
 		 * as everything done in the Customizer should not make a change to the site unless the

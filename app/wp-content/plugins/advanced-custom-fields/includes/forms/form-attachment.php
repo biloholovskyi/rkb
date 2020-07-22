@@ -161,7 +161,7 @@ acf.unload.active = 0;
 				$fields = acf_get_fields( $field_group );
 				
 				
-				// override instruction placement for headerMenu
+				// override instruction placement for modal
 				if( !$is_page ) {
 					
 					$field_group['instruction_placement'] = 'field';

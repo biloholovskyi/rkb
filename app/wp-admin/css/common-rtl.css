@@ -2953,7 +2953,7 @@ div.action-links {
 	}
 }
 
-/* Thickbox for the Plugin details headerMenu. */
+/* Thickbox for the Plugin details modal. */
 #TB_window.plugin-details-modal {
 	background: #fcfcfc;
 }

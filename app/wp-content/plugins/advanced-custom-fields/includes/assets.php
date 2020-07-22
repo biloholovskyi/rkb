@@ -155,7 +155,7 @@ class ACF_Assets {
 		}
 		
 		// enqueue uploader
-		// WP requires a lot of JS + inline scripes to create the media headerMenu and should be avoioded when possible.
+		// WP requires a lot of JS + inline scripes to create the media modal and should be avoioded when possible.
 		// - priority must be less than 10 to allow WP to enqueue
 		if( $args['uploader'] ) {
 			add_action($actions['admin_footer'], 'acf_enqueue_uploader', 5);

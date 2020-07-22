@@ -94,11 +94,11 @@ twentytwenty.touchEnabled = {
 twentytwenty.coverModals = {
 
 	init: function() {
-		if ( document.querySelector( '.cover-headerMenu' ) ) {
+		if ( document.querySelector( '.cover-modal' ) ) {
 			// Handle cover modals when they're toggled.
 			this.onToggle();
 
-			// When toggled, untoggle if visitor clicks on the wrapping element of the headerMenu.
+			// When toggled, untoggle if visitor clicks on the wrapping element of the modal.
 			this.outsideUntoggle();
 
 			// Close on escape key press.
@@ -111,35 +111,35 @@ twentytwenty.coverModals = {
 
 	// Handle cover modals when they're toggled.
 	onToggle: function() {
-		document.querySelectorAll( '.cover-headerMenu' ).forEach( function( element ) {
+		document.querySelectorAll( '.cover-modal' ).forEach( function( element ) {
 			element.addEventListener( 'toggled', function( event ) {
 				var modal = event.target,
 					body = document.body;
 
 				if ( modal.classList.contains( 'active' ) ) {
-					body.classList.add( 'showing-headerMenu' );
+					body.classList.add( 'showing-modal' );
 				} else {
-					body.classList.remove( 'showing-headerMenu' );
-					body.classList.add( 'hiding-headerMenu' );
+					body.classList.remove( 'showing-modal' );
+					body.classList.add( 'hiding-modal' );
 
 					// Remove the hiding class after a delay, when animations have been run.
 					setTimeout( function() {
-						body.classList.remove( 'hiding-headerMenu' );
+						body.classList.remove( 'hiding-modal' );
 					}, 500 );
 				}
 			} );
 		} );
 	},
 
-	// Close headerMenu on outside click.
+	// Close modal on outside click.
 	outsideUntoggle: function() {
 		document.addEventListener( 'click', function( event ) {
 			var target = event.target;
-			var modal = document.querySelector( '.cover-headerMenu.active' );
+			var modal = document.querySelector( '.cover-modal.active' );
 
 			// if target onclick is <a> with # within the href attribute
 			if ( event.target.tagName.toLowerCase() === 'a' && event.target.hash.includes( '#' ) && modal !== null ) {
-				// untoggle the headerMenu
+				// untoggle the modal
 				this.untoggleModal( modal );
 				// wait 550 and scroll to the anchor
 				setTimeout( function() {
@@ -154,12 +154,12 @@ twentytwenty.coverModals = {
 		}.bind( this ) );
 	},
 
-	// Close headerMenu on escape key press.
+	// Close modal on escape key press.
 	closeOnEscape: function() {
 		document.addEventListener( 'keydown', function( event ) {
 			if ( event.keyCode === 27 ) {
 				event.preventDefault();
-				document.querySelectorAll( '.cover-headerMenu.active' ).forEach( function( element ) {
+				document.querySelectorAll( '.cover-modal.active' ).forEach( function( element ) {
 					this.untoggleModal( element );
 				}.bind( this ) );
 			}
@@ -170,7 +170,7 @@ twentytwenty.coverModals = {
 	hideAndShowModals: function() {
 		var _doc = document,
 			_win = window,
-			modals = _doc.querySelectorAll( '.cover-headerMenu' ),
+			modals = _doc.querySelectorAll( '.cover-modal' ),
 			htmlStyle = _doc.documentElement.style,
 			adminBar = _doc.querySelector( '#wpadminbar' );
 
@@ -199,7 +199,7 @@ twentytwenty.coverModals = {
 			};
 		}
 
-		// Show the headerMenu.
+		// Show the modal.
 		modals.forEach( function( modal ) {
 			modal.addEventListener( 'toggle-target-before-inactive', function( event ) {
 				var styles = htmlStyles(),
@@ -229,10 +229,10 @@ twentytwenty.coverModals = {
 					}
 				}
 
-				modal.classList.add( 'show-headerMenu' );
+				modal.classList.add( 'show-modal' );
 			} );
 
-			// Hide the headerMenu after a delay, so animations have time to play out.
+			// Hide the modal after a delay, so animations have time to play out.
 			modal.addEventListener( 'toggle-target-after-inactive', function( event ) {
 				if ( event.target !== modal ) {
 					return;
@@ -241,7 +241,7 @@ twentytwenty.coverModals = {
 				setTimeout( function() {
 					var clickedEl = twentytwenty.toggles.clickedEl;
 
-					modal.classList.remove( 'show-headerMenu' );
+					modal.classList.remove( 'show-modal' );
 
 					Object.keys( htmlStyles() ).forEach( function( styleKey ) {
 						htmlStyle.removeProperty( styleKey );
@@ -265,24 +265,24 @@ twentytwenty.coverModals = {
 		} );
 	},
 
-	// Untoggle a headerMenu.
+	// Untoggle a modal.
 	untoggleModal: function( modal ) {
 		var modalTargetClass,
 			modalToggle = false;
 
-		// If the headerMenu has specified the string (ID or class) used by toggles to target it, untoggle the toggles with that target string.
-		// The headerMenu-target-string must match the string toggles use to target the headerMenu.
+		// If the modal has specified the string (ID or class) used by toggles to target it, untoggle the toggles with that target string.
+		// The modal-target-string must match the string toggles use to target the modal.
 		if ( modal.dataset.modalTargetString ) {
 			modalTargetClass = modal.dataset.modalTargetString;
 
 			modalToggle = document.querySelector( '*[data-toggle-target="' + modalTargetClass + '"]' );
 		}
 
-		// If a headerMenu toggle exists, trigger it so all of the toggle options are included.
+		// If a modal toggle exists, trigger it so all of the toggle options are included.
 		if ( modalToggle ) {
 			modalToggle.click();
 
-			// If one doesn't exist, just hide the headerMenu.
+			// If one doesn't exist, just hide the modal.
 		} else {
 			modal.classList.remove( 'active' );
 		}
@@ -345,7 +345,7 @@ twentytwenty.modalMenu = {
 	},
 
 	expandLevel: function() {
-		var modalMenus = document.querySelectorAll( '.headerMenu-menu' );
+		var modalMenus = document.querySelectorAll( '.modal-menu' );
 
 		modalMenus.forEach( function( modalMenu ) {
 			var activeMenuItem = modalMenu.querySelector( '.current-menu-item' );
@@ -368,7 +368,7 @@ twentytwenty.modalMenu = {
 			var toggleTarget, modal, selectors, elements, menuType, bottomMenu, activeEl, lastEl, firstEl, tabKey, shiftKey,
 				clickedEl = twentytwenty.toggles.clickedEl;
 
-			if ( clickedEl && _doc.body.classList.contains( 'showing-headerMenu' ) ) {
+			if ( clickedEl && _doc.body.classList.contains( 'showing-modal' ) ) {
 				toggleTarget = clickedEl.dataset.toggleTarget;
 				selectors = 'input, a, button';
 				modal = _doc.querySelector( toggleTarget );
@@ -376,7 +376,7 @@ twentytwenty.modalMenu = {
 				elements = modal.querySelectorAll( selectors );
 				elements = Array.prototype.slice.call( elements );
 
-				if ( '.menu-headerMenu' === toggleTarget ) {
+				if ( '.menu-modal' === toggleTarget ) {
 					menuType = window.matchMedia( '(min-width: 1000px)' ).matches;
 					menuType = menuType ? '.expanded-menu' : '.mobile-menu';
 
@@ -493,7 +493,7 @@ twentytwenty.toggles = {
 			activeClass = 'active';
 
 		// Elements to focus after modals are closed.
-		if ( ! _doc.querySelectorAll( '.show-headerMenu' ).length ) {
+		if ( ! _doc.querySelectorAll( '.show-modal' ).length ) {
 			self.clickedEl = _doc.activeElement;
 		}
 
@@ -516,7 +516,7 @@ twentytwenty.toggles = {
 		// For cover modals, set a short timeout duration so the class animations have time to play out.
 		timeOutTime = 0;
 
-		if ( target.classList.contains( 'cover-headerMenu' ) ) {
+		if ( target.classList.contains( 'cover-modal' ) ) {
 			timeOutTime = 10;
 		}
 

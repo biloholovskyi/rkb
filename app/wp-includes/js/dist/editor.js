@@ -8390,7 +8390,7 @@ function PostFeaturedImage(_ref) {
     onSelect: onUpdateImage,
     unstableFeaturedImageFlow: true,
     allowedTypes: ALLOWED_MEDIA_TYPES,
-    modalClass: !featuredImageId ? 'editor-post-featured-image__media-headerMenu' : 'editor-post-featured-image__media-headerMenu',
+    modalClass: !featuredImageId ? 'editor-post-featured-image__media-modal' : 'editor-post-featured-image__media-modal',
     render: function render(_ref2) {
       var open = _ref2.open;
       return Object(external_this_wp_element_["createElement"])("div", {
@@ -8416,7 +8416,7 @@ function PostFeaturedImage(_ref) {
     onSelect: onUpdateImage,
     unstableFeaturedImageFlow: true,
     allowedTypes: ALLOWED_MEDIA_TYPES,
-    modalClass: "editor-post-featured-image__media-headerMenu",
+    modalClass: "editor-post-featured-image__media-modal",
     render: function render(_ref3) {
       var open = _ref3.open;
       return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
@@ -8969,7 +8969,7 @@ function (_Component) {
   return isViewable;
 })])(post_preview_button_PostPreviewButton));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/components/post-locked-headerMenu/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/components/post-locked-modal/index.js
 
 
 
@@ -9044,7 +9044,7 @@ function (_Component) {
     key: "getHookName",
     value: function getHookName() {
       var instanceId = this.props.instanceId;
-      return 'core/editor/post-locked-headerMenu-' + instanceId;
+      return 'core/editor/post-locked-modal-' + instanceId;
     }
     /**
      * Keep the lock refreshed.
@@ -9091,7 +9091,7 @@ function (_Component) {
       var received = data['wp-refresh-post-lock'];
 
       if (received.lock_error) {
-        // Auto save and display the takeover headerMenu.
+        // Auto save and display the takeover modal.
         autosave();
         updatePostLock({
           isLocked: true,
@@ -9174,7 +9174,7 @@ function (_Component) {
         shouldCloseOnClickOutside: false,
         shouldCloseOnEsc: false,
         isDismissible: false,
-        className: "editor-post-locked-headerMenu"
+        className: "editor-post-locked-modal"
       }, !!userAvatar && Object(external_this_wp_element_["createElement"])("img", {
         src: userAvatar,
         alt: Object(external_this_wp_i18n_["__"])('Avatar'),
@@ -9496,7 +9496,7 @@ function (_Component) {
         var hasNonPostEntityChanges = _this2.props.hasNonPostEntityChanges;
 
         if (hasNonPostEntityChanges) {
-          // The headerMenu for multiple entity saving will open,
+          // The modal for multiple entity saving will open,
           // hold the callback for saving/publishing the post
           // so that we can call it if the post entity is checked.
           _this2.setState({

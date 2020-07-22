@@ -393,7 +393,7 @@ var tinyMCEPopup = {
       if (tinymce.Env.ie < 11) {
         document.attachEvent('onmouseup', tinyMCEPopup._restoreSelection);
 
-        // Add base target element for it since it would fail with headerMenu dialogs
+        // Add base target element for it since it would fail with modal dialogs
         t.dom.add(t.dom.select('head')[0], 'base', { target: '_self' });
       } else {
         document.addEventListener('mouseup', tinyMCEPopup._restoreSelection, false);

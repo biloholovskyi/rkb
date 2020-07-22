@@ -667,7 +667,7 @@
 			 */
 			onInit: function( img ) {
 				// Ensure that the imgAreaSelect wrapper elements are position:absolute
-				// (even if we're in a position:fixed headerMenu).
+				// (even if we're in a position:fixed modal).
 				$img = $( img );
 				$img.next().css( 'position', 'absolute' )
 					.nextAll( '.imgareaselect-outer' ).css( 'position', 'absolute' );

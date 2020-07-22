@@ -1624,10 +1624,10 @@ function reducer_activeGeneralSidebar() {
   return state;
 }
 /**
- * Reducer for storing the name of the open headerMenu, or null if no headerMenu is open.
+ * Reducer for storing the name of the open modal, or null if no modal is open.
  *
  * @param {Object} state  Previous state.
- * @param {Object} action Action object containing the `name` of the headerMenu
+ * @param {Object} action Action object containing the `name` of the modal
  *
  * @return {Object} Updated state
  */
@@ -1767,9 +1767,9 @@ function actions_closeGeneralSidebar() {
   };
 }
 /**
- * Returns an action object used in signalling that the user opened a headerMenu.
+ * Returns an action object used in signalling that the user opened a modal.
  *
- * @param {string} name A string that uniquely identifies the headerMenu.
+ * @param {string} name A string that uniquely identifies the modal.
  *
  * @return {Object} Action object.
  */
@@ -1781,7 +1781,7 @@ function actions_openModal(name) {
   };
 }
 /**
- * Returns an action object signalling that the user closed a headerMenu.
+ * Returns an action object signalling that the user closed a modal.
  *
  * @return {Object} Action object.
  */
@@ -2146,12 +2146,12 @@ function selectors_isEditorPanelOpened(state, panelName) {
   return Object(external_this_lodash_["get"])(panels, [panelName]) === true || Object(external_this_lodash_["get"])(panels, [panelName, 'opened']) === true;
 }
 /**
- * Returns true if a headerMenu is active, or false otherwise.
+ * Returns true if a modal is active, or false otherwise.
  *
  * @param  {Object}  state 	   Global application state.
- * @param  {string}  modalName A string that uniquely identifies the headerMenu.
+ * @param  {string}  modalName A string that uniquely identifies the modal.
  *
- * @return {boolean} Whether the headerMenu is active.
+ * @return {boolean} Whether the modal is active.
  */
 
 function selectors_isModalActive(state, modalName) {
@@ -2942,7 +2942,7 @@ function KeyboardShortcuts() {
 
 /* harmony default export */ var keyboard_shortcuts = (KeyboardShortcuts);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-headerMenu/config.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-modal/config.js
 /**
  * WordPress dependencies
  */
@@ -2979,7 +2979,7 @@ var textFormattingShortcuts = [{
   description: Object(external_this_wp_i18n_["__"])('Underline the selected text.')
 }];
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-headerMenu/shortcut.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-modal/shortcut.js
 
 
 /**
@@ -3039,7 +3039,7 @@ function Shortcut(_ref2) {
 
 /* harmony default export */ var keyboard_shortcut_help_modal_shortcut = (Shortcut);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-headerMenu/dynamic-shortcut.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-modal/dynamic-shortcut.js
 
 
 /**
@@ -3084,7 +3084,7 @@ function DynamicShortcut(_ref) {
 
 /* harmony default export */ var dynamic_shortcut = (DynamicShortcut);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-headerMenu/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcut-help-modal/index.js
 
 
 /**
@@ -3174,7 +3174,7 @@ function KeyboardShortcutHelpModal(_ref4) {
   }
 
   return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Modal"], {
-    className: "edit-post-keyboard-shortcut-help-headerMenu",
+    className: "edit-post-keyboard-shortcut-help-modal",
     title: Object(external_this_wp_i18n_["__"])('Keyboard shortcuts'),
     closeLabel: Object(external_this_wp_i18n_["__"])('Close'),
     onRequestClose: toggleModal
@@ -3222,7 +3222,7 @@ function KeyboardShortcutHelpModal(_ref4) {
   };
 })])(KeyboardShortcutHelpModal));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-headerMenu/checklist.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-modal/checklist.js
 
 
 /**
@@ -3266,7 +3266,7 @@ function BlockTypesChecklist(_ref) {
 var EditPostSettings = Object(external_this_wp_element_["createContext"])({});
 /* harmony default export */ var edit_post_settings = (EditPostSettings);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-headerMenu/category.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-modal/category.js
 
 
 
@@ -3377,7 +3377,7 @@ function BlockManagerCategory(_ref) {
   };
 })])(BlockManagerCategory));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-headerMenu/manager.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-modal/manager.js
 
 
 /**
@@ -3467,7 +3467,7 @@ function BlockManager(_ref) {
   };
 })])(BlockManager));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-headerMenu/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/manage-blocks-modal/index.js
 
 
 /**
@@ -3483,7 +3483,7 @@ function BlockManager(_ref) {
 
 
 /**
- * Unique identifier for Manage Blocks headerMenu.
+ * Unique identifier for Manage Blocks modal.
  *
  * @type {string}
  */
@@ -3498,7 +3498,7 @@ function ManageBlocksModal(_ref) {
   }
 
   return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Modal"], {
-    className: "edit-post-manage-blocks-headerMenu",
+    className: "edit-post-manage-blocks-modal",
     title: Object(external_this_wp_i18n_["__"])('Block Manager'),
     closeLabel: Object(external_this_wp_i18n_["__"])('Close'),
     onRequestClose: closeModal
@@ -3520,7 +3520,7 @@ function ManageBlocksModal(_ref) {
   };
 })])(ManageBlocksModal));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/section.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/section.js
 
 
 var section_Section = function Section(_ref) {
@@ -3535,7 +3535,7 @@ var section_Section = function Section(_ref) {
 
 /* harmony default export */ var section = (section_Section);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/base.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/base.js
 
 
 /**
@@ -3559,7 +3559,7 @@ function BaseOption(_ref) {
 
 /* harmony default export */ var base = (BaseOption);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/enable-custom-fields.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-custom-fields.js
 
 
 
@@ -3619,7 +3619,7 @@ function EnableCustomFieldsOption(_ref2) {
   };
 })(EnableCustomFieldsOption));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/enable-panel.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-panel.js
 /**
  * WordPress dependencies
  */
@@ -3653,7 +3653,7 @@ function EnableCustomFieldsOption(_ref2) {
   };
 }))(base));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/enable-plugin-document-setting-panel.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-plugin-document-setting-panel.js
 
 
 /**
@@ -3682,7 +3682,7 @@ var enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption 
 enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption.Slot = enable_plugin_document_setting_panel_Slot;
 /* harmony default export */ var enable_plugin_document_setting_panel = (enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/enable-publish-sidebar.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-publish-sidebar.js
 /**
  * WordPress dependencies
  */
@@ -3712,7 +3712,7 @@ enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption.Slot
 // See the edit-post's header component for the specific logic.
 Object(external_this_wp_viewport_["ifViewportMatches"])('medium'))(base));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/enable-feature.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-feature.js
 /**
  * WordPress dependencies
  */
@@ -3741,14 +3741,14 @@ Object(external_this_wp_viewport_["ifViewportMatches"])('medium'))(base));
   };
 }))(base));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/options/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/index.js
 
 
 
 
 
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/meta-boxes-section.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/meta-boxes-section.js
 
 
 
@@ -3809,7 +3809,7 @@ function MetaBoxesSection(_ref) {
   };
 })(MetaBoxesSection));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-headerMenu/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/index.js
 
 
 /**
@@ -3843,7 +3843,7 @@ function OptionsModal(_ref) {
   }
 
   return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Modal"], {
-    className: "edit-post-options-headerMenu",
+    className: "edit-post-options-modal",
     title: Object(external_this_wp_i18n_["__"])('Options'),
     closeLabel: Object(external_this_wp_i18n_["__"])('Close'),
     onRequestClose: closeModal

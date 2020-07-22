@@ -52,29 +52,18 @@ get_header();
         <div class="pacient-servis"> 
           <h2 id="servis">Службы</h2>
           <div class="pacient-servis-wrap">
-          <?php
-            $args = array(
-              'numberposts' => -1, // если -1 то выводит все
-              'orderby' => 'date',
-              'order' => 'DESC',
-              'post_type' => 'PacientServis', // тип поста
-              'suppress_filters' => true,
-            );
-
-            $posts = get_posts($args);
-
-            foreach ($posts as $post) {  
-              setup_postdata($post);
-              ?>  
-              <?php $servisIcon = get_field('servis-icon'); ?>
-            <div class="pacient-serv-item"><img src="<?php echo $servisIcon; ?>" alt="icon">
-              <h3><?php the_title(); ?></h3>
-              <a href="tel:<?php the_field('servis-tel'); ?>"><?php the_field('servis-tel'); ?></a>
-            </div>
+            <?php
+            $serv_list = get_field('serv_list');
+            foreach ($serv_list as $serv) {
+              ?>
+              <div class="pacient-serv-item"><img src="<?php the_field('serv_logo', $serv->ID); ?>" alt="icon">
+                <h3><?php echo $serv->post_title; ?></h3>
+                <a href="tel:<?php the_field('serv_number', $serv->ID); ?>"><?php the_field('serv_number', $serv->ID); ?></a>
+              </div>
               <?php
-              }
-              wp_reset_postdata(); // сброс
-              ?>  
+            }
+            ?>
+
            
           </div>
         </div>

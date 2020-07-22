@@ -56,24 +56,24 @@ jQuery( document ).ready( function( $ ) {
 
 	/*
 	 * Custom events: when a Thickbox iframe has loaded and when the Thickbox
-	 * headerMenu gets removed from the DOM.
+	 * modal gets removed from the DOM.
 	 */
 	$body
 		.on( 'thickbox:iframe:loaded', tbWindow, function() {
 			/*
-			 * Return if it's not the headerMenu with the plugin details iframe. Other
+			 * Return if it's not the modal with the plugin details iframe. Other
 			 * thickbox instances might want to load an iframe with content from
 			 * an external domain. Avoid to access the iframe contents when we're
 			 * not sure the iframe loads from the same domain.
 			 */
-			if ( ! tbWindow.hasClass( 'plugin-details-headerMenu' ) ) {
+			if ( ! tbWindow.hasClass( 'plugin-details-modal' ) ) {
 				return;
 			}
 
 			iframeLoaded();
 		})
 		.on( 'thickbox:removed', function() {
-			// Set focus back to the element that opened the headerMenu dialog.
+			// Set focus back to the element that opened the modal dialog.
 			// Note: IE 8 would need this wrapped in a fake setTimeout `0`.
 			$focusedBefore.focus();
 		});
@@ -100,7 +100,7 @@ jQuery( document ).ready( function( $ ) {
 			handleTabbables();
 		});
 
-		// Close the headerMenu when pressing Escape.
+		// Close the modal when pressing Escape.
 		$iframeBody.on( 'keydown', function( event ) {
 			if ( 27 !== event.which ) {
 				return;
@@ -133,7 +133,7 @@ jQuery( document ).ready( function( $ ) {
 		});
 	}
 
-	// Constrain tabbing within the plugin headerMenu dialog.
+	// Constrain tabbing within the plugin modal dialog.
 	function constrainTabbing( event ) {
 		if ( 9 !== event.which ) {
 			return;
@@ -149,19 +149,19 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	/*
-	 * Open the Plugin details headerMenu. The event is delegated to get also the links
+	 * Open the Plugin details modal. The event is delegated to get also the links
 	 * in the plugins search tab, after the AJAX search rebuilds the HTML. It's
 	 * delegated on the closest ancestor and not on the body to avoid conflicts
 	 * with other handlers, see Trac ticket #43082.
 	 */
-	$( '.wrap' ).on( 'click', '.thickbox.open-plugin-details-headerMenu', function( e ) {
+	$( '.wrap' ).on( 'click', '.thickbox.open-plugin-details-modal', function( e ) {
 		// The `data-title` attribute is used only in the Plugin screens.
 		var title = $( this ).data( 'title' ) ? plugininstallL10n.plugin_information + ' ' + $( this ).data( 'title' ) : plugininstallL10n.plugin_modal_label;
 
 		e.preventDefault();
 		e.stopPropagation();
 
-		// Store the element that has focus before opening the headerMenu dialog, i.e. the control which opens it.
+		// Store the element that has focus before opening the modal dialog, i.e. the control which opens it.
 		$focusedBefore = $( this );
 
 		tb_click.call(this);
@@ -172,7 +172,7 @@ jQuery( document ).ready( function( $ ) {
 				'role': 'dialog',
 				'aria-label': plugininstallL10n.plugin_modal_label
 			})
-			.addClass( 'plugin-details-headerMenu' );
+			.addClass( 'plugin-details-modal' );
 
 		// Set title attribute on the iframe.
 		tbWindow.find( '#TB_iframeContent' ).attr( 'title', title );

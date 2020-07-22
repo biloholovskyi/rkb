@@ -184,7 +184,7 @@ wp.media.mixin = {
 	 * Allows any class that has set 'player' to a MediaElementPlayer
 	 * instance to remove the player when listening to events.
 	 *
-	 * Examples: headerMenu closes, shortcode properties are removed, etc.
+	 * Examples: modal closes, shortcode properties are removed, etc.
 	 *
 	 * @since 4.2.0
 	 */
@@ -221,7 +221,7 @@ wp.media.playlist = new wp.media.collection({
 /**
  * Shortcode modeling for audio.
  *
- * `edit()` prepares the shortcode for the media headerMenu.
+ * `edit()` prepares the shortcode for the media modal.
  * `shortcode()` builds the new shortcode after an update.
  *
  * @namespace
@@ -293,7 +293,7 @@ wp.media.audio = {
 /**
  * Shortcode modeling for video.
  *
- *  `edit()` prepares the shortcode for the media headerMenu.
+ *  `edit()` prepares the shortcode for the media modal.
  *  `shortcode()` builds the new shortcode after update.
  *
  * @since 4.2.0

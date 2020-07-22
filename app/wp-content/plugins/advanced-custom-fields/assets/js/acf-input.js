@@ -10415,7 +10415,7 @@
 			
 			// add class
 			frame.on('open',function() {
-				this.$el.closest('.media-headerMenu').addClass('acf-media-headerMenu -' + this.acf.get('mode') );
+				this.$el.closest('.media-modal').addClass('acf-media-modal -' + this.acf.get('mode') );
 			}, frame);
 			
 			// edit image view
@@ -10656,7 +10656,7 @@
 			frame.on('open',function() {
 				
 				// add class
-				this.$el.closest('.media-headerMenu').addClass('acf-expanded');
+				this.$el.closest('.media-modal').addClass('acf-expanded');
 				
 				// set to browse
 				if( this.content.mode() != 'browse' ) {
@@ -10763,7 +10763,7 @@
 					// add events
 					$a.on('click', function( e ){
 						e.preventDefault();
-						var $div = $(this).closest('.media-headerMenu');
+						var $div = $(this).closest('.media-modal');
 						if( $div.hasClass('acf-expanded') ) {
 							$div.removeClass('acf-expanded');
 						} else {
@@ -10833,7 +10833,7 @@
 					// WP bug
 					// When multiple media frames exist on the same page (WP content, WYSIWYG, image, file ),
 					// WP creates multiple instances of this AttachmentCompat view.
-					// Each instance will attempt to render when a new headerMenu is created.
+					// Each instance will attempt to render when a new modal is created.
 					// Use a property to avoid this and only render once per instance.
 					if( this.rendered ) {
 						return this;

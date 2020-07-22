@@ -29,7 +29,7 @@ if ( force_ssl_admin() && ! is_ssl() ) {
  *
  * @global string      $error         Login error message set by deprecated pluggable wp_login() function
  *                                    or plugins replacing it.
- * @global bool|string $interim_login Whether interim login headerMenu is being displayed. String 'success'
+ * @global bool|string $interim_login Whether interim login modal is being displayed. String 'success'
  *                                    upon successful login.
  * @global string      $action        The action that brought the visitor to the login page.
  *
@@ -275,7 +275,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
  *
  * @since 3.1.0
  *
- * @global bool|string $interim_login Whether interim login headerMenu is being displayed. String 'success'
+ * @global bool|string $interim_login Whether interim login modal is being displayed. String 'success'
  *                                    upon successful login.
  *
  * @param string $input_id Which input to auto-focus.

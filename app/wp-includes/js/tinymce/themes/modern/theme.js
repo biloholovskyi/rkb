@@ -3607,7 +3607,7 @@ var modern = (function (domGlobals) {
           zIndex++;
         }
       }
-      var modalBlockEl = global$9('#' + ctrl.classPrefix + 'headerMenu-block', ctrl.getContainerElm())[0];
+      var modalBlockEl = global$9('#' + ctrl.classPrefix + 'modal-block', ctrl.getContainerElm())[0];
       if (topModal) {
         global$9(modalBlockEl).css('z-index', topModal.zIndex - 1);
       } else if (modalBlockEl) {
@@ -3642,9 +3642,9 @@ var modern = (function (domGlobals) {
             var $modalBlockEl_1;
             var prefix_1 = self.classPrefix;
             if (self.modal && !hasModal) {
-              $modalBlockEl_1 = global$9('#' + prefix_1 + 'headerMenu-block', self.getContainerElm());
+              $modalBlockEl_1 = global$9('#' + prefix_1 + 'modal-block', self.getContainerElm());
               if (!$modalBlockEl_1[0]) {
-                $modalBlockEl_1 = global$9('<div id="' + prefix_1 + 'headerMenu-block" class="' + prefix_1 + 'reset ' + prefix_1 + 'fade"></div>').appendTo(self.getContainerElm());
+                $modalBlockEl_1 = global$9('<div id="' + prefix_1 + 'modal-block" class="' + prefix_1 + 'reset ' + prefix_1 + 'fade"></div>').appendTo(self.getContainerElm());
               }
               global$7.setTimeout(function () {
                 $modalBlockEl_1.addClass(prefix_1 + 'in');

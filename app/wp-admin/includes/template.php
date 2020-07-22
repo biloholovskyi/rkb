@@ -1859,7 +1859,7 @@ function settings_errors( $setting = '', $sanitize = false, $hide_on_update = fa
 }
 
 /**
- * Outputs the headerMenu window used for attaching media to posts or pages in the media-listing screen.
+ * Outputs the modal window used for attaching media to posts or pages in the media-listing screen.
  *
  * @since 2.7.0
  *

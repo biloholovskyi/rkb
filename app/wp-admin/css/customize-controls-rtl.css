@@ -2294,7 +2294,7 @@ p.customize-section-description {
 }
 
 .modal-open .in-themes-panel #customize-controls .wp-full-overlay-sidebar-content {
-	overflow: visible; /* Prevent the top-level Customizer controls from becoming visible when elements on the right of the details headerMenu are focused. */
+	overflow: visible; /* Prevent the top-level Customizer controls from becoming visible when elements on the right of the details modal are focused. */
 }
 
 .wp-customizer .theme-header {

@@ -548,7 +548,7 @@ function twentytwenty_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 		// Add a toggle to items with children.
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
-			$toggle_target_string = '.menu-headerMenu .menu-item-' . $item->ID . ' > .sub-menu';
+			$toggle_target_string = '.menu-modal .menu-item-' . $item->ID . ' > .sub-menu';
 			$toggle_duration      = twentytwenty_toggle_duration();
 
 			// Add the sub menu toggle.
@@ -644,7 +644,7 @@ function twentytwenty_body_classes( $classes ) {
 
 	// Check for enabled search.
 	if ( true === get_theme_mod( 'enable_header_search', true ) ) {
-		$classes[] = 'enable-search-headerMenu';
+		$classes[] = 'enable-search-modal';
 	}
 
 	// Check for post thumbnail.

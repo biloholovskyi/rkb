@@ -144,7 +144,7 @@
 	wp.updates.queue = [];
 
 	/**
-	 * Holds a jQuery reference to return focus to when exiting the request credentials headerMenu.
+	 * Holds a jQuery reference to return focus to when exiting the request credentials modal.
 	 *
 	 * @since 4.2.0
 	 *
@@ -977,7 +977,7 @@
 	 * @param {string} response.newVersion New version of the theme.
 	 */
 	wp.updates.updateThemeSuccess = function( response ) {
-		var isModalOpen    = $( 'body.headerMenu-open' ).length,
+		var isModalOpen    = $( 'body.modal-open' ).length,
 			$theme         = $( '[data-slug="' + response.slug + '"]' ),
 			updatedMessage = {
 				className: 'updated-message notice-success notice-alt',
@@ -1020,7 +1020,7 @@
 
 		$document.trigger( 'wp-theme-update-success', response );
 
-		// Show updated message after headerMenu re-rendered.
+		// Show updated message after modal re-rendered.
 		if ( isModalOpen && 'customize' !== pagenow ) {
 			$( '.theme-info .theme-author' ).after( wp.updates.adminNotice( updatedMessage ) );
 		}
@@ -1058,7 +1058,7 @@
 		} else {
 			$notice = $( '.theme-info .notice' ).add( $theme.find( '.notice' ) );
 
-			$( 'body.headerMenu-open' ).length ? $( '.load-customize:visible' ).focus() : $theme.find( '.load-customize' ).focus();
+			$( 'body.modal-open' ).length ? $( '.load-customize:visible' ).focus() : $theme.find( '.load-customize' ).focus();
 		}
 
 		wp.updates.addAdminNotice( {
@@ -1188,7 +1188,7 @@
 		}
 
 		if ( 'customize' === pagenow ) {
-			if ( $document.find( 'body' ).hasClass( 'headerMenu-open' ) ) {
+			if ( $document.find( 'body' ).hasClass( 'modal-open' ) ) {
 				$button = $( '.theme-install[data-slug="' + response.slug + '"]' );
 				$card   = $( '.theme-overlay .theme-info' ).prepend( $message );
 			} else {
@@ -1441,7 +1441,7 @@
 	wp.updates.requestFilesystemCredentials = function( event ) {
 		if ( false === wp.updates.filesystemCredentials.available ) {
 			/*
-			 * After exiting the credentials request headerMenu,
+			 * After exiting the credentials request modal,
 			 * return the focus to the element triggering the request.
 			 */
 			if ( event && ! wp.updates.$elToReturnFocusToFromCredentialsModal ) {
@@ -1467,10 +1467,10 @@
 	};
 
 	/**
-	 * Keydown handler for the request for credentials headerMenu.
+	 * Keydown handler for the request for credentials modal.
 	 *
-	 * Closes the headerMenu when the escape key is pressed and
-	 * constrains keyboard navigation to inside the headerMenu.
+	 * Closes the modal when the escape key is pressed and
+	 * constrains keyboard navigation to inside the modal.
 	 *
 	 * @since 4.2.0
 	 *
@@ -1495,7 +1495,7 @@
 	};
 
 	/**
-	 * Opens the request for credentials headerMenu.
+	 * Opens the request for credentials modal.
 	 *
 	 * @since 4.2.0
 	 */
@@ -1509,7 +1509,7 @@
 	};
 
 	/**
-	 * Closes the request for credentials headerMenu.
+	 * Closes the request for credentials modal.
 	 *
 	 * @since 4.2.0
 	 */
@@ -1523,7 +1523,7 @@
 	};
 
 	/**
-	 * Takes care of the steps that need to happen when the headerMenu is canceled out.
+	 * Takes care of the steps that need to happen when the modal is canceled out.
 	 *
 	 * @since 4.2.0
 	 * @since 4.6.0 Triggers an event for callbacks to listen to and add their actions.
@@ -1536,7 +1536,7 @@
 		}
 
 		_.each( wp.updates.queue, function( job ) {
-			$document.trigger( 'credential-headerMenu-cancel', job );
+			$document.trigger( 'credential-modal-cancel', job );
 		} );
 
 		// Remove the lock, and clear the queue.
@@ -1753,7 +1753,7 @@
 		} );
 
 		/**
-		 * Closes the request credentials headerMenu when clicking the 'Cancel' button or outside of the headerMenu.
+		 * Closes the request credentials modal when clicking the 'Cancel' button or outside of the modal.
 		 *
 		 * @since 4.2.0
 		 */
@@ -1769,14 +1769,14 @@
 		} ).change();
 
 		/**
-		 * Handles events after the credential headerMenu was closed.
+		 * Handles events after the credential modal was closed.
 		 *
 		 * @since 4.6.0
 		 *
 		 * @param {Event}  event Event interface.
 		 * @param {string} job   The install/update.delete request.
 		 */
-		$document.on( 'credential-headerMenu-cancel', function( event, job ) {
+		$document.on( 'credential-modal-cancel', function( event, job ) {
 			var $updatingMessage = $( '.updating-message' ),
 				$message, originalText;
 
@@ -1842,7 +1842,7 @@
 
 			wp.updates.maybeRequestFilesystemCredentials( event );
 
-			// Return the user to the input box of the plugin's table row after closing the headerMenu.
+			// Return the user to the input box of the plugin's table row after closing the modal.
 			wp.updates.$elToReturnFocusToFromCredentialsModal = $pluginRow.find( '.check-column input' );
 			wp.updates.updatePlugin( {
 				plugin: $pluginRow.data( 'plugin' ),
@@ -1891,7 +1891,7 @@
 			if ( wp.updates.shouldRequestFilesystemCredentials && ! wp.updates.ajaxLocked ) {
 				wp.updates.requestFilesystemCredentials( event );
 
-				$document.on( 'credential-headerMenu-cancel', function() {
+				$document.on( 'credential-modal-cancel', function() {
 					var $message = $( '.install-now.updating-message' );
 
 					$message
@@ -1927,7 +1927,7 @@
 			if ( wp.updates.shouldRequestFilesystemCredentials && ! wp.updates.ajaxLocked ) {
 				wp.updates.requestFilesystemCredentials( event );
 
-				$document.on( 'credential-headerMenu-cancel', function() {
+				$document.on( 'credential-modal-cancel', function() {
 
 					$button
 						.removeClass( 'updating-message' )
@@ -1990,7 +1990,7 @@
 
 			wp.updates.maybeRequestFilesystemCredentials( event );
 
-			// Return the user to the input box of the theme's table row after closing the headerMenu.
+			// Return the user to the input box of the theme's table row after closing the modal.
 			wp.updates.$elToReturnFocusToFromCredentialsModal = $themeRow.find( '.check-column input' );
 			wp.updates.updateTheme( {
 				slug: $themeRow.data( 'slug' )
@@ -2348,7 +2348,7 @@
 		} );
 
 		/**
-		 * Click handler for updating a plugin from the details headerMenu on `plugin-install.php`.
+		 * Click handler for updating a plugin from the details modal on `plugin-install.php`.
 		 *
 		 * @since 4.2.0
 		 *
@@ -2378,7 +2378,7 @@
 		} );
 
 		/**
-		 * Click handler for installing a plugin from the details headerMenu on `plugin-install.php`.
+		 * Click handler for installing a plugin from the details modal on `plugin-install.php`.
 		 *
 		 * @since 4.6.0
 		 *

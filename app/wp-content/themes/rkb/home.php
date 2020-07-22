@@ -70,7 +70,10 @@ get_header();
             <div class="info__wrapper">
               <div class="info__text">
                 <div class="name"><?php echo $spec_week->post_title; ?></div>
-                <div class="place"><?php the_field( 'place', $spec_week->ID ); ?></div>
+                <?php
+                $place_doctor = get_field('place', $spec_week->ID);
+                ?>
+                <div class="place"><?php echo $place_doctor->post_title; ?></div>
                 <div class="post"><?php the_field( 'post', $spec_week->ID ); ?></div>
               </div>
               <a class="info__link" href="<?php the_permalink( $spec_week->ID ); ?>">Подробнее о специалисте</a>
