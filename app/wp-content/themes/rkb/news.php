@@ -13,7 +13,7 @@ get_header();
               <div class="news-tab__title">Новости</div>
               <div class="news-tab__head">
                 <div class="tabs">
-                  <a href="/news/" class="tab active">Все</a>
+                  <a href="/news/" class="tab no-js active">Все</a>
 					<?php
 					$categories = get_categories( [
 						'taxonomy'     => 'category',
@@ -34,7 +34,7 @@ get_header();
 						foreach ( $categories as $cat ) {
 							?>
                           <a href="<?php home_url(); ?>/category/<?php echo $cat->slug; ?>"
-                             class="tab"
+                             class="tab no-js"
                              id="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
 							<?php
 						}
@@ -160,6 +160,7 @@ get_header();
     <?php
     if($post_count < 4) {
       ?>
+      </div>
       </div>
       </div>
       <?php

@@ -1,6 +1,9 @@
 const switchNewsTab = (e) => {
   const tabs = $('.news-tab__head .tabs .tab');
   const current = $(e.currentTarget);
+  if(current.hasClass('no-js')) {
+    return
+  }
   tabs.removeClass('active');
   current.addClass('active');
   const id = current.attr('id').split('tab-')[1];

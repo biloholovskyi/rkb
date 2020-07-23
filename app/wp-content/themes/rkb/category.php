@@ -11,7 +11,7 @@ $slug = get_the_category()[0]->slug;
               <div class="news-tab__title">Новости</div>
               <div class="news-tab__head">
                 <div class="tabs">
-                  <a href="/news/" class="tab">Все</a>
+                  <a href="/news/" class="tab no-js">Все</a>
 					<?php
 					$categories = get_categories( [
 						'taxonomy'     => 'category',
@@ -31,9 +31,9 @@ $slug = get_the_category()[0]->slug;
 					if ( $categories ) {
 						foreach ( $categories as $cat ) {
 							// need check slug for active class
-							$active_class = 'tab';
+							$active_class = 'tab no-js';
 							if ( $slug == $cat->slug ) {
-								$active_class = 'tab active';
+								$active_class = 'tab no-js active';
 							}
 							?>
                           <a href="<?php home_url(); ?>/category/<?php echo $cat->slug; ?>"
@@ -157,6 +157,7 @@ $slug = get_the_category()[0]->slug;
 		?>
       </div>
       </div>
+    </div>
 		<?php
 	}
 	?>
