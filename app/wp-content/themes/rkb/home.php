@@ -122,7 +122,7 @@ get_header();
 				}
 				?>
             </div>
-            <a class="all-news" href="#">Все новости</a>
+            <a class="all-news" href="news/">Все новости</a>
           </div>
         </div>
         <div class="news-tab__body show" id="body-all">
@@ -287,7 +287,7 @@ get_header();
 			  }
 		  }
 		  ?>
-        <a class="news-btns" href="#">Читать все новости </a>
+        <a class="news-btns" href="news/">Читать все новости </a>
       </div>
     </div>
   </div>

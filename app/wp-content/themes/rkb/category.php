@@ -1,8 +1,6 @@
 <?php
-/*
-Template Name: News
-*/
 get_header();
+$slug = get_the_category()[0]->slug;
 ?>
   <div class="news-page">
     <div class="news-tab">
@@ -13,7 +11,7 @@ get_header();
               <div class="news-tab__title">Новости</div>
               <div class="news-tab__head">
                 <div class="tabs">
-                  <a href="/news/" class="tab active">Все</a>
+                  <a href="/news/" class="tab">Все</a>
 					<?php
 					$categories = get_categories( [
 						'taxonomy'     => 'category',
@@ -32,9 +30,14 @@ get_header();
 
 					if ( $categories ) {
 						foreach ( $categories as $cat ) {
+							// need check slug for active class
+							$active_class = 'tab';
+							if ( $slug == $cat->slug ) {
+								$active_class = 'tab active';
+							}
 							?>
                           <a href="<?php home_url(); ?>/category/<?php echo $cat->slug; ?>"
-                             class="tab"
+                             class="<?php echo $active_class; ?>"
                              id="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
 							<?php
 						}
@@ -45,16 +48,8 @@ get_header();
               </div>
             </div>
 			  <?php $post_count = 0; ?>
-            <?php
-            global $wp_query;
-            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-            $query = new WP_Query( array(
-              'posts_pet_page' => 20,
-              'paged' => $paged
-            ) );
-            ?>
-			  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) :
-	      $query->the_post(); ?>
+			  <?php if ( have_posts() ) : while ( have_posts() ) :
+			  the_post(); ?>
 			  <?php
 			  $post_count ++;
 			  if ( $post_count == 1 ) {
@@ -157,50 +152,30 @@ get_header();
         </div>
       </div>
     </div>
+	<?php
+	if($post_count < 4) {
+		?>
+      </div>
+      </div>
+		<?php
+	}
+	?>
     <?php
-    if($post_count < 4) {
-      ?>
-      </div>
-      </div>
-      <?php
-    }
+    $args = array(
+	    'show_all'     => false, // показаны все страницы участвующие в пагинации
+	    'end_size'     => 1,     // количество страниц на концах
+	    'mid_size'     => 1,     // количество страниц вокруг текущей
+	    'prev_next'    => false,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+	    'prev_text'    => __('« Previous'),
+	    'next_text'    => __('Next »'),
+	    'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+	    'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+	    'screen_reader_text' => false,
+    );
     ?>
-	  <?php
-	  $args = array(
-		  'show_all'     => false, // показаны все страницы участвующие в пагинации
-		  'end_size'     => 1,     // количество страниц на концах
-		  'mid_size'     => 1,     // количество страниц вокруг текущей
-		  'prev_next'    => false,  // выводить ли боковые ссылки "предыдущая/следующая страница".
-		  'prev_text'    => __('« Previous'),
-		  'next_text'    => __('Next »'),
-		  'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
-		  'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
-		  'screen_reader_text' => false,
-	  );
-	  ?>
 	  <?php the_posts_pagination( $args ); ?>
-
-    <div class="pagination">
-	    <?php
-	    echo paginate_links( array(
-		    'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-		    'total'        => $query->max_num_pages,
-		    'current'      => max( 1, get_query_var( 'paged' ) ),
-		    'format'       => '?paged=%#%',
-		    'show_all'     => false,
-		    'type'         => 'plain',
-		    'end_size'     => 1,
-		    'mid_size'     => 1,
-		    'prev_next'    => false,
-		    'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Posts', 'text-domain' ) ),
-		    'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
-		    'add_args'     => false,
-		    'add_fragment' => '',
-	    ) );
-	    ?>
-    </div>
 	  <?php endif; ?>
-    <?php wp_reset_postdata(); ?>
+
   </div>
 
 <?php get_footer(); ?>
